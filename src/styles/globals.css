@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  direction: rtl;
+  font-family: "Almarai", sans-serif;
+  --main-color: #a6225b;
+  --alt-color: #f9d6b4;
+  --sec-background: #fffbf7;
+}
+html {
+  scroll-behavior: smooth;
+}
