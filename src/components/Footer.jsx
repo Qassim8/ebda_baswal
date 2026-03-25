@@ -1,53 +1,109 @@
+import Link from "next/link";
 import Image from "next/image";
 
 export default function Footer() {
-  const links = [
-    { label: "الرئيسية", href: "/" },
-    { label: "من نحن", href: "#about" },
-    { label: "خدماتنا", href: "#services" },
-    { label: "التواصل", href: "#footer" },
-  ];
+  const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-orange-100 text-slate-800 pt-10" id="footer">
+    <footer className="bg-[#fcf4ed] text-slate-800 pt-10">
       <div className="container mx-auto px-3 md:px-0 pb-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10">
+        {/* Logo + About */}
         <div className="col-span-1">
-          <Image src="/images/logo.png" alt="ابدأ بسؤال" width={96} height={80} className="w-24 mb-4" />
-          <p className="text-sm leading-relaxed">منصة تهدف إلى تبسيط المعرفة، وتحفيز التفكير، وتمكين الشباب...</p>
+          <Image
+            src="/logo.png"
+            alt="ابدأ بسؤال"
+            width={96}
+            height={60}
+            className="mb-4"
+          />
+          <p className="text-sm leading-relaxed">
+            منصة تهدف إلى تبسيط المعرفة، وتحفيز التفكير، وتمكين الشباب من خلال
+            مشاركة المحتوى والإرشاد العملي.
+          </p>
         </div>
 
+        {/* روابط سريعة */}
         <div>
           <h3 className="text-lg font-semibold mb-3">روابط مهمة</h3>
           <ul className="space-y-2 text-sm">
-            {links.map((link, idx) => (
-              <li key={idx}>
-                <a href={link.href} className="relative inline-block text-slate-800 transition-colors duration-300 hover:text-pink-600">{link.label}</a>
+            {["الرئيسية", "من نحن", "خدماتنا", "التواصل"].map((item) => (
+              <li key={item}>
+                <Link
+                  href="#"
+                  className="relative inline-block text-slate-800 transition-colors duration-300 hover:text-(--main-color) 
+                             before:absolute before:bottom-0 before:inset-s-0 before:h-0.5 before:w-0 
+                             before:bg-(--main-color) before:transition-all before:duration-300 hover:before:w-full pb-2"
+                >
+                  {item}
+                </Link>
               </li>
             ))}
           </ul>
         </div>
 
+        {/* خدماتنا */}
         <div>
           <h3 className="text-lg font-semibold mb-3">خدماتنا</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:text-pink-600">جلسات استشارية</a></li>
-            <li><a href="#" className="hover:text-pink-600">بودكاست مسارك</a></li>
-            <li><a href="#" className="hover:text-pink-600">فرص تطوعية</a></li>
-            <li><a href="#" className="hover:text-pink-600">دورات تدريبية</a></li>
+            <li>
+              <Link
+                href="#"
+                className="hover:text-(--main-color) transition-colors"
+              >
+                جلسات استشارية
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#"
+                className="hover:text-(--main-color) transition-colors"
+              >
+                بودكاست مسارك
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#"
+                className="hover:text-(--main-color) transition-colors"
+              >
+                فرص تطوعية
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#"
+                className="hover:text-(--main-color) transition-colors"
+              >
+                دورات تدريبية
+              </Link>
+            </li>
           </ul>
         </div>
 
+        {/* تواصل معنا */}
         <div>
           <h3 className="text-lg font-semibold mb-3">تواصل معنا</h3>
           <ul className="space-y-2 text-sm">
-            <li><i className="ti ti-phone ms-5"></i> <span>+249 150 124 8489</span></li>
-            <li>abda_b_soual@org.edu <i className="ti ti-mail me-1"></i></li>
-            <li><i className="ti ti-map-pin me-1"></i> السودان - الخرطوم</li>
+            <li className="flex items-center gap-2">
+              <i className="ti ti-phone text-(--main-color)"></i>
+              <span dir="ltr">+249 150 124 8489</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <i className="ti ti-mail text-(--main-color)"></i>
+              <span>abda_b_soual@org.edu</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <i className="ti ti-map-pin text-(--main-color)"></i>
+              <span>السودان - الخرطوم</span>
+            </li>
           </ul>
         </div>
       </div>
 
-      <div className="text-slate-800 bg-orange-200 mt-10 py-5 text-center text-sm">© 2025 ابدأ بسؤال. جميع الحقوق محفوظة.</div>
+      {/* Bottom Rights */}
+      <div className="text-slate-800 bg-(--alt-color) mt-10 py-5 text-center text-sm font-medium">
+        © {currentYear} ابدأ بسؤال. جميع الحقوق محفوظة.
+      </div>
     </footer>
   );
 }
