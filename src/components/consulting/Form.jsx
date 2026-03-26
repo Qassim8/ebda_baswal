@@ -19,6 +19,7 @@ export default function ConsultingForm() {
             title="استشر فريقنا"
             subtitle="نحن هنا لدعمك! ارسل استشارتك وسيتواصل معك فريقنا المتخصص لمساعدتك في إيجاد الحلول."
             center={true}
+            fullwidth={1}
           />
 
           <form className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">

@@ -44,6 +44,7 @@ export default function About({ about }) {
             <MainTitle
               title="من نحن؟"
               subtitle="نحن إجابتك الأولى ونسعى أن نكون المنصة الأولى التي يلجأ إليها الطلاب والخريجين"
+              fullwidth={1}
             />
             <p className="text-slate-600 text-lg md:text-xl leading-relaxed">
               <span className="text-(--main-color) font-bold">
