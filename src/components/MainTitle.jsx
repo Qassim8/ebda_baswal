@@ -15,7 +15,7 @@ export default function MainTitle({
         {title}
       </h2>
       <p
-        className={`text-slate-800 font-bold text-2xl md:text-3xl leading-snug ${center ? "max-w-2xl mx-auto" : ""}`}
+        className={`text-slate-800 font-bold text-xl md:text-3xl leading-snug ${center ? "max-w-2xl mx-auto" : ""}`}
       >
         {subtitle}
       </p>

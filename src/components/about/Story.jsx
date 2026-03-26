@@ -24,7 +24,7 @@ const storySteps = [
 
 export default function Story() {
   return (
-    <section className="py-20 relative ">
+    <section className="py-20 relative overflow-hidden" id="story">
       <div className="container mx-auto px-5">
         <MainTitle
           title="رحلتنا"
@@ -48,7 +48,7 @@ export default function Story() {
                 <div className="hidden md:block w-5/12"></div>
 
                 {/* الدائرة المركزية (التي تقع على الخط) */}
-                <div className="z-20 flex items-center justify-center w-12 h-12 bg-white border-4 border-main rounded-full shadow-lg mb-4 md:mb-0">
+                <div className="z-20 flex items-center justify-center w-12 h-12 bg-white border-4 border-(--main-color) rounded-full shadow-lg mb-4 md:mb-0">
                   <div className="text-(--main-color) text-xl">{step.icon}</div>
                 </div>
 

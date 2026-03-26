@@ -40,7 +40,7 @@ const Counter = ({ endValue, duration = 2000, startCount }) => {
   );
 };
 
-export default function Statistics() {
+export default function Statistics({ home }) {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -89,7 +89,7 @@ export default function Statistics() {
 
   return (
     <section
-      className="py-20 bg-white relative overflow-hidden"
+      className={`py-20 ${home ? "bg-(--second-color)" : "bg-white"} relative overflow-hidden`}
       ref={sectionRef}
     >
       {/* لمسة خلفية لتكرار الاستايل الجمالي */}

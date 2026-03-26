@@ -20,7 +20,7 @@ export default function Goals({ about }) {
             {/* المربع الخلفي الزخرفي */}
             <div className="absolute -top-7 -right-7 h-20 w-20 bg-(--alt-color) -z-10 rounded-sm"></div>
 
-            <div className="p-7 md:p-10 bg-slate-800 rounded-sm shadow-xl min-h-80 flex flex-col justify-center">
+            <div className="p-7 md:p-10 bg-(--main-color) rounded-sm shadow-xl min-h-80 flex flex-col justify-center">
               <h3 className="text-lg md:text-2xl text-(--alt-color) font-bold mb-4">
                 رسالتنا:
               </h3>
@@ -45,10 +45,10 @@ export default function Goals({ about }) {
           {/* كارت الرؤية */}
           <div className="relative z-10">
             {/* المربع الخلفي الزخرفي */}
-            <div className="absolute -bottom-7 -left-7 h-20 w-20 border-2 border-slate-200 -z-10 rounded-sm"></div>
+            <div className="absolute -bottom-7 -left-7 h-20 w-20 border-2 border-(--main-color)/40 -z-10 rounded-sm"></div>
 
-            <div className="p-7 md:p-10 bg-(--alt-color) rounded-sm shadow-md min-h-80 flex flex-col justify-center border border-pink-100">
-              <h3 className="text-lg md:text-2xl text-slate-800 font-bold mb-4">
+            <div className="p-7 md:p-10 bg-(--alt-color) rounded-sm shadow-md min-h-80 flex flex-col justify-center">
+              <h3 className="text-lg md:text-2xl text-(--main-color) font-bold mb-4">
                 رؤيتنا:
               </h3>
               <p className="text-slate-600 text-sm md:text-base leading-relaxed">
