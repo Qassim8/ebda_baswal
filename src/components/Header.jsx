@@ -10,7 +10,8 @@ const navLinks = [
   { name: "الرئيسية", href: "/" },
   { name: "من نحن", href: "/about" },
   { name: "الخدمات", href: "/services" },
-  { name: "الاستشارة", href: "/consult" },
+  { name: "كلام رزان", href: "/podcast" },
+  { name: "الاستشارة", href: "/consulting" },
   { name: "تواصل معنا", href: "/contact" },
 ];
 

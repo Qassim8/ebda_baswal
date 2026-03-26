@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { ChevronLeft, ChevronRight, Home2 } from "tabler-icons-react";
+import { ChevronLeft, Home2 } from "tabler-icons-react";
 
 export default function Breadcrumb({ title, pageName }) {
   return (
     <section
-      className="h-[30vh] md:h-[40vh] bg-cover bg-center relative flex items-center justify-center overflow-hidden"
+      className="h-[30vh] md:h-[60vh] bg-cover bg-center relative flex items-center justify-center overflow-hidden"
       style={{
         backgroundImage: "url('/shape-bg.jpg')", // تأكد من المسار في مجلد public
       }}

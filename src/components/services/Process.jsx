@@ -1,4 +1,5 @@
 import {
+  ArrowDown,
   CalendarEvent,
   ClipboardCheck,
   Rocket,
@@ -23,7 +24,7 @@ const steps = [
     title: "الجلسة التفاعلية",
     desc: "نلتقي أونلاين أو حضورياً لنعمل سوياً على حل المشكلات ورسم خارطة الطريق.",
     icon: <UserCheck size={32} />,
-    color: "bg-rose-50 text-main border-rose-100",
+    color: "bg-rose-50 text-(--main-color) border-rose-100",
   },
   {
     title: "الانطلاق والمتابعة",
@@ -35,7 +36,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-20 bg-(--second-color) relative overflow-hidden">
       <div className="container mx-auto px-5">
         <MainTitle
           title="كيف نبدأ رحلتك؟"
@@ -45,7 +46,7 @@ export default function Process() {
 
         <div className="relative mt-20">
           {/* الخط الرابط بين الخطوات (يظهر في الشاشات الكبيرة فقط) */}
-          <div className="hidden lg:block absolute top-1/4 left-0 w-full h-0.5 bg-dashed border-t-2 border-dashed border-slate-200 -z-10"></div>
+          <div className="hidden lg:block absolute top-1/4 left-0 w-full h-0.5  bg-dashed border-t-2 border-dashed border-slate-200"></div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {steps.map((step, index) => (
@@ -56,7 +57,7 @@ export default function Process() {
                 {/* الدائرة والأيقونة مع رقم الخطوة */}
                 <div className="relative mb-8">
                   <div
-                    className={`w-24 h-24 rounded-full border-2 flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-main/10 bg-white relative z-10 ${step.color}`}
+                    className={`w-24 h-24 rounded-full border-2 flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-(--main-color)/10 bg-white relative z-10 ${step.color}`}
                   >
                     {step.icon}
                   </div>
@@ -68,7 +69,7 @@ export default function Process() {
                 </div>
 
                 {/* النصوص */}
-                <h3 className="text-xl font-extrabold text-slate-800 mb-4 group-hover:text-main transition-colors">
+                <h3 className="text-xl font-extrabold text-(--main-color) md:text-slate-800 mb-4 group-hover:text-(--main-color) transition-colors">
                   {step.title}
                 </h3>
                 <p className="text-slate-500 leading-relaxed text-sm px-4">
@@ -77,19 +78,14 @@ export default function Process() {
 
                 {/* سهم صغير للموبايل والتابلت يظهر تحت كل خطوة ما عدا الأخيرة */}
                 {index !== steps.length - 1 && (
-                  <div className="mt-8 lg:hidden text-slate-300">
-                    <i className="ti ti-arrow-down text-3xl animate-bounce"></i>
+                  <div className="mt-8 lg:hidden text-(--main-color)">
+                    <ArrowDown size={32} className="animate-bounce" />
                   </div>
                 )}
               </div>
             ))}
           </div>
         </div>
-      </div>
-
-      {/* لمسة جمالية: ترقيم خلفي كبير جداً وباهت ليعطي طابع الـ Editorial Design */}
-      <div className="absolute -bottom-10 left-10 text-[200px] font-black text-slate-50 -z-10 select-none">
-        STEPS
       </div>
     </section>
   );

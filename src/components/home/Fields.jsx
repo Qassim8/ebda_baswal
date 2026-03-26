@@ -42,7 +42,7 @@ const fieldsData = [
 
 export default function Fields() {
   return (
-    <section className="py-16 bg-(--second-color)" id="fields">
+    <section className="py-20 bg-(--second-color)" id="fields">
       <div className="container mx-auto px-3 md:px-0">
         <MainTitle
           title="مجالاتنا"

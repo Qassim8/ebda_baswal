@@ -25,7 +25,7 @@ export default function Consultation() {
 
   return (
     <section
-      className="py-16 relative overflow-hidden bg-(--second-color)"
+      className="py-20 relative overflow-hidden bg-(--second-color)"
       id="consultation"
     >
       <div className="container mx-auto px-5 md:px-0 relative z-20">

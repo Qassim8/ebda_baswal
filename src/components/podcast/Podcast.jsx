@@ -54,10 +54,10 @@ const episodes = [
   },
 ];
 
-export default function Podcast({ home }) {
+export default function PodcastSection({ home }) {
   return (
     <section
-      className="py-16 bg-(--second-color) relative overflow-hidden"
+      className="py-20 bg-(--second-color) relative overflow-hidden"
       id="podcast"
     >
       {/* Decorative Background Icon */}

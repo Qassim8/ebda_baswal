@@ -24,7 +24,7 @@ const featureData = [
 
 export default function Features() {
   return (
-    <section className="py-24 bg-white" id="features">
+    <section className="py-20 bg-white" id="features">
       <div className="container mx-auto px-5">
         <MainTitle
           title="لماذا ابدأ بسؤال؟"

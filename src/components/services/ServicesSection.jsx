@@ -52,7 +52,7 @@ const servicesData = [
 
 export default function ServicesSection() {
   return (
-    <section className="py-16  relative overflow-hidden" id="services">
+    <section className="py-20 relative overflow-hidden" id="services">
       {/* Background Icon */}
       <div className="absolute -right-30 -top-20 w-75 z-10 opacity-20">
         <Image

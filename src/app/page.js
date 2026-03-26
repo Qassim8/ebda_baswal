@@ -3,7 +3,7 @@ import Consultation from "@/components/consultation/Consultation";
 import Fields from "@/components/home/Fields";
 import Goals from "@/components/home/Goals";
 import HeroSection from "@/components/home/HeroSection";
-import Podcast from "@/components/home/Podcast";
+import Podcast from "@/components/podcast/Podcast";
 import Quote from "@/components/home/Quotes";
 import Statistics from "@/components/home/Statistics";
 import Testimonials from "@/components/home/Testimonials";
