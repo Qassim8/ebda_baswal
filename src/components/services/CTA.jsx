@@ -11,7 +11,7 @@ export default function ServicesCTA() {
         backgroundImage: "url('/shape-bg.jpg')", // تأكد من المسار في مجلد public
       }}
     >
-      <div className="absolute inset-0 bg-white/90 " />
+      <div className="absolute inset-0 bg-white/95 " />
       <div className="container mx-auto px-5">
         <div className="bg-(--main-color) rounded-[3rem] p-8 md:p-16 relative overflow-hidden shadow-2xl shadow-(--main-color)/20 group">
           {/* لمسات خلفية متحركة خفيفة */}

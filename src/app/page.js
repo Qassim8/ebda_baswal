@@ -9,6 +9,7 @@ import Statistics from "@/components/home/Statistics";
 import Testimonials from "@/components/home/Testimonials";
 import ServicesSection from "@/components/services/ServicesSection";
 import Services from "@/components/services/ServicesSection";
+import ConsultingForm from "@/components/consulting/Form";
 export default function Home() {
   return (
     <>
@@ -21,7 +22,7 @@ export default function Home() {
       <Goals />
       <Podcast home={true} />
       <Testimonials />
-      <Consultation />
+      <ConsultingForm />
     </>
   );
 }
