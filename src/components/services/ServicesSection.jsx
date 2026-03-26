@@ -50,7 +50,7 @@ const servicesData = [
   },
 ];
 
-export default function Services() {
+export default function ServicesSection() {
   return (
     <section className="py-16  relative overflow-hidden" id="services">
       {/* Background Icon */}

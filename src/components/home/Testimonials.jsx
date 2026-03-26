@@ -8,7 +8,13 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import MainTitle from "../MainTitle";
-import { ChevronLeft, ChevronRight } from "tabler-icons-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  Quote,
+} from "tabler-icons-react";
 
 const testimonials = [
   {
@@ -75,15 +81,15 @@ export default function Testimonials() {
           <div className="hidden md:flex justify-between absolute top-1/2 -translate-y-1/2 w-full z-30 pointer-events-none">
             <button
               ref={(node) => setPrevEl(node)}
-              className="pointer-events-auto w-10 h-10 flex items-center justify-center rounded-full bg-(--alt-color) border border-rose-100 text-main shadow-md hover:bg-main hover:text-white transition-all -ml-5"
+              className="cursor-pointer pointer-events-auto w-10 h-10 flex items-center justify-center rounded-full bg-(--main-color) border border-rose-100 text-main shadow-md hover:bg-main hover:text-white transition-all -ml-5"
             >
-              <ChevronRight className="text-(--main-color)" />
+              <ArrowRight className="text-white" />
             </button>
             <button
               ref={(node) => setNextEl(node)}
-              className="pointer-events-auto w-10 h-10 flex items-center justify-center rounded-full bg-(--alt-color) border border-rose-100 text-main shadow-md hover:bg-main hover:text-white transition-all -mr-5"
+              className="cursor-pointer pointer-events-auto w-10 h-10 flex items-center justify-center rounded-full bg-(--main-color) border border-rose-100 text-main shadow-md hover:bg-main hover:text-white transition-all -mr-5"
             >
-              <ChevronLeft className="text-(--main-color)" />
+              <ArrowLeft className="text-white" />
             </button>
           </div>
 
@@ -113,9 +119,11 @@ export default function Testimonials() {
           >
             {testimonials.map((item) => (
               <SwiperSlide key={item.id}>
-                <div className="bg-rose-50/40 p-8 rounded-2xl border border-rose-100 flex flex-col h-full hover:shadow-md transition-all border-b-4 hover:border-b-main">
-                  <i className="ti ti-quote text-3xl text-main/30 mb-4"></i>
-                  <p className="text-slate-600 leading-relaxed italic mb-8 flex-grow text-sm md:text-base">
+                <div className="bg-rose-50/40 p-8 min-h-72 rounded-2xl border border-(--main-color)/20 flex flex-col h-full hover:shadow-md transition-all border-b-4 hover:border-b-main">
+                  <div className="text-3xl text-(--main-color)/30 mb-4">
+                    <Quote />
+                  </div>
+                  <p className="text-slate-600 leading-relaxed italic mb-8 grow text-sm md:text-base">
                     "{item.comment}"
                   </p>
                   <div className="flex items-center gap-4 pt-6">
@@ -141,7 +149,7 @@ export default function Testimonials() {
             ))}
           </Swiper>
 
-          <div className="custom-pagination flex justify-center gap-2 mt-2"></div>
+          <div className="custom-pagination flex justify-center gap-2 mt-5"></div>
         </div>
       </div>
 

@@ -4,7 +4,10 @@ import MainTitle from "../MainTitle";
 
 export default function About({ about }) {
   return (
-    <section className="py-16 bg-sec overflow-hidden" id="about">
+    <section
+      className={`py-20 ${about ? "bg-(--second-color)" : "bg-white"} overflow-hidden`}
+      id="about"
+    >
       <div className="container mx-auto px-3 md:px-0">
         {/* الجزء الأول: الصور المتداخلة + النص */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-10 md:gap-5">
@@ -75,7 +78,7 @@ export default function About({ about }) {
                   src="/about-2.jpg"
                   alt="ورش عمل"
                   width={600}
-                  height={400}
+                  height={200}
                   className="rounded-md shadow-md w-full object-cover"
                 />
               </div>

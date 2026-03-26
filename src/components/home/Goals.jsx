@@ -1,9 +1,11 @@
 import Link from "next/link";
 import MainTitle from "../MainTitle";
 
-export default function Goals() {
+export default function Goals({ about }) {
   return (
-    <section className="py-16 overflow-hidden">
+    <section
+      className={`py-20 ${about ? "bg-(--second-color)" : "bg-white"} overflow-hidden`}
+    >
       <div className="container mx-auto px-3 md:px-0">
         {/* استخدام مكون العنوان الجاهز */}
         <MainTitle

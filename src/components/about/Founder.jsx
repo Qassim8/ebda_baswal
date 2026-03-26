@@ -1,6 +1,6 @@
 export default function Founder() {
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section className="py-20 bg-(--second-color) overflow-hidden">
       <div className="container mx-auto px-5 flex flex-col md:flex-row items-center gap-12">
         {/* صورة المؤسس مع خلفية ديكورية */}
         <div className="md:w-1/2 relative">

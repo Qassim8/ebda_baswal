@@ -15,7 +15,7 @@ export default function AboutUs() {
       <Story />
       <About about={true} />
       <Features />
-      <Goals />
+      <Goals about={true} />
       <Testimonials />
     </>
   );

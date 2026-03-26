@@ -7,6 +7,7 @@ import Podcast from "@/components/home/Podcast";
 import Quote from "@/components/home/Quotes";
 import Statistics from "@/components/home/Statistics";
 import Testimonials from "@/components/home/Testimonials";
+import ServicesSection from "@/components/services/ServicesSection";
 import Services from "@/components/services/ServicesSection";
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
       <HeroSection />
       <About />
       <Statistics />
-      <Services />
+      <ServicesSection />
       <Fields />
       <Quote />
       <Goals />
