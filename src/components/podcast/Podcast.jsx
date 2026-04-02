@@ -2,59 +2,62 @@ import Image from "next/image";
 import MainTitle from "../MainTitle";
 import { BrandYoutube } from "tabler-icons-react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
-const episodes = [
+const episodeData = [
   {
     id: "01",
-    title: "نبدأ من وين؟",
+    titleKey: "episode1.title",
     link: "https://youtu.be/0opNH7nV0tU?si=4vaHwuCBgtVBm7SF",
     img: "/podcast-1.jpg",
   },
   {
     id: "02",
-    title: "من مبتدئ الى محترف",
+    titleKey: "episode2.title",
     link: "https://youtu.be/cMbxlCkby1o?si=_G_zk6iRanOFBOev",
     img: "/podcast-2.jpg",
   },
   {
     id: "03",
-    title: "ريادة الاعمال المجتمعية من الافكار الى التأثير",
+    titleKey: "episode3.title",
     link: "https://youtu.be/7QcqEU_jzCo?si=ADoY7s5o0UoBM7TG",
     img: "/podcast-3.jpg",
   },
   {
     id: "04",
-    title: "جسور المعرفة بين الاكاديميات والبزنس",
+    titleKey: "episode4.title",
     link: "https://youtu.be/7QcqEU_jzCo?si=rFMu2ax5BB2QYXRE",
     img: "/podcast-4.jpg",
   },
   {
     id: "05",
-    title: "المنح الدراسية",
+    titleKey: "episode5.title",
     link: "https://youtu.be/AEtwsIWmYoI?si=mKsXinrxKZOpHLjH",
     img: "/podcast-5.jpg",
   },
   {
     id: "06",
-    title: "صناعة العلامة الشخصية",
+    titleKey: "episode6.title",
     link: "https://youtu.be/CZVLXjSk_ZA?si=F3FuvnorOz9CKg-u",
     img: "/podcast-6.jpg",
   },
   {
     id: "07",
-    title: "رحلة البراندينق في العالم الجديد",
+    titleKey: "episode7.title",
     link: "https://youtu.be/4Cnef1wqVGs?si=3gQ2sMKatUcGMu8g",
     img: "/podcast-7.jpg",
   },
   {
     id: "08",
-    title: "الفرص الاستثمارية بعد الحرب",
+    titleKey: "episode8.title",
     link: "https://youtu.be/EC4Ny9lLs-M?si=PPxrrZDom1XuFThK",
     img: "/podcast-8.jpg",
   },
 ];
 
 export default function PodcastSection({ home }) {
+  const t = useTranslations("Podcast");
+
   return (
     <section
       className="py-20 bg-(--second-color) relative overflow-hidden"
@@ -73,16 +76,12 @@ export default function PodcastSection({ home }) {
       </div>
 
       <div className="container mx-auto px-5 md:px-0 relative z-20">
-        <MainTitle
-          title="كلام رزان"
-          subtitle="بودكاست يهدف إلى تمكين الشباب والطلاب والخريجين الجدد في مسيرتهم المهنية، من خلال استكشاف مواضيع ملهمة وتقديم طرق عملية للتأهيل."
-          center={true}
-        />
+        <MainTitle title={t("title")} subtitle={t("subtitle")} center={true} />
 
         <div
           className={`grid grid-cols-1 md:grid-cols-2 ${home ? "lg:grid-cols-3" : "lg:grid-cols-4"} my-16 gap-6`}
         >
-          {(home ? episodes.slice(0, 3) : episodes).map((episode) => (
+          {(home ? episodeData.slice(0, 3) : episodeData).map((episode) => (
             <div
               key={episode.id}
               className="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 ease-in-out border border-rose-50"
@@ -90,7 +89,7 @@ export default function PodcastSection({ home }) {
               <div className="relative h-72 w-full overflow-hidden">
                 <Image
                   src={episode.img}
-                  alt={episode.title}
+                  alt={t(episode.titleKey)}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -101,7 +100,7 @@ export default function PodcastSection({ home }) {
 
               <div className="p-5 flex flex-col justify-between h-40">
                 <h2 className="font-bold text-slate-700 text-sm md:text-base line-clamp-2">
-                  الحلقة {episode.id}: {episode.title}
+                  {t("episodeLabel")} {episode.id}: {t(episode.titleKey)}
                 </h2>
 
                 <a
@@ -111,7 +110,7 @@ export default function PodcastSection({ home }) {
                   className="flex items-center justify-center gap-2 bg-(--main-color) text-white py-2.5 px-4 rounded-lg hover:bg-pink-700 transition-colors text-sm font-bold shadow-sm"
                 >
                   <BrandYoutube />
-                  <span>شاهد الآن</span>
+                  <span>{t("watchNow")}</span>
                 </a>
               </div>
             </div>
@@ -121,10 +120,10 @@ export default function PodcastSection({ home }) {
       {home && (
         <div className="text-center flex flex-col items-center justify-center py-5">
           <Link
-            href="/contact"
+            href="/podcast"
             className="bg-(--main-color) text-white px-10 py-3 rounded-lg font-bold hover:bg-pink-700 transition-all shadow-lg hover:shadow-pink-200"
           >
-            شاهد كل الحلقات
+            {t("viewAll")}
           </Link>
         </div>
       )}

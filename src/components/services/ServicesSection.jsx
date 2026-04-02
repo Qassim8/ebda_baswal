@@ -1,7 +1,9 @@
-// components/home/Services.jsx
+// components/services/ServicesSection.jsx
+"use client";
 import Image from "next/image";
 import Card from "./ServicesCard";
 import MainTitle from "../MainTitle";
+import { useTranslations } from "next-intl";
 import {
   Book,
   DeviceLaptop,
@@ -11,46 +13,48 @@ import {
   Writing,
 } from "tabler-icons-react";
 
-const servicesData = [
-  {
-    id: "٠١",
-    title: "محتوى تعليمي",
-    icon: <Book />,
-    desc: "مشاركة محتوى مكتوب ومرئي باستمرار عبر منصاتنا على وسائل التواصل الاجتماعي، لتبسيط المعرفة للمستفيدين.",
-  },
-  {
-    id: "٠٢",
-    title: "كلام رزان",
-    icon: <Speakerphone />,
-    desc: "بودكاست يهدف إلى تمكين الشباب والطلاب والخريجين الجدد في مسيرتهم المهنية، من خلال استكشاف مواضيع متنوعة.",
-  },
-  {
-    id: "٠٣",
-    title: "دورات تدريبية",
-    icon: <School />,
-    desc: "نقدم دورات تدريبية دورية افتراضية عبر منصة 'التلغرام'، تهدف إلى تعميق الفهم لأهم المهارات المطلوبة.",
-  },
-  {
-    id: "٠٤",
-    title: "مستشارك المهني",
-    icon: <UserCheck />,
-    desc: "يوفر برنامج 'مستشارك المهني' جلسات استشارة مهنية افتراضية، للحصول على إرشادات حول تخطيط المسار.",
-  },
-  {
-    id: "٠٥",
-    title: "فرص تدريب وتطوع",
-    icon: <DeviceLaptop />,
-    desc: "بالتعاون مع منظمات غير حكومية نقدّم فرص تطوع عن بُعد مثل: تطوير المواقع، وإدارة وسائل التواصل.",
-  },
-  {
-    id: "٠٦",
-    title: "التقديم للمنح",
-    icon: <Writing />,
-    desc: "نحن هنا لمساعدتك في زيادة فرص قبولك في المنح الدراسية من خلال تحسين المقالات والسيرة الذاتية.",
-  },
-];
-
 export default function ServicesSection() {
+  const t = useTranslations("Services");
+
+  const servicesData = [
+    {
+      id: "01",
+      titleKey: "service1.title",
+      descKey: "service1.description",
+      icon: <Book />,
+    },
+    {
+      id: "02",
+      titleKey: "service2.title",
+      descKey: "service2.description",
+      icon: <Speakerphone />,
+    },
+    {
+      id: "03",
+      titleKey: "service3.title",
+      descKey: "service3.description",
+      icon: <School />,
+    },
+    {
+      id: "04",
+      titleKey: "service4.title",
+      descKey: "service4.description",
+      icon: <UserCheck />,
+    },
+    {
+      id: "05",
+      titleKey: "service5.title",
+      descKey: "service5.description",
+      icon: <DeviceLaptop />,
+    },
+    {
+      id: "06",
+      titleKey: "service6.title",
+      descKey: "service6.description",
+      icon: <Writing />,
+    },
+  ];
+
   return (
     <section className="py-20 relative overflow-hidden" id="services">
       {/* Background Icon */}
@@ -64,22 +68,17 @@ export default function ServicesSection() {
       </div>
 
       <div className="container mx-auto px-5 md:px-0 mt-10 md:mt-0 relative z-20">
-        {/* استخدمنا المكون الجاهز MainTitle مع خاصية center */}
-        <MainTitle
-          title="افضل خدماتنا"
-          subtitle="نحرص على تقديم تحليلات عميقة ونصائح استراتيجية تساعدك على الاستعداد لمستقبل مسارك المهني."
-          center={true}
-        />
+        <MainTitle title={t("title")} subtitle={t("subtitle")} center={true} />
 
-        {/* Grid الكروت */}
+        {/* Grid of Service Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-16 gap-5">
           {servicesData.map((service, index) => (
             <Card
               key={index}
               id={service.id}
-              title={service.title}
+              title={t(service.titleKey)}
+              desc={t(service.descKey)}
               icon={service.icon}
-              desc={service.desc}
             />
           ))}
         </div>

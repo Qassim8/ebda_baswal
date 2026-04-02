@@ -15,51 +15,48 @@ import {
   ChevronRight,
   Quote,
 } from "tabler-icons-react";
+import { useTranslations } from "next-intl";
 
-const testimonials = [
+const testimonialData = [
   {
     id: 1,
-    name: "سارة أحمد",
-    role: "خريجة هندسة",
+    nameKey: "testimonial1.name",
+    roleKey: "testimonial1.role",
+    commentKey: "testimonial1.comment",
     image: "/images/user-1.jpg",
-    comment:
-      "المبادرة كانت نقطة تحول في مساري المهني. المهارات الناعمة اللي اتعلمتها ساعدتني جداً في أول انترفيو ليا وقدرت بفضل الله أتقبل في الوظيفة.",
   },
   {
     id: 2,
-    name: "محمد خالد",
-    role: "رائد أعمال شاب",
+    nameKey: "testimonial2.name",
+    roleKey: "testimonial2.role",
+    commentKey: "testimonial2.comment",
     image: "/images/user-2.jpg",
-    comment:
-      "البودكاست والاستشارات اللي بتقدمها د. رزان دايماً فيها خلاصة الخبرة. بجد محتوى ملهم وبيحطك على أول الطريق العملي صح.",
   },
   {
     id: 3,
-    name: "ليلى حسن",
-    role: "طالبة جامعية",
+    nameKey: "testimonial3.name",
+    roleKey: "testimonial3.role",
+    commentKey: "testimonial3.comment",
     image: "/images/user-3.jpg",
-    comment:
-      "أكتر حاجة بتميزهم هي الصدق والواقعية في طرح الحلول. مش مجرد كلام نظري، لكن خطوات عملية تقدر تطبقها من تاني يوم.",
   },
   {
-    id: 2,
-    name: "محمد خالد",
-    role: "رائد أعمال شاب",
+    id: 4,
+    nameKey: "testimonial4.name",
+    roleKey: "testimonial4.role",
+    commentKey: "testimonial4.comment",
     image: "/images/user-2.jpg",
-    comment:
-      "البودكاست والاستشارات اللي بتقدمها د. رزان دايماً فيها خلاصة الخبرة. بجد محتوى ملهم وبيحطك على أول الطريق العملي صح.",
   },
   {
-    id: 3,
-    name: "ليلى حسن",
-    role: "طالبة جامعية",
+    id: 5,
+    nameKey: "testimonial5.name",
+    roleKey: "testimonial5.role",
+    commentKey: "testimonial5.comment",
     image: "/images/user-3.jpg",
-    comment:
-      "أكتر حاجة بتميزهم هي الصدق والواقعية في طرح الحلول. مش مجرد كلام نظري، لكن خطوات عملية تقدر تطبقها من تاني يوم.",
   },
 ];
 
 export default function Testimonials() {
+  const t = useTranslations("Testimonials");
   // نستخدم State بدلاً من Refs لتجنب خطأ الـ Render
   const [prevEl, setPrevEl] = useState(null);
   const [nextEl, setNextEl] = useState(null);
@@ -70,11 +67,7 @@ export default function Testimonials() {
       id="testimonials"
     >
       <div className="container mx-auto px-5">
-        <MainTitle
-          title="قالوا عن المبادرة"
-          subtitle="نفخر بكوننا جزءاً من رحلة نجاح الكثير من الشباب المبدع."
-          center={true}
-        />
+        <MainTitle title={t("title")} subtitle={t("subtitle")} center={true} />
 
         <div className="mt-12 relative">
           {/* أزرار التنقل المخصصة */}
@@ -117,30 +110,30 @@ export default function Testimonials() {
             }}
             className="pb-16"
           >
-            {testimonials.map((item) => (
+            {testimonialData.map((item) => (
               <SwiperSlide key={item.id}>
                 <div className="bg-rose-50/40 p-8 min-h-72 rounded-2xl border border-(--main-color)/20 flex flex-col h-full hover:shadow-md transition-all border-b-4 hover:border-b-main">
                   <div className="text-3xl text-(--main-color)/30 mb-4">
                     <Quote />
                   </div>
                   <p className="text-slate-600 leading-relaxed italic mb-8 grow text-sm md:text-base">
-                    "{item.comment}"
+                    "{t(item.commentKey)}"
                   </p>
                   <div className="flex items-center gap-4 pt-6">
                     <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-sm">
                       <Image
                         src={item.image}
-                        alt={item.name}
+                        alt={t(item.nameKey)}
                         fill
                         className="object-cover"
                       />
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-800 text-md">
-                        {item.name}
+                        {t(item.nameKey)}
                       </h4>
                       <p className="text-main text-xs font-medium">
-                        {item.role}
+                        {t(item.roleKey)}
                       </p>
                     </div>
                   </div>

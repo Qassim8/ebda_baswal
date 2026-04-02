@@ -1,60 +1,53 @@
-import Link from "next/link";
+"use client";
+import { Link } from "@/i18n/navigation";
 import MainTitle from "../MainTitle";
+import { useTranslations } from "next-intl";
 
 export default function Goals({ about }) {
+  const t = useTranslations("Goals");
+
   return (
     <section
       className={`py-20 ${about ? "bg-(--second-color)" : "bg-white"} overflow-hidden`}
     >
       <div className="container mx-auto px-3 md:px-0">
-        {/* استخدام مكون العنوان الجاهز */}
-        <MainTitle
-          title="رؤيتنا"
-          subtitle="نؤمن أن كل شخص يملك فضولًا داخليًا يدفعه لفهم العالم من حوله، وأن كل سؤال هو خطوة أولى نحو التطور."
-          center={true}
-        />
+        <MainTitle title={t("title")} subtitle={t("subtitle")} center={true} />
 
         <div className="py-12 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-5 w-full items-center">
-          {/* كارت الرسالة */}
+          {/* Mission Card */}
           <div className="relative z-10">
-            {/* المربع الخلفي الزخرفي */}
             <div className="absolute -top-7 -right-7 h-20 w-20 bg-(--alt-color) -z-10 rounded-sm"></div>
 
             <div className="p-7 md:p-10 bg-(--main-color) rounded-sm shadow-xl min-h-80 flex flex-col justify-center">
               <h3 className="text-lg md:text-2xl text-(--alt-color) font-bold mb-4">
-                رسالتنا:
+                {t("mission")}
               </h3>
               <p className="text-slate-50 text-sm md:text-base leading-relaxed">
-                تمكين الطلاب والخريجين والباحثين من الوصول إلى إجابات موثوقة
-                وواضحة لكل الأسئلة التي تدور في أذهانهم في الحياة الأكاديمية
-                والعملية، من خلال محتوى مبسّط، شامل، ومتاح للجميع.
+                {t("missionText")}
               </p>
             </div>
           </div>
 
-          {/* زر التواصل الأوسط */}
+          {/* Contact Button Center */}
           <div className="text-center flex flex-col items-center justify-center py-5">
             <Link
               href="/contact"
               className="py-3 px-8 border border-slate-800 text-slate-800 font-bold transition-all duration-300 hover:bg-slate-800 hover:text-(--alt-color) rounded-sm"
             >
-              تواصل معنا
+              {t("contactButton")}
             </Link>
           </div>
 
-          {/* كارت الرؤية */}
+          {/* Vision Card */}
           <div className="relative z-10">
-            {/* المربع الخلفي الزخرفي */}
             <div className="absolute -bottom-7 -left-7 h-20 w-20 border-2 border-(--main-color)/40 -z-10 rounded-sm"></div>
 
             <div className="p-7 md:p-10 bg-(--alt-color) rounded-sm shadow-md min-h-80 flex flex-col justify-center">
               <h3 className="text-lg md:text-2xl text-(--main-color) font-bold mb-4">
-                رؤيتنا:
+                {t("vision")}
               </h3>
               <p className="text-slate-600 text-sm md:text-base leading-relaxed">
-                نسعى لأن نكون منصة رائدة في تمكين قدرات الشباب وحديثي التخرج، من
-                خلال تقديم خدمات تطوير وتدريب عملية وفعالة تهدف لتزويدهم
-                بالأدوات والمعرفة اللازمة للنجاح.
+                {t("visionText")}
               </p>
             </div>
           </div>

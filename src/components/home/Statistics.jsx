@@ -1,8 +1,9 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import { useTranslations } from "next-intl";
 import { Article, Clover, Confetti, Microphone } from "tabler-icons-react";
 
-// دالة تنسيق الأرقام (تحويل 1000000 لـ 1M)
+// Function to format numbers (convert 1000000 to 1M)
 const formatNumber = (num) => {
   if (num >= 1000000) return (num / 1000000).toFixed(0) + "M";
   if (num >= 1000) return (num / 1000).toFixed(0) + "K";
@@ -21,7 +22,7 @@ const Counter = ({ endValue, duration = 2000, startCount }) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
 
-      // تأثير الـ Ease Out عشان العد يبطأ في الآخر ويكون مريح للعين
+      // Ease out effect for smooth counting
       const easeOut = 1 - Math.pow(1 - progress, 3);
       setCount(Math.floor(easeOut * endValue));
 
@@ -43,6 +44,7 @@ const Counter = ({ endValue, duration = 2000, startCount }) => {
 export default function Statistics({ home }) {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+  const t = useTranslations("Statistics");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -59,28 +61,28 @@ export default function Statistics({ home }) {
   const stats = [
     {
       id: 1,
-      label: "متابعين",
+      label: t("followers"),
       value: 1000000,
       icon: <Confetti size={28} />,
       prefix: "+",
     },
     {
       id: 2,
-      label: "استشارات شخصية",
+      label: t("consultations"),
       value: 50,
       icon: <Clover size={28} />,
       prefix: "+",
     },
     {
       id: 3,
-      label: "بث مباشر",
+      label: t("broadcasts"),
       value: 40,
       icon: <Microphone size={28} />,
       prefix: "+",
     },
     {
       id: 4,
-      label: "منشور",
+      label: t("posts"),
       value: 250,
       icon: <Article size={28} />,
       prefix: "+",

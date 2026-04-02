@@ -1,0 +1,201 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "podcast": "Podcast",
+    "consulting": "Consulting",
+    "contact": "Contact",
+    "arabic": "Arabic",
+    "english": "English"
+  },
+  "Hero": {
+    "badge": "Start with a Question",
+    "mainTitle": "Start with a Question",
+    "subtitle": "Open the doors of knowledge",
+    "description": "Questions are the first step towards real understanding and learning. At the \"Start with a Question\" platform, we believe that every great idea begins with a simple question. Join us and be part of a community that shares questions and grows through answers.",
+    "contactButton": "Contact Us",
+    "servicesButton": "Our Services"
+  },
+  "Fields": {
+    "title": "Our Fields",
+    "subtitle": "We believe that work fields are not just specializations, but a path to self-discovery and contributing to building the future.",
+    "softSkills": {
+      "title": "Soft Skills",
+      "description": "We aim to bridge the gap that universities leave in providing soft skills like effective communication and leadership."
+    },
+    "management": {
+      "title": "Management",
+      "description": "We pay great attention to developing management and leadership skills and team management to meet job description requirements."
+    },
+    "dataAnalysis": {
+      "title": "Data Analysis",
+      "description": "An essential element to help individuals make informed decisions for ensuring the best results."
+    },
+    "technicalFields": {
+      "title": "Technical Fields",
+      "description": "We focus on teaching AI skills, project analysis, and programming to prepare youth for the modern job market."
+    },
+    "entrepreneurship": {
+      "title": "Entrepreneurship",
+      "description": "We support entrepreneurs by providing the knowledge, resources, and guidance needed to turn their ideas into reality."
+    }
+  },
+  "Goals": {
+    "title": "Our Vision",
+    "subtitle": "We believe that every person has inner curiosity that drives them to understand the world around them, and that every question is a first step towards progress.",
+    "mission": "Mission",
+    "missionText": "Empowering students, graduates, and researchers to access reliable and clear answers to all questions in their academic and professional lives through simplified, comprehensive, and accessible content.",
+    "vision": "Vision",
+    "visionText": "We aspire to be a leading platform in empowering youth and recent graduates' capabilities through providing practical and effective development and training services aimed at equipping them with the tools and knowledge needed for success.",
+    "contactButton": "Contact Us"
+  },
+  "Quote": {
+    "text": "\"Life is moderate. It is neither all pink with butterflies and eternal spring, nor pitch black darkness all the time. There is day and night, joy and sorrow.\"",
+    "author": "Dr. Razan Al-Harith"
+  },
+  "Testimonials": {
+    "title": "What They Say About Us",
+    "subtitle": "We are proud to be part of the success journey of many creative young people.",
+    "testimonial1": {
+      "name": "Sarah Ahmed",
+      "role": "Computer Engineering Graduate",
+      "comment": "The initiative was a turning point in my career path. The soft skills I learned helped me a lot in my first interview and thanks to God I was able to get accepted for the job."
+    },
+    "testimonial2": {
+      "name": "Muhammad Khaled",
+      "role": "Young Entrepreneur",
+      "comment": "The podcast and consultations that Dr. Razan provides always contain the essence of experience. Really inspiring content that puts you on the right practical path."
+    },
+    "testimonial3": {
+      "name": "Layla Hassan",
+      "role": "University Student",
+      "comment": "What distinguishes them the most is honesty and realism in presenting solutions. Not just theoretical talk, but practical steps you can apply from the next day."
+    },
+    "testimonial4": {
+      "name": "Fatima Ibrahim",
+      "role": "Project Manager",
+      "comment": "The support I received changed the way I looked at my personal and professional life. I felt my true value."
+    },
+    "testimonial5": {
+      "name": "Yusuf Muhammad",
+      "role": "Entrepreneur",
+      "comment": "The entrepreneurship training gave me the tools and knowledge I needed to turn my idea into reality."
+    }
+  },
+  "About": {
+    "title": "Who Are We?",
+    "description": "We are your first answer and we strive to be the first platform that students and graduates turn to",
+    "mainDescription": "Start with a Question is a youth training and development platform aimed at raising awareness and developing skills in the youth community with special focus on university students and recent graduates. The platform works to bridge the gap between university education and professional life.",
+    "additionalDescription": "The platform offers practical programs, training workshops, and guided mentoring sessions that help youth acquire the required experience, build clear career paths that enable them to compete effectively, and make a positive impact in their communities. The platform also seeks to create an integrated learning community that brings together students, graduates, and experts from various fields to exchange knowledge, share experience, and provide practical support in the journey of personal and professional development. In addition, \"Start with a Question\" works to provide volunteer opportunities, organize events and activities aimed at empowering youth to expand their networks, promote the spirit of initiative, and develop their ability to innovate and create.",
+    "subtitle": "Bridge the gap between education and career"
+  },
+  "Services": {
+    "title": "Our Best Services",
+    "subtitle": "We are committed to providing in-depth analysis and strategic advice to help you prepare for your career future",
+    "service1": {
+      "title": "Educational Content",
+      "description": "Continuous sharing of written and visual content through our social media platforms to simplify knowledge for beneficiaries."
+    },
+    "service2": {
+      "title": "Razan's Talk",
+      "description": "A podcast aimed at empowering youth, students, and recent graduates in their professional journey by exploring diverse topics."
+    },
+    "service3": {
+      "title": "Training Courses",
+      "description": "We offer periodic virtual training courses via the Telegram platform aimed at deepening understanding of the most required skills."
+    },
+    "service4": {
+      "title": "Your Professional Advisor",
+      "description": "The \"Your Professional Advisor\" program provides virtual professional consultation sessions to get guidance on career planning."
+    },
+    "service5": {
+      "title": "Training & Volunteer Opportunities",
+      "description": "In collaboration with NGOs, we offer remote volunteer opportunities such as website development and social media management."
+    },
+    "service6": {
+      "title": "Scholarship Application",
+      "description": "We are here to help you increase your chances of being accepted for scholarships by improving essays and CVs."
+    }
+  },
+  "Statistics": {
+    "followers": "Followers",
+    "consultations": "Personal Consultations",
+    "broadcasts": "Live Broadcasts",
+    "posts": "Post"
+  },
+  "Podcast": {
+    "title": "Razan's Talk",
+    "subtitle": "A podcast aimed at empowering youth, students, and recent graduates in their professional journey through exploring inspiring topics and providing practical methods for qualification.",
+    "listenNow": "Listen Now",
+    "viewAll": "View All Episodes",
+    "episodeLabel": "Episode",
+    "watchNow": "Watch Now",
+    "episode1": {
+      "title": "Where Do We Start?"
+    },
+    "episode2": {
+      "title": "From Beginner to Professional"
+    },
+    "episode3": {
+      "title": "Community Entrepreneurship: From Ideas to Impact"
+    },
+    "episode4": {
+      "title": "Bridges of Knowledge Between Academia and Business"
+    },
+    "episode5": {
+      "title": "Scholarships"
+    },
+    "episode6": {
+      "title": "Building Your Personal Brand"
+    },
+    "episode7": {
+      "title": "Branding Journey in the New World"
+    },
+    "episode8": {
+      "title": "Investment Opportunities After War"
+    }
+  },
+  "Consulting": {
+    "title": "Book Your Session Now",
+    "subtitle": "Send your consultation details and our team will contact you to confirm the appointment.",
+    "form": {
+      "bookSessionTitle": "Book Your Session Now",
+      "bookSessionSubtitle": "Send your consultation details and our team will contact you to confirm the appointment.",
+      "contactTitle": "Contact Us",
+      "contactSubtitle": "Do you have a question or suggestion? We are here to listen to you and respond as soon as possible.",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Example: Ahmed Muhammad",
+      "email": "Email",
+      "emailPlaceholder": "email@example.com",
+      "sessionType": "Session Type",
+      "explorationSession": "Exploration Session (30 minutes)",
+      "roadmapSession": "Roadmap (90 minutes)",
+      "challengesDescription": "Brief about your challenges",
+      "subject": "Message Subject",
+      "subjectPlaceholder": "General inquiry, collaboration, etc...",
+      "messageDetails": "Message Details",
+      "confirmBooking": "Confirm Booking",
+      "sendMessage": "Send Message"
+    }
+  },
+  "Contact": {
+    "title": "Get in Touch",
+    "description": "We'd love to hear from you",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address"
+  },
+  "Footer": {
+    "aboutus": "A platform aimed at simplifying knowledge, stimulating thinking, and empowering youth through sharing content and practical guidance to build successful career paths.",
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact",
+    "followUs": "Follow Us",
+    "copyright": "© {year} Start with a Question. All rights reserved.",
+    "madeWith": "Made with",
+    "by": "by the Team"
+  }
+}

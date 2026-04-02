@@ -8,8 +8,10 @@ import {
   Writing,
 } from "tabler-icons-react";
 import MainTitle from "../MainTitle";
+import { useTranslations } from "next-intl";
 
 export default function ConsultingForm({ mode = "consulting" }) {
+  const t = useTranslations("Consulting");
   const isConsulting = mode === "consulting";
 
   return (
@@ -22,11 +24,13 @@ export default function ConsultingForm({ mode = "consulting" }) {
       <div className="container mx-auto px-5">
         <div className="max-w-4xl mx-auto bg-[#fdfafb] rounded-[3rem] p-8 md:p-16 border border-rose-100 shadow-2xl shadow-rose-100/50 relative z-10">
           <MainTitle
-            title={isConsulting ? "احجز جلستك الآن" : "تواصل معنا"}
+            title={
+              isConsulting ? t("form.bookSessionTitle") : t("form.contactTitle")
+            }
             subtitle={
               isConsulting
-                ? "ارسل تفاصيل استشارتك وسيتواصل معك فريقنا لتحديد الموعد."
-                : "لديك استفسار أو اقتراح؟ نحن هنا للاستماع إليك والرد في أسرع وقت."
+                ? t("form.bookSessionSubtitle")
+                : t("form.contactSubtitle")
             }
             center={true}
             fullwidth={1}
@@ -36,23 +40,24 @@ export default function ConsultingForm({ mode = "consulting" }) {
             {/* الحقول المشتركة */}
             <div className="space-y-2">
               <label className="text-sm font-black text-slate-700 mr-2 flex items-center gap-2">
-                <User size={16} className="text-(--main-color)" /> الاسم الكامل
+                <User size={16} className="text-(--main-color)" />{" "}
+                {t("form.fullName")}
               </label>
               <input
                 type="text"
-                placeholder="مثال: أحمد محمد"
+                placeholder={t("form.fullNamePlaceholder")}
                 className="input-style-custom"
               />
             </div>
 
             <div className="space-y-2">
               <label className="text-sm font-black text-slate-700 mr-2 flex items-center gap-2">
-                <Mail size={16} className="text-(--main-color)" /> البريد
-                الإلكتروني
+                <Mail size={16} className="text-(--main-color)" />{" "}
+                {t("form.email")}
               </label>
               <input
                 type="email"
-                placeholder="email@example.com"
+                placeholder={t("form.emailPlaceholder")}
                 className="input-style-custom"
               />
             </div>
@@ -61,23 +66,23 @@ export default function ConsultingForm({ mode = "consulting" }) {
             {isConsulting ? (
               <div className="md:col-span-2 space-y-2">
                 <label className="text-sm font-black text-slate-700 mr-2 flex items-center gap-2">
-                  <ChevronDown size={16} className="text-(--main-color)" /> نوع
-                  الجلسة
+                  <ChevronDown size={16} className="text-(--main-color)" />{" "}
+                  {t("form.sessionType")}
                 </label>
                 <select className="input-style-custom appearance-none cursor-pointer">
-                  <option>جلسة الاستكشاف (30 دقيقة)</option>
-                  <option>خطة الطريق (90 دقيقة)</option>
+                  <option>{t("form.explorationSession")}</option>
+                  <option>{t("form.roadmapSession")}</option>
                 </select>
               </div>
             ) : (
               <div className="md:col-span-2 space-y-2">
                 <label className="text-sm font-black text-slate-700 mr-2 flex items-center gap-2">
-                  <Writing size={16} className="text-(--main-color)" /> موضوع
-                  الرسالة
+                  <Writing size={16} className="text-(--main-color)" />{" "}
+                  {t("form.subject")}
                 </label>
                 <input
                   type="text"
-                  placeholder="استفسار عام، تعاون، إلخ..."
+                  placeholder={t("form.subjectPlaceholder")}
                   className="input-style-custom"
                 />
               </div>
@@ -86,7 +91,9 @@ export default function ConsultingForm({ mode = "consulting" }) {
             <div className="md:col-span-2 space-y-2">
               <label className="text-sm font-black text-slate-700 mr-2 flex items-center gap-2">
                 <MessageDots size={16} className="text-(--main-color)" />
-                {isConsulting ? "نبذة عن تحدياتك" : "تفاصيل رسالتك"}
+                {isConsulting
+                  ? t("form.challengesDescription")
+                  : t("form.messageDetails")}
               </label>
               <textarea
                 rows="4"
@@ -96,7 +103,11 @@ export default function ConsultingForm({ mode = "consulting" }) {
 
             <div className="md:col-span-2 mt-4">
               <button className="cursor-pointer w-full bg-(--main-color) text-white py-5 rounded-2xl font-black text-lg shadow-xl shadow-(--main-color)/20 hover:bg-slate-800 transition-all flex items-center justify-center gap-3 group">
-                <span>{isConsulting ? "تأكيد الحجز" : "إرسال الرسالة"}</span>
+                <span>
+                  {isConsulting
+                    ? t("form.confirmBooking")
+                    : t("form.sendMessage")}
+                </span>
                 <Send
                   size={22}
                   className="group-hover:-translate-x-1 group-hover:-translate-y-1 transition-transform"

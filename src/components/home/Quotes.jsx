@@ -1,6 +1,10 @@
+"use client";
 import { IconQuote } from "@tabler/icons-react";
+import { useTranslations } from "next-intl";
 
 export default function Quote() {
+  const t = useTranslations("Quote");
+
   return (
     <section
       className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-cover bg-center bg-fixed"
@@ -22,12 +26,11 @@ export default function Quote() {
           />
 
           <h2 className="text-white text-xl md:text-3xl font-medium leading-relaxed mb-8">
-            "الحياة معتدلة تماماً لا هي لونها وردي وفراشات وربيع طول السنة ولا
-            هي بسواد السكن وظلام الليل طول الوقت.. في نهار وليل وفي فرح وحزن.."
+            {t("text")}
           </h2>
 
           <p className="text-(--alt-color) text-lg md:text-xl font-bold tracking-wide">
-            د. رزان الحارث
+            {t("author")}
           </p>
         </div>
       </div>
