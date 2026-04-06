@@ -169,7 +169,7 @@ export const seoData = {
 // Function to generate metadata for a specific page and locale
 export function generatePageMetadata(
   pageKey,
-  locale = "en",
+  locale = "ar",
   siteUrl = "https://yoursite.com",
 ) {
   const pageData = seoData[locale]?.[pageKey] || seoData.en[pageKey];
@@ -179,9 +179,6 @@ export function generatePageMetadata(
     description: pageData.description,
     keywords: pageData.keywords,
     robots: "index, follow",
-    viewport: "width=device-width, initial-scale=1.0",
-    language: locale,
-    charset: "utf-8",
     openGraph: {
       type: "website",
       locale: locale === "ar" ? "ar_SA" : "en_US",
