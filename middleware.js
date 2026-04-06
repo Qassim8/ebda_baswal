@@ -1,6 +1,6 @@
 // src/middleware.ts
 import createMiddleware from "next-intl/middleware";
-import { routingConfig } from "./i18n/config";
+import { routingConfig } from "./src/i18n/config";
 
 export default createMiddleware({
   // تأكد من تمرير القيم مباشرة هنا
