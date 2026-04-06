@@ -1,16 +1,13 @@
-import { routing } from "@/i18n/navigation";
+// middleware.ts
 import createMiddleware from "next-intl/middleware";
+import { routingConfig } from "./src/i18n/routingConfig"; // الاستيراد من ملف الإعدادات النظيف
 
 export default createMiddleware({
-  locales: routing.locales,
-  defaultLocale: routing.defaultLocale,
+  locales: routingConfig.locales,
+  defaultLocale: routingConfig.defaultLocale,
 });
 
 export const config = {
-  // Match all pathnames except for
-  // - api (API routes)
-  // - _next/static (static files)
-  // - _next/image (image optimization files)
-  // - favicon.ico (favicon file)
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+  // Matcher المعدل لاستبعاد الملفات الثابتة بشكل أفضل
+  matcher: ["/((?!api|_next|.*\\..*).*)"],
 };
