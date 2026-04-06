@@ -23,6 +23,12 @@ const almarai = Almarai({
   display: "swap",
 });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#03045e", // يمكنك إضافة لون الثيم الخاص ببراند "ابدأ بسؤال" هنا
+};
+
 // Generate metadata function for locale-specific SEO
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -69,11 +75,6 @@ export async function generateMetadata({ params }) {
   };
 
   const currentSeo = seoData[locale] || seoData.en;
-
-  const viewport = {
-    width: "device-width",
-    initialScale: 1,
-  };
 
   return {
     title: currentSeo.title,
