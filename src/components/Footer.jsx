@@ -31,15 +31,16 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#2b2a2a] text-white pt-20 relative overflow-hidden">
-      {/* Decorative background element */}
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-(--main-color)/10 rounded-full blur-[100px] -z-0"></div>
+    <footer className="bg-[#1a1a1a] text-white pt-20 relative overflow-hidden">
+      {/* 1. تأثير خلفية ناعم جداً لزيادة العمق */}
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-(--main-color)/5 rounded-full blur-[120px] -z-0 pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-64 h-64 bg-(--main-color)/5 rounded-full blur-[100px] -z-0 pointer-events-none"></div>
 
       <div className="container mx-auto px-5 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16">
-          {/* 1. Logo + About */}
-          <div className="space-y-6">
-            <div className="bg-white/5 p-4 rounded-2xl w-fit backdrop-blur-sm border border-white/10">
+          {/* العمود الأول: اللوجو والتعريف */}
+          <div className="space-y-6" data-aos="fade-up" data-aos-delay="100">
+            <div className="bg-white/5 p-4 rounded-2xl w-fit backdrop-blur-sm border border-white/10 hover:border-(--main-color)/50 transition-colors duration-500">
               <Image
                 src="/logo.png"
                 alt="Start with a Question"
@@ -49,29 +50,29 @@ export default function Footer() {
                 className="brightness-110"
               />
             </div>
-            <p className="text-gray-400 text-sm leading-loose font-medium">
+            <p className="text-gray-400 text-sm leading-loose font-medium max-w-xs">
               {t("aboutus")}
             </p>
-            {/* Social Icons */}
+            {/* أيقونات السوشيال ميديا */}
             <div className="flex gap-4">
               {[BrandLinkedin, BrandInstagram, BrandFacebook].map((Icon, i) => (
                 <Link
                   key={i}
                   href="#"
-                  className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-(--main-color) hover:border-(--main-color) hover:-translate-y-1.5 transition-all duration-300 shadow-lg"
+                  className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-(--main-color) hover:border-(--main-color) hover:-translate-y-2 transition-all duration-300"
                 >
-                  <Icon size={22} />
+                  <Icon size={20} />
                 </Link>
               ))}
             </div>
           </div>
 
-          {/* 2. Quick Links */}
-          <div>
-            <h3 className="text-white font-black text-lg mb-8 relative inline-block">
+          {/* العمود الثاني: روابط سريعة */}
+          <div data-aos="fade-up" data-aos-delay="200">
+            <h3 className="text-white font-black text-lg mb-8 relative inline-block group">
               {t("quickLinks")}
               <span
-                className={`absolute -bottom-2 ${dir === "ltr" ? "left-0" : "right-0"} w-10 h-1.5 bg-(--main-color) rounded-full`}
+                className={`absolute -bottom-2 ${dir === "ltr" ? "left-0" : "right-0"} w-8 h-1 bg-(--main-color) rounded-full transition-all group-hover:w-full`}
               ></span>
             </h3>
             <ul className="space-y-4">
@@ -81,7 +82,7 @@ export default function Footer() {
                     href={link.href}
                     className="text-gray-400 hover:text-(--main-color) font-bold text-sm transition-all flex items-center gap-3 group"
                   >
-                    <span className="w-2 h-2 rounded-full bg-white/10 group-hover:scale-150 group-hover:bg-(--main-color) transition-all duration-300"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-(--main-color) group-hover:scale-125 transition-all"></span>
                     {link.name}
                   </Link>
                 </li>
@@ -89,12 +90,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* 3. Services */}
-          <div>
-            <h3 className="text-white font-black text-lg mb-8 relative inline-block">
+          {/* العمود الثالث: الخدمات */}
+          <div data-aos="fade-up" data-aos-delay="300">
+            <h3 className="text-white font-black text-lg mb-8 relative inline-block group">
               {t("services")}
               <span
-                className={`absolute -bottom-2 ${dir === "ltr" ? "left-0" : "right-0"} w-10 h-1.5 bg-(--main-color) rounded-full`}
+                className={`absolute -bottom-2 ${dir === "ltr" ? "left-0" : "right-0"} w-8 h-1 bg-(--main-color) rounded-full transition-all group-hover:w-full`}
               ></span>
             </h3>
             <ul className="space-y-4">
@@ -103,9 +104,11 @@ export default function Footer() {
                   <li key={service}>
                     <Link
                       href="#"
-                      className="text-gray-400 hover:text-white hover:pr-2 font-bold text-sm transition-all duration-300 flex items-center gap-2"
+                      className="text-gray-400 hover:text-white font-bold text-sm transition-all duration-300 flex items-center gap-2 group"
                     >
-                      <span className="text-(--main-color)">←</span>
+                      <span className="text-(--main-color) opacity-0 group-hover:opacity-100 transition-all">
+                        {dir === "ltr" ? "→" : "←"}
+                      </span>
                       {service}
                     </Link>
                   </li>
@@ -114,30 +117,30 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* 4. Contact Info */}
-          <div>
-            <h3 className="text-white font-black text-lg mb-8 relative inline-block">
+          {/* العمود الرابع: معلومات التواصل */}
+          <div data-aos="fade-up" data-aos-delay="400">
+            <h3 className="text-white font-black text-lg mb-8 relative inline-block group">
               {t("contact")}
               <span
-                className={`absolute -bottom-2 ${dir === "ltr" ? "left-0" : "right-0"} w-10 h-1.5 bg-(--main-color) rounded-full`}
+                className={`absolute -bottom-2 ${dir === "ltr" ? "left-0" : "right-0"} w-8 h-1 bg-(--main-color) rounded-full transition-all group-hover:w-full`}
               ></span>
             </h3>
             <ul className="space-y-5">
               {[
                 {
-                  icon: <Phone size={20} />,
+                  icon: <Phone size={18} />,
                   label: t("phone"),
                   value: "+249 150 124 8489",
                   dir: "ltr",
                 },
                 {
-                  icon: <Mail size={20} />,
+                  icon: <Mail size={18} />,
                   label: t("email"),
                   value: "info@abdasoual.org",
-                  dir: "rtl",
+                  dir: "ltr",
                 },
                 {
-                  icon: <MapPin size={20} />,
+                  icon: <MapPin size={18} />,
                   label: t("address"),
                   value: t("addressInfo"),
                   dir: locale === "ar" ? "rtl" : "ltr",
@@ -147,7 +150,7 @@ export default function Footer() {
                   key={i}
                   className="flex items-start gap-4 group cursor-pointer"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-(--main-color) group-hover:bg-(--main-color) group-hover:text-white transition-all duration-500 shadow-inner">
+                  <div className="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center text-(--main-color) group-hover:bg-(--main-color) group-hover:text-white transition-all duration-500 shadow-inner">
                     {item.icon}
                   </div>
                   <div className="flex flex-col">
@@ -167,10 +170,14 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Rights */}
-        <div className="border-t border-white/5 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
+        {/* الحقوق واللمسة النهائية */}
+        <div
+          className="border-t border-white/5 py-10 flex flex-col md:flex-row justify-between items-center gap-6"
+          data-aos="fade-in"
+          data-aos-duration="1500"
+        >
           <p className="text-gray-500 text-xs font-bold tracking-wide">
-            {t("copyright", { year: 2025 })}
+            {t("copyright", { year: new Date().getFullYear() })}
           </p>
 
           <div className="flex items-center gap-2 text-gray-500 text-xs font-bold group">
@@ -180,6 +187,9 @@ export default function Footer() {
               className="text-red-500 fill-red-500 group-hover:scale-125 transition-transform duration-300 animate-pulse"
             />
             <span>{t("by")}</span>
+            <span className="text-gray-400 hover:text-(--main-color) cursor-pointer transition-colors">
+              Ebda Baswal Team
+            </span>
           </div>
         </div>
       </div>

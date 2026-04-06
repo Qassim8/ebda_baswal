@@ -18,11 +18,21 @@ export default function Goals({ about }) {
       className={`py-20 ${about ? "bg-(--second-color)" : "bg-white"} overflow-hidden`}
     >
       <div className="container mx-auto px-3 md:px-0">
-        <MainTitle title={t("title")} subtitle={t("subtitle")} center={true} />
+        <div data-aos="fade-down">
+          <MainTitle
+            title={t("title")}
+            subtitle={t("subtitle")}
+            center={true}
+          />
+        </div>
 
         <div className="py-12 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-5 w-full items-center">
-          {/* Mission Card */}
-          <div className="relative z-10">
+          {/* 1. Mission Card: يظهر من الجانب (حسب الاتجاه) */}
+          <div
+            className="relative z-10"
+            data-aos={dir === "rtl" ? "fade-left" : "fade-right"}
+            data-aos-duration="1000"
+          >
             <div
               className={`absolute -top-7 ${dir === "rtl" ? "-right-7" : "-left-7"} h-20 w-20 bg-(--alt-color) -z-10 rounded-full`}
             ></div>
@@ -37,8 +47,13 @@ export default function Goals({ about }) {
             </div>
           </div>
 
-          {/* Contact Button Center */}
-          <div className="text-center flex flex-col items-center justify-center py-5">
+          {/* 2. Contact Button Center: يظهر بتكبير ناعم في المنتصف */}
+          <div
+            className="text-center flex flex-col items-center justify-center py-5"
+            data-aos="zoom-in"
+            data-aos-delay="400"
+            data-aos-duration="800"
+          >
             <Link
               href="/contact"
               className="py-3 px-8 border border-slate-800 text-slate-800 font-bold transition-all duration-300 hover:bg-slate-800 hover:text-(--alt-color) rounded-xl"
@@ -47,8 +62,13 @@ export default function Goals({ about }) {
             </Link>
           </div>
 
-          {/* Vision Card */}
-          <div className="relative z-10">
+          {/* 3. Vision Card: يظهر من الجانب المقابل */}
+          <div
+            className="relative z-10"
+            data-aos={dir === "rtl" ? "fade-right" : "fade-left"}
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
             <div
               className={`absolute -bottom-7 ${dir === "rtl" ? "-left-7" : "-right-7"} h-20 w-20 border-2 border-(--main-color)/40 -z-10 rounded-full`}
             ></div>

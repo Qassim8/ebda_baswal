@@ -57,30 +57,48 @@ export default function ServicesSection() {
 
   return (
     <section className="py-20 relative overflow-hidden" id="services">
-      {/* Background Icon */}
-      <div className="absolute -right-30 -top-20 w-75 z-10 opacity-20">
+      {/* 1. لوجو الخلفية: يظهر بنعومة فائقة مع دوران خفيف */}
+      <div
+        className="absolute -right-30 -top-20 w-75 z-10 opacity-20"
+        data-aos="fade-in"
+        data-aos-duration="2000"
+      >
         <Image
           src="/bg-logo-removebg-preview.png"
           alt="icon"
           width={300}
           height={300}
           loading="lazy"
+          className="rotate-12"
         />
       </div>
 
       <div className="container mx-auto px-5 md:px-0 mt-10 md:mt-0 relative z-20">
-        <MainTitle title={t("title")} subtitle={t("subtitle")} center={true} />
+        {/* 2. العنوان الرئيسي: يظهر من الأعلى */}
+        <div data-aos="fade-down" data-aos-duration="1000">
+          <MainTitle
+            title={t("title")}
+            subtitle={t("subtitle")}
+            center={true}
+          />
+        </div>
 
-        {/* Grid of Service Cards */}
+        {/* 3. شبكة الكروت: كل كرت يظهر بتأخير (Delay) عن الذي قبله */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-16 gap-5">
           {servicesData.map((service, index) => (
-            <Card
+            <div
               key={index}
-              id={service.id}
-              title={t(service.titleKey)}
-              desc={t(service.descKey)}
-              icon={service.icon}
-            />
+              data-aos="fade-up"
+              data-aos-delay={index * 100} // تأخير متسلسل 100ms بين كل كرت
+              data-aos-duration="800"
+            >
+              <Card
+                id={service.id}
+                title={t(service.titleKey)}
+                desc={t(service.descKey)}
+                icon={service.icon}
+              />
+            </div>
           ))}
         </div>
       </div>

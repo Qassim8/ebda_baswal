@@ -11,47 +11,71 @@ import MainTitle from "../MainTitle";
 import { ArrowLeft, ArrowRight, Quote } from "tabler-icons-react";
 import { useTranslations } from "next-intl";
 
+// ... (testimonialData stays the same)
 const testimonialData = [
   {
     id: 1,
+
     nameKey: "testimonial1.name",
+
     roleKey: "testimonial1.role",
+
     commentKey: "testimonial1.comment",
+
     image: "/images/user-1.jpg",
   },
+
   {
     id: 2,
+
     nameKey: "testimonial2.name",
+
     roleKey: "testimonial2.role",
+
     commentKey: "testimonial2.comment",
+
     image: "/images/user-2.jpg",
   },
+
   {
     id: 3,
+
     nameKey: "testimonial3.name",
+
     roleKey: "testimonial3.role",
+
     commentKey: "testimonial3.comment",
+
     image: "/images/user-3.jpg",
   },
+
   {
     id: 4,
+
     nameKey: "testimonial4.name",
+
     roleKey: "testimonial4.role",
+
     commentKey: "testimonial4.comment",
+
     image: "/images/user-2.jpg",
   },
+
   {
     id: 5,
+
     nameKey: "testimonial5.name",
+
     roleKey: "testimonial5.role",
+
     commentKey: "testimonial5.comment",
+
     image: "/images/user-3.jpg",
   },
 ];
 
 export default function Testimonials() {
   const t = useTranslations("Testimonials");
-  // نستخدم State بدلاً من Refs لتجنب خطأ الـ Render
   const [prevEl, setPrevEl] = useState(null);
   const [nextEl, setNextEl] = useState(null);
   const [dir, setDir] = useState("ltr");
@@ -63,13 +87,26 @@ export default function Testimonials() {
 
   return (
     <section
-      className="py-20 bg-white relative testimonial-section"
+      className="py-20 bg-white relative testimonial-section overflow-hidden"
       id="testimonials"
     >
       <div className="container mx-auto px-5">
-        <MainTitle title={t("title")} subtitle={t("subtitle")} center={true} />
+        {/* 1. العنوان: يظهر من الأعلى */}
+        <div data-aos="fade-down" data-aos-duration="1000">
+          <MainTitle
+            title={t("title")}
+            subtitle={t("subtitle")}
+            center={true}
+          />
+        </div>
 
-        <div className="mt-12 relative">
+        {/* 2. السلايدر: يظهر بتكبير ناعم للداخل */}
+        <div
+          className="mt-12 relative"
+          data-aos="zoom-in"
+          data-aos-duration="1200"
+          data-aos-delay="200"
+        >
           {/* أزرار التنقل المخصصة */}
           <div className="hidden md:flex justify-between absolute top-1/2 -translate-y-1/2 w-full z-30 pointer-events-none">
             <button
@@ -101,11 +138,7 @@ export default function Testimonials() {
             loop={true}
             autoplay={{ delay: 5000 }}
             pagination={{ clickable: true, el: ".custom-pagination" }}
-            navigation={{
-              prevEl,
-              nextEl,
-            }}
-            // نضمن تحديث الـ Swiper عند ربط العناصر
+            navigation={{ prevEl, nextEl }}
             onInit={(swiper) => {
               swiper.params.navigation.prevEl = prevEl;
               swiper.params.navigation.nextEl = nextEl;
@@ -155,17 +188,25 @@ export default function Testimonials() {
         </div>
       </div>
 
+      {/* ... (styles stay the same) */}
       <style jsx global>{`
         .custom-pagination .swiper-pagination-bullet {
           background: #d1d5db;
+
           opacity: 1;
+
           width: 8px;
+
           height: 8px;
+
           transition: all 0.3s;
         }
+
         .custom-pagination .swiper-pagination-bullet-active {
           background: #a6225d !important;
+
           width: 24px;
+
           border-radius: 4px;
         }
       `}</style>

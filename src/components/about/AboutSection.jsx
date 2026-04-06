@@ -15,11 +15,15 @@ export default function About({ about }) {
       <div className="container mx-auto px-3 md:px-0">
         {/* First Section: Images + Text */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-10 md:gap-5">
-          {/* Images */}
-          <div className="relative flex-1 order-last md:order-first w-full min-h-100">
+          {/* Images - تحريك الصور من جهة اليمين أو اليسار حسب الـ Layout */}
+          <div
+            className="relative flex-1 order-last md:order-first w-full min-h-100"
+            data-aos="fade-right" // الصورة الكبيرة بتتحرك من الجنب بنعومة
+            data-aos-duration="1200"
+          >
             <div
               className="absolute top-25 md:right-37.5 z-10 
-              rounded-md w-full md:w-[70%]"
+                       rounded-md w-full md:w-[70%]"
             >
               <Image
                 src="/Consulting-1024x644.jpg"
@@ -27,12 +31,17 @@ export default function About({ about }) {
                 width={600}
                 height={400}
                 loading="lazy"
-                className="rounded-md object-cover"
+                className="rounded-md object-cover shadow-lg"
               />
             </div>
+
+            {/* الصورة الصغيرة بتتحرك بتأخير بسيط عشان تدي عمق */}
             <div
               className="h-full mt-60 md:me-50
-               rounded-md z-10 relative w-[70%] md:w-1/2"
+                        rounded-md z-10 relative w-[70%] md:w-1/2"
+              data-aos="fade-up"
+              data-aos-delay="300"
+              data-aos-duration="1000"
             >
               <Image
                 src="/Planning-for-New-Financial-Year.png"
@@ -40,13 +49,13 @@ export default function About({ about }) {
                 width={400}
                 height={300}
                 loading="lazy"
-                className="rounded-md object-cover"
+                className="rounded-md object-cover border-8 border-white"
               />
             </div>
           </div>
 
-          {/* Text Content */}
-          <div className="flex-1">
+          {/* Text Content - بيتحرك من الجهة المقابلة للصور */}
+          <div className="flex-1" data-aos="fade-left" data-aos-duration="1200">
             <MainTitle
               title={t("title")}
               subtitle={t("description")}
@@ -65,19 +74,29 @@ export default function About({ about }) {
           <>
             {/* Second Section: Additional Text + Image */}
             <div className="py-16 flex flex-col md:flex-row justify-between items-center gap-10">
-              <div className="flex-1">
+              <div
+                className="flex-1"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
                 <p className="text-slate-600 text-lg md:text-xl leading-relaxed">
                   {t("additionalDescription")}
                 </p>
               </div>
-              <div className="flex-1 w-full">
+
+              <div
+                className="flex-1 w-full"
+                data-aos="zoom-in-up" // تأثير زووم خفيف للصورة الثانية
+                data-aos-duration="1000"
+                data-aos-delay="200"
+              >
                 <Image
                   src="/about-2.jpg"
                   alt="Workshop"
                   width={500}
                   height={400}
                   loading="lazy"
-                  className="rounded-md object-cover"
+                  className="rounded-md object-cover shadow-lg"
                 />
               </div>
             </div>

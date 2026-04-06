@@ -19,17 +19,31 @@ export default function Quote() {
       {/* Content */}
       <div className="container mx-auto px-5 relative z-20 text-center max-w-4xl">
         <div className="flex flex-col items-center">
-          {/* Quote Icon */}
-          <IconQuote
-            size={50}
-            className="text-5xl text-(--alt-color) mb-6 animate-pulse"
-          />
+          {/* 1. أيقونة الاقتباس: تظهر بتكبير ناعم */}
+          <div data-aos="zoom-in" data-aos-duration="1000">
+            <IconQuote
+              size={50}
+              className="text-5xl text-(--alt-color) mb-6 animate-pulse"
+            />
+          </div>
 
-          <h2 className="text-white text-xl md:text-3xl font-medium leading-relaxed mb-8">
+          {/* 2. نص الاقتباس: يستخدم zoom-out ليعطي إحساس بالاتساع */}
+          <h2
+            className="text-white text-xl md:text-3xl font-medium leading-relaxed mb-8"
+            data-aos="zoom-out"
+            data-aos-delay="300"
+            data-aos-duration="1200"
+          >
             {t("text")}
           </h2>
 
-          <p className="text-(--alt-color) text-lg md:text-xl font-bold tracking-wide">
+          {/* 3. اسم القائل: يظهر من الأسفل بنعومة */}
+          <p
+            className="text-(--alt-color) text-lg md:text-xl font-bold tracking-wide"
+            data-aos="fade-up"
+            data-aos-delay="600"
+            data-aos-duration="800"
+          >
             {t("author")}
           </p>
         </div>
