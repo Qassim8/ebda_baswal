@@ -102,6 +102,7 @@ export default function Testimonials({ dir }) {
                       <img
                         src={avatarImages[item.gender]}
                         alt={t(`${item.key}.name`)}
+                        loading="lazy"
                         className="w-full h-full object-cover"
                       />
                     </div>

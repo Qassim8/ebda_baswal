@@ -16,6 +16,7 @@ export default function FeaturedEpisode() {
             src="/podcast-8.jpg"
             alt="Latest Episode"
             fill
+            loading="lazy"
             className="object-cover opacity-50 md:opacity-60 group-hover:scale-105 transition-transform duration-700"
           />
           {/* تدرج لوني أغمق في الموبايل لضمان وضوح النص */}

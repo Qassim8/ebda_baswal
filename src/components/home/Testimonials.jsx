@@ -133,6 +133,7 @@ export default function Testimonials() {
                         src={item.image}
                         alt={t(item.nameKey)}
                         fill
+                        loading="lazy"
                         className="object-cover"
                       />
                     </div>

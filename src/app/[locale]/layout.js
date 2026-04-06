@@ -70,12 +70,16 @@ export async function generateMetadata({ params }) {
 
   const currentSeo = seoData[locale] || seoData.en;
 
+  const viewport = {
+    width: "device-width",
+    initialScale: 1,
+  };
+
   return {
     title: currentSeo.title,
     description: currentSeo.description,
     keywords: currentSeo.keywords,
     robots: "index, follow",
-    viewport: "width=device-width, initial-scale=1.0",
     language: locale,
     charset: "utf-8",
     openGraph: {

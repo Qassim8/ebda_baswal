@@ -64,6 +64,7 @@ export default function ServicesSection() {
           alt="icon"
           width={300}
           height={300}
+          loading="lazy"
         />
       </div>
 

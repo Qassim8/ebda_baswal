@@ -26,6 +26,7 @@ export default function About({ about }) {
                 alt="Professional Consultation"
                 width={600}
                 height={400}
+                loading="lazy"
                 className="rounded-md object-cover"
               />
             </div>
@@ -38,6 +39,7 @@ export default function About({ about }) {
                 alt="Career Planning"
                 width={400}
                 height={300}
+                loading="lazy"
                 className="rounded-md object-cover"
               />
             </div>
@@ -74,6 +76,7 @@ export default function About({ about }) {
                   alt="Workshop"
                   width={500}
                   height={400}
+                  loading="lazy"
                   className="rounded-md object-cover"
                 />
               </div>

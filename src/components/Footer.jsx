@@ -45,6 +45,7 @@ export default function Footer() {
                 alt="Start with a Question"
                 width={100}
                 height={60}
+                loading="lazy"
                 className="brightness-110"
               />
             </div>
