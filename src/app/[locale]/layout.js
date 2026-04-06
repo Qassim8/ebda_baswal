@@ -81,35 +81,21 @@ export async function generateMetadata({ params }) {
     description: currentSeo.description,
     keywords: currentSeo.keywords,
     robots: "index, follow",
-    language: locale,
-    charset: "utf-8",
     openGraph: {
       type: "website",
       locale: locale === "ar" ? "ar_SA" : "en_US",
-      url: currentSeo.siteUrl,
-      title: currentSeo.ogTitle,
-      description: currentSeo.ogDescription,
-      image: {
-        url: currentSeo.ogImage,
-        width: 1200,
-        height: 630,
-        alt: currentSeo.ogTitle,
-      },
+      url: `${currentSeo.siteUrl}/${locale}`,
+      title: currentSeo.title,
+      description: currentSeo.description,
       siteName: "Start with a Question",
     },
-    twitter: {
-      card: "summary_large_image",
-      title: currentSeo.ogTitle,
-      description: currentSeo.ogDescription,
-      image: currentSeo.ogImage,
-      creator: currentSeo.twitterHandle,
+    alternates: {
+      canonical: `${currentSeo.siteUrl}/${locale}`,
+      languages: {
+        en: "/en",
+        ar: "/ar",
+      },
     },
-    alternateLanguages: [
-      { hrefLang: "en", href: `${currentSeo.siteUrl}/en` },
-      { hrefLang: "ar", href: `${currentSeo.siteUrl}/ar` },
-      { hrefLang: "x-default", href: currentSeo.siteUrl },
-    ],
-    canonical: `${currentSeo.siteUrl}/${locale}`,
   };
 }
 
