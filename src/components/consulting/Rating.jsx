@@ -9,43 +9,17 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import MainTitle from "../MainTitle";
 import { ArrowLeft, ArrowRight, Quote } from "tabler-icons-react";
+import { useTranslations } from "next-intl";
 
-const testimonials = [
-  {
-    id: 1,
-    name: "سارة أحمد",
-    role: "خريجة هندسة",
-    gender: "female",
-    comment:
-      "المبادرة كانت نقطة تحول في مساري المهني. المهارات الناعمة اللي اتعلمتها ساعدتني جداً في أول انترفيو ليا وقدرت بفضل الله أتقبل في الوظيفة.",
-  },
-  {
-    id: 2,
-    name: "محمد خالد",
-    role: "رائد أعمال شاب",
-    gender: "male",
-    comment:
-      "البودكاست والاستشارات اللي بتقدمها د. رزان دايماً فيها خلاصة الخبرة. بجد محتوى ملهم وبيحطك على أول الطريق العملي صح.",
-  },
-  {
-    id: 3,
-    name: "ليلى حسن",
-    role: "طالبة جامعية",
-    gender: "female",
-    comment:
-      "أكتر حاجة بتميزهم هي الصدق والواقعية في طرح الحلول. مش مجرد كلام نظري، لكن خطوات عملية تقدر تطبقها من تاني يوم.",
-  },
-  {
-    id: 4,
-    name: "عبد الله عمر",
-    role: "خريج تقني",
-    gender: "male",
-    comment:
-      "تجربة ممتازة، ساعدوني في ترتيب أفكاري وتحديد أولوياتي قبل البدء في البحث عن وظيفة في المجال التقني.",
-  },
+const testimonialsData = [
+  { id: 1, gender: "female", key: "testimonial1" },
+  { id: 2, gender: "male", key: "testimonial2" },
+  { id: 3, gender: "female", key: "testimonial3" },
+  { id: 4, gender: "male", key: "testimonial4" },
 ];
 
 export default function Testimonials() {
+  const t = useTranslations("Rating");
   const [prevEl, setPrevEl] = useState(null);
   const [nextEl, setNextEl] = useState(null);
 
@@ -64,11 +38,7 @@ export default function Testimonials() {
       <div className="absolute top-0 right-10 w-80 h-80 bg-(--main-color)/5 rounded-full blur-3xl -z-10"></div>
 
       <div className="container mx-auto px-5 relative z-10">
-        <MainTitle
-          title="قالوا عن المبادرة"
-          subtitle="نفخر بكوننا جزءاً من رحلة نجاح الكثير من الشباب المبدع."
-          center={true}
-        />
+        <MainTitle title={t("title")} subtitle={t("subtitle")} center={true} />
 
         <div className="mt-16 relative group">
           {/* أزرار التنقل */}
@@ -107,7 +77,7 @@ export default function Testimonials() {
             }}
             className="pb-20 !flex !items-stretch"
           >
-            {testimonials.map((item) => (
+            {testimonialsData.map((item) => (
               <SwiperSlide key={item.id} className="!h-auto flex mb-10">
                 {/* هنا تم تطبيق min-h-72 و flex-col h-full لتوحيد الشكل */}
                 <div className="min-h-72 w-full bg-white p-10 rounded-[2.5rem] border border-rose-200 flex flex-col h-full hover:shadow-2xl hover:border-(--main-color)/50 transition-all duration-500 group relative overflow-hidden border-b-4 hover:border-b-main">
@@ -116,23 +86,23 @@ export default function Testimonials() {
                   </div>
 
                   <p className="text-slate-600 leading-loose italic mb-10 grow text-sm md:text-base relative z-10">
-                    "{item.comment}"
+                    "{t(`${item.key}.comment`)}"
                   </p>
 
                   <div className="flex items-center gap-4 pt-8 border-t border-slate-50 relative z-10">
                     <div className="relative w-14 h-14 rounded-2xl overflow-hidden border-4 border-white shadow-md bg-rose-50">
                       <img
                         src={avatarImages[item.gender]}
-                        alt={item.name}
+                        alt={t(`${item.key}.name`)}
                         className="w-full h-full object-cover"
                       />
                     </div>
                     <div>
                       <h4 className="font-extrabold text-slate-800 text-lg group-hover:text-(--main-color) transition-colors">
-                        {item.name}
+                        {t(`${item.key}.name`)}
                       </h4>
                       <p className="text-(--main-color) text-xs font-semibold uppercase tracking-wider">
-                        {item.role}
+                        {t(`${item.key}.role`)}
                       </p>
                     </div>
                   </div>

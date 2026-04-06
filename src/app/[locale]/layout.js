@@ -1,14 +1,13 @@
-import { Almarai, Geist, Geist_Mono } from "next/font/google";
+import { Almarai, Comfortaa, Exo_2, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Header";
 import Footer from "@/components/Footer";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
 import { routing } from "@/i18n/navigation";
 import { notFound } from "next/navigation";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const exo2 = Comfortaa({
+  variable: "--font-exo2",
   subsets: ["latin"],
 });
 
@@ -54,11 +53,15 @@ export default async function RootLayout({ children, params }) {
 
   // Determine page direction and language
   const direction = locale === "ar" ? "rtl" : "ltr";
+  const fontVariables =
+    locale === "en" ? `${exo2.variable}` : `${almarai.variable}`;
+
   return (
     <html
       lang={locale}
       dir={direction}
-      className={`${geistSans.variable} ${geistMono.variable} ${almarai.variable} h-full antialiased`}
+      data-locale={locale}
+      className={`${fontVariables} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider locale={locale} messages={messages}>

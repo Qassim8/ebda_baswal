@@ -2,8 +2,10 @@
 import { IconCalendarCheck } from "@tabler/icons-react";
 import Link from "next/link";
 import { Microphone2, Rocket } from "tabler-icons-react";
+import { useTranslations } from "next-intl";
 
 export default function ServicesCTA() {
+  const t = useTranslations("CTA");
   return (
     <section
       className="py-20 bg-cover bg-center relative overflow-hidden"
@@ -22,31 +24,29 @@ export default function ServicesCTA() {
             {/* المحتوى النصي */}
             <div className="lg:w-2/3 text-center lg:text-right">
               <h2 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">
-                هل أنت مستعد لرسم مسارك <br className="hidden md:block" />{" "}
-                المهني بكل ثقة؟
+                {t("title")}
               </h2>
               <p className="text-rose-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                سواء كنت تفضل الاستماع لخبراتنا عبر البودكاست، أو الحصول على
-                استشارة مهنية خاصة، نحن هنا لندعم خطواتك.
+                {t("subtitle")}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 {/* زرار الاستشارات */}
                 <Link
                   href="/consulting"
-                  className="bg-white text-(--main-color) px-8 py-4 rounded-2xl font-black text-lg shadow-xl hover:bg-slate-800 hover:text-white transition-all duration-300 flex items-center justify-center gap-3"
+                  className="bg-white text-(--main-color) px-4 md:px-8 py-2 md:py-4 rounded-lg md:rounded-2xl font-black md:text-lg shadow-xl hover:bg-slate-800 hover:text-white transition-all duration-300 flex items-center justify-center gap-3"
                 >
                   <IconCalendarCheck size={24} />
-                  احجز استشارتك الآن
+                  {t("consultButton")}
                 </Link>
 
                 {/* زرار البودكاست */}
                 <Link
                   href="/podcast"
-                  className="bg-(--main-color) border-2 border-white/30 text-white px-8 py-4 rounded-2xl font-black text-lg hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-3"
+                  className="bg-(--main-color) border-2 border-white/30 text-white px-4 md:px-8 py-2 md:py-4 rounded-lg md:rounded-2xl font-black md:text-lg hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-3"
                 >
                   <Microphone2 size={24} />
-                  استمع للبودكاست
+                  {t("podcastButton")}
                 </Link>
               </div>
             </div>

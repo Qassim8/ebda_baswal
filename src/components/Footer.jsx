@@ -15,13 +15,12 @@ import {
 export default function Footer() {
   const t = useTranslations("Footer");
   const locale = useLocale();
-  const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { name: t("home"), href: `/${locale}` },
-    { name: t("about"), href: `/${locale}/about` },
-    { name: t("services"), href: `/${locale}/services` },
-    { name: t("contact"), href: `/${locale}/contact` },
+    { name: t("home"), href: `/` },
+    { name: t("about"), href: `/about` },
+    { name: t("services"), href: `/services` },
+    { name: t("contact"), href: `/contact` },
   ];
 
   return (
@@ -83,26 +82,23 @@ export default function Footer() {
           {/* 3. Services */}
           <div>
             <h3 className="text-white font-black text-lg mb-8 relative inline-block">
-              {t("quickLinks")}
+              {t("services")}
               <span className="absolute -bottom-2 right-0 w-10 h-1.5 bg-(--main-color) rounded-full"></span>
             </h3>
             <ul className="space-y-4">
-              {[
-                "Consultation Sessions",
-                "Career Podcast",
-                "Volunteer Opportunities",
-                "Training Courses",
-              ].map((service) => (
-                <li key={service}>
-                  <Link
-                    href="#"
-                    className="text-gray-400 hover:text-white hover:pr-2 font-bold text-sm transition-all duration-300 flex items-center gap-2"
-                  >
-                    <span className="text-(--main-color)">←</span>
-                    {service}
-                  </Link>
-                </li>
-              ))}
+              {[t("session"), t("podcast"), t("volunteer"), t("courses")].map(
+                (service) => (
+                  <li key={service}>
+                    <Link
+                      href="#"
+                      className="text-gray-400 hover:text-white hover:pr-2 font-bold text-sm transition-all duration-300 flex items-center gap-2"
+                    >
+                      <span className="text-(--main-color)">←</span>
+                      {service}
+                    </Link>
+                  </li>
+                ),
+              )}
             </ul>
           </div>
 
@@ -129,7 +125,7 @@ export default function Footer() {
                 {
                   icon: <MapPin size={20} />,
                   label: t("address"),
-                  value: "Sudan - Khartoum",
+                  value: t("addressInfo"),
                   dir: locale === "ar" ? "rtl" : "ltr",
                 },
               ].map((item, i) => (
@@ -160,7 +156,7 @@ export default function Footer() {
         {/* Bottom Rights */}
         <div className="border-t border-white/5 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-gray-500 text-xs font-bold tracking-wide">
-            {t("copyright", { year: currentYear })}
+            {t("copyright", { year: 2025 })}
           </p>
 
           <div className="flex items-center gap-2 text-gray-500 text-xs font-bold group">

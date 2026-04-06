@@ -6,50 +6,44 @@ import {
   UserCheck,
 } from "tabler-icons-react";
 import MainTitle from "../MainTitle";
+import { useTranslations } from "next-intl";
 
-const steps = [
+const stepsData = [
   {
-    title: "حجز الموعد",
-    desc: "اختر الخدمة المناسبة لك وحدد الموعد الذي يناسب جدولك عبر نظامنا السهل.",
     icon: <CalendarEvent size={32} />,
+    key: "step1",
     color: "bg-blue-50 text-blue-600 border-blue-100",
   },
   {
-    title: "تحليل الاحتياجات",
-    desc: "نقوم بدراسة ملفك الشخصي وتحدياتك المهنية قبل الجلسة لضمان أقصى استفادة.",
     icon: <ClipboardCheck size={32} />,
+    key: "step2",
     color: "bg-purple-50 text-purple-600 border-purple-100",
   },
   {
-    title: "الجلسة التفاعلية",
-    desc: "نلتقي أونلاين أو حضورياً لنعمل سوياً على حل المشكلات ورسم خارطة الطريق.",
     icon: <UserCheck size={32} />,
+    key: "step3",
     color: "bg-rose-50 text-(--main-color) border-rose-100",
   },
   {
-    title: "الانطلاق والمتابعة",
-    desc: "لا تنتهي علاقتنا بالجلسة، بل نتابع تقدمك ونزودك بالموارد اللازمة لنجاحك.",
     icon: <Rocket size={32} />,
+    key: "step4",
     color: "bg-orange-50 text-orange-600 border-orange-100",
   },
 ];
 
 export default function Process() {
+  const t = useTranslations("Process");
   return (
     <section className="py-20 bg-(--second-color) relative overflow-hidden">
       <div className="container mx-auto px-5">
-        <MainTitle
-          title="كيف نبدأ رحلتك؟"
-          subtitle="خطوات بسيطة ومدروسة تأخذك من حيث أنت الآن إلى حيث تطمح أن تكون."
-          center={true}
-        />
+        <MainTitle title={t("title")} subtitle={t("subtitle")} center={true} />
 
         <div className="relative mt-20">
           {/* الخط الرابط بين الخطوات (يظهر في الشاشات الكبيرة فقط) */}
           <div className="hidden lg:block absolute top-1/4 left-0 w-full h-0.5  bg-dashed border-t-2 border-dashed border-slate-200"></div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            {steps.map((step, index) => (
+            {stepsData.map((step, index) => (
               <div
                 key={index}
                 className="flex flex-col items-center text-center group"
@@ -70,14 +64,14 @@ export default function Process() {
 
                 {/* النصوص */}
                 <h3 className="text-xl font-extrabold text-(--main-color) md:text-slate-800 mb-4 group-hover:text-(--main-color) transition-colors">
-                  {step.title}
+                  {t(`${step.key}.title`)}
                 </h3>
                 <p className="text-slate-500 leading-relaxed text-sm px-4">
-                  {step.desc}
+                  {t(`${step.key}.description`)}
                 </p>
 
                 {/* سهم صغير للموبايل والتابلت يظهر تحت كل خطوة ما عدا الأخيرة */}
-                {index !== steps.length - 1 && (
+                {index !== stepsData.length - 1 && (
                   <div className="mt-8 lg:hidden text-(--main-color)">
                     <ArrowDown size={32} className="animate-bounce" />
                   </div>

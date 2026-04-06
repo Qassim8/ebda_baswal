@@ -13,32 +13,32 @@ export default function Fields() {
 
   const fieldsData = [
     {
-      title: t("softSkills.title"),
-      desc: t("softSkills.description"),
+      title: "softSkills.title",
+      desc: "softSkills.description",
       icon: <MoodSmileBeam />,
       align: "right",
     },
     {
-      title: t("management.title"),
-      desc: t("management.description"),
+      title: "management.title",
+      desc: "management.description",
       icon: <Briefcase />,
       align: "left",
     },
     {
-      title: t("dataAnalysis.title"),
-      desc: t("dataAnalysis.description"),
+      title: "dataAnalysis.title",
+      desc: "dataAnalysis.description",
       icon: <ChartBar />,
       align: "right",
     },
     {
-      title: t("technicalFields.title"),
-      desc: t("technicalFields.description"),
+      title: "technicalFields.title",
+      desc: "technicalFields.description",
       icon: <Code />,
       align: "left",
     },
     {
-      title: t("entrepreneurship.title"),
-      desc: t("entrepreneurship.description"),
+      title: "entrepreneurship.title",
+      desc: "entrepreneurship.description",
       icon: <Rocket />,
       align: "right",
     },

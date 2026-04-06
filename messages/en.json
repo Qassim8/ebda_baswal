@@ -10,9 +10,9 @@
     "english": "English"
   },
   "Hero": {
-    "badge": "Start with a Question",
-    "mainTitle": "Start with a Question",
-    "subtitle": "Open the doors of knowledge",
+    "badge": "Ebda Baswal Initiative",
+    "mainTitle": "Ebda Baswal",
+    "subtitle": "and get knowledge",
     "description": "Questions are the first step towards real understanding and learning. At the \"Start with a Question\" platform, we believe that every great idea begins with a simple question. Join us and be part of a community that shares questions and grows through answers.",
     "contactButton": "Contact Us",
     "servicesButton": "Our Services"
@@ -84,6 +84,7 @@
     }
   },
   "About": {
+    "badge": "About Us",
     "title": "Who Are We?",
     "description": "We are your first answer and we strive to be the first platform that students and graduates turn to",
     "mainDescription": "Start with a Question is a youth training and development platform aimed at raising awareness and developing skills in the youth community with special focus on university students and recent graduates. The platform works to bridge the gap between university education and professional life.",
@@ -120,9 +121,9 @@
   },
   "Statistics": {
     "followers": "Followers",
-    "consultations": "Personal Consultations",
+    "consultations": "Consultations",
     "broadcasts": "Live Broadcasts",
-    "posts": "Post"
+    "posts": "Posts"
   },
   "Podcast": {
     "title": "Razan's Talk",
@@ -131,30 +132,14 @@
     "viewAll": "View All Episodes",
     "episodeLabel": "Episode",
     "watchNow": "Watch Now",
-    "episode1": {
-      "title": "Where Do We Start?"
-    },
-    "episode2": {
-      "title": "From Beginner to Professional"
-    },
-    "episode3": {
-      "title": "Community Entrepreneurship: From Ideas to Impact"
-    },
-    "episode4": {
-      "title": "Bridges of Knowledge Between Academia and Business"
-    },
-    "episode5": {
-      "title": "Scholarships"
-    },
-    "episode6": {
-      "title": "Building Your Personal Brand"
-    },
-    "episode7": {
-      "title": "Branding Journey in the New World"
-    },
-    "episode8": {
-      "title": "Investment Opportunities After War"
-    }
+    "episode1": "Where Do We Start?",
+    "episode2": "From Beginner to Professional",
+    "episode3": "Community Entrepreneurship: From Ideas to Impact",
+    "episode4": "Bridges of Knowledge Between Academia and Business",
+    "episode5": "Scholarships",
+    "episode6": "Building Your Personal Brand",
+    "episode7": "Branding Journey in the New World",
+    "episode8": "Investment Opportunities After War"
   },
   "Consulting": {
     "title": "Book Your Session Now",
@@ -186,13 +171,170 @@
     "email": "Email",
     "address": "Address"
   },
+  "Breadcrumb": {
+    "home": "Home"
+  },
+  "Founder": {
+    "subtitle": "Founder's Message",
+    "quot": "This journey started with one question: How can we make the path easier for those who come after us?",
+    "description": "Here you can write a short story about how the initiative started, and what personal motivation drove Dr. Razan to start the podcast and help youth. Personal stories create an emotional connection between the website and visitors.",
+    "name": "Dr. Razan Al-Harith"
+  },
+  "Story": {
+    "title": "Our Journey",
+    "subtitle": "How the dream turned into reality that touches the lives of thousands",
+    "step1": {
+      "year": "The Beginning",
+      "title": "A Small Idea, A Big Dream",
+      "description": "Everything started with a simple idea born from the challenges faced by new graduates. The beginning was just individual attempts at professional guidance through social media platforms."
+    },
+    "step2": {
+      "year": "Establishment",
+      "title": "A Committed Team",
+      "description": "A small but committed team came together, united by one goal: to bridge the gap between education and work. In this phase, the features of 'Razan's Talks' began to take shape as an organized entity."
+    },
+    "step3": {
+      "year": "Today",
+      "title": "Integrated Initiative with Tangible Impact",
+      "description": "Today, the idea has transformed into a complete national initiative that includes training programs, inspiring podcasts, and specialized technical consultations serving thousands of youth."
+    }
+  },
+  "Features": {
+    "title": "Why Start with a Question?",
+    "subtitle": "We believe that every question is the beginning of a journey towards knowledge.",
+    "feature1": {
+      "title": "Direct Personal Experience",
+      "description": "Platform founders experienced the transition from university education to professional life, giving them a deep understanding of challenges."
+    },
+    "feature2": {
+      "title": "Comprehensive and Effective Programs",
+      "description": "We offer integrated training programs specifically designed to bridge the gap between education and work, based on best practices."
+    },
+    "feature3": {
+      "title": "Focus on Practical Empowerment",
+      "description": "We equip youth with the knowledge and skills needed for professional success through practical training and interactive digital content."
+    }
+  },
+  "Plans": {
+    "title": "Professional Consultation Packages",
+    "subtitle": "Choose the package that suits your current stage and start shaping your future with confidence.",
+    "mostDemanded": "Most Demanded",
+    "plan1": {
+      "title": "Exploration Session",
+      "price": "Free",
+      "duration": "20-30 minutes",
+      "description": "A quick meeting to understand your current challenges and determine how our initiative can help you in your next step.",
+      "features": [
+        "Initial analysis of professional situation",
+        "Identification of basic gaps",
+        "Initial communication plan"
+      ],
+      "buttonText": "Book Your Free Session"
+    },
+    "plan2": {
+      "title": "Professional Roadmap",
+      "price": "Special Offer",
+      "duration": "60-90 minutes",
+      "description": "An in-depth consultation where we cover all details, build your CV, and prepare you to break into the job market.",
+      "features": [
+        "Comprehensive CV and LinkedIn review",
+        "Personal interview training",
+        "Written action plan for 6 months"
+      ],
+      "buttonText": "Start Your Success Journey"
+    },
+    "plan3": {
+      "title": "Institutional Development",
+      "price": "On Demand",
+      "duration": "Workshops",
+      "description": "Customized services for universities and institutions to prepare groups of graduates for the job market with professional skills.",
+      "features": [
+        "Intensive group workshops",
+        "Participant performance evaluation",
+        "Certified attendance certificates"
+      ],
+      "buttonText": "Contact Us for More"
+    }
+  },
+  "Rating": {
+    "title": "What They Say About Us",
+    "subtitle": "We are proud to be part of the success journey of many creative young people.",
+    "testimonial1": {
+      "name": "Sarah Ahmed",
+      "role": "Engineering Graduate",
+      "comment": "The initiative was a turning point in my professional career. The soft skills I learned helped me greatly in my first interview and, by God's grace, I was able to land the job."
+    },
+    "testimonial2": {
+      "name": "Mohammed Khaled",
+      "role": "Young Entrepreneur",
+      "comment": "The podcast and consultations provided by Dr. Razan always contain the essence of experience. Truly inspiring content that puts you on the right practical path."
+    },
+    "testimonial3": {
+      "name": "Layla Hassan",
+      "role": "University Student",
+      "comment": "What distinguishes them most is honesty and realism in presenting solutions. Not just theoretical talk, but practical steps you can apply from the next day."
+    },
+    "testimonial4": {
+      "name": "Abdullah Omar",
+      "role": "Technical Graduate",
+      "comment": "Excellent experience, they helped me organize my thoughts and prioritize before starting my search for a job in the technical field."
+    }
+  },
+  "Process": {
+    "title": "How Do We Start Your Journey?",
+    "subtitle": "Simple and well-thought-out steps that take you from where you are now to where you aspire to be.",
+    "step1": {
+      "title": "Book Your Appointment",
+      "description": "Choose the service that suits you and schedule the time that works for your schedule through our easy system."
+    },
+    "step2": {
+      "title": "Analyze Your Needs",
+      "description": "We study your personal profile and professional challenges before the session to ensure you get the most out of it."
+    },
+    "step3": {
+      "title": "Interactive Session",
+      "description": "We meet online or in person to work together on solving problems and mapping out your path forward."
+    },
+    "step4": {
+      "title": "Launch and Follow-up",
+      "description": "Our relationship doesn't end with the session. We track your progress and provide you with the resources needed for your success."
+    }
+  },
+  "CTA": {
+    "title": "Are you ready to chart your professional path with confidence?",
+    "subtitle": "Whether you prefer to listen to our expertise through the podcast or get personalized professional consultation, we're here to support your journey.",
+    "consultButton": "Book Your Consultation Now",
+    "podcastButton": "Listen to the Podcast"
+  },
+  "ContactInfo": {
+    "whatsapp": {
+      "title": "Contact via WhatsApp",
+      "value": "+249 000 000 000"
+    },
+    "email": {
+      "title": "Email",
+      "value": "info@razantalks.com"
+    },
+    "hours": {
+      "title": "Working Hours",
+      "value": "Sunday - Thursday (9am - 5pm)"
+    }
+  },
   "Footer": {
     "aboutus": "A platform aimed at simplifying knowledge, stimulating thinking, and empowering youth through sharing content and practical guidance to build successful career paths.",
     "quickLinks": "Quick Links",
     "home": "Home",
     "about": "About",
     "services": "Services",
+    "session": "Consultation Sessions",
+    "podcast": "Podcast",
+    "volunteer": "Volunteer Opportunities",
+    "courses": "Training & Courses",
     "contact": "Contact",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "addressInfo": "Sudan - Khartoum",
     "followUs": "Follow Us",
     "copyright": "© {year} Start with a Question. All rights reserved.",
     "madeWith": "Made with",

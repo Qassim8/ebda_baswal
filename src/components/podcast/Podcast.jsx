@@ -4,59 +4,59 @@ import { BrandYoutube } from "tabler-icons-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
-const episodeData = [
-  {
-    id: "01",
-    titleKey: "episode1.title",
-    link: "https://youtu.be/0opNH7nV0tU?si=4vaHwuCBgtVBm7SF",
-    img: "/podcast-1.jpg",
-  },
-  {
-    id: "02",
-    titleKey: "episode2.title",
-    link: "https://youtu.be/cMbxlCkby1o?si=_G_zk6iRanOFBOev",
-    img: "/podcast-2.jpg",
-  },
-  {
-    id: "03",
-    titleKey: "episode3.title",
-    link: "https://youtu.be/7QcqEU_jzCo?si=ADoY7s5o0UoBM7TG",
-    img: "/podcast-3.jpg",
-  },
-  {
-    id: "04",
-    titleKey: "episode4.title",
-    link: "https://youtu.be/7QcqEU_jzCo?si=rFMu2ax5BB2QYXRE",
-    img: "/podcast-4.jpg",
-  },
-  {
-    id: "05",
-    titleKey: "episode5.title",
-    link: "https://youtu.be/AEtwsIWmYoI?si=mKsXinrxKZOpHLjH",
-    img: "/podcast-5.jpg",
-  },
-  {
-    id: "06",
-    titleKey: "episode6.title",
-    link: "https://youtu.be/CZVLXjSk_ZA?si=F3FuvnorOz9CKg-u",
-    img: "/podcast-6.jpg",
-  },
-  {
-    id: "07",
-    titleKey: "episode7.title",
-    link: "https://youtu.be/4Cnef1wqVGs?si=3gQ2sMKatUcGMu8g",
-    img: "/podcast-7.jpg",
-  },
-  {
-    id: "08",
-    titleKey: "episode8.title",
-    link: "https://youtu.be/EC4Ny9lLs-M?si=PPxrrZDom1XuFThK",
-    img: "/podcast-8.jpg",
-  },
-];
-
 export default function PodcastSection({ home }) {
   const t = useTranslations("Podcast");
+
+  const episodeData = [
+    {
+      id: "01",
+      titleKey: "episode1",
+      link: "https://youtu.be/0opNH7nV0tU?si=4vaHwuCBgtVBm7SF",
+      img: "/podcast-1.jpg",
+    },
+    {
+      id: "02",
+      titleKey: "episode2",
+      link: "https://youtu.be/cMbxlCkby1o?si=_G_zk6iRanOFBOev",
+      img: "/podcast-2.jpg",
+    },
+    {
+      id: "03",
+      titleKey: "episode3",
+      link: "https://youtu.be/7QcqEU_jzCo?si=ADoY7s5o0UoBM7TG",
+      img: "/podcast-3.jpg",
+    },
+    {
+      id: "04",
+      titleKey: "episode4",
+      link: "https://youtu.be/7QcqEU_jzCo?si=rFMu2ax5BB2QYXRE",
+      img: "/podcast-4.jpg",
+    },
+    {
+      id: "05",
+      titleKey: "episode5",
+      link: "https://youtu.be/AEtwsIWmYoI?si=mKsXinrxKZOpHLjH",
+      img: "/podcast-5.jpg",
+    },
+    {
+      id: "06",
+      titleKey: "episode6",
+      link: "https://youtu.be/CZVLXjSk_ZA?si=F3FuvnorOz9CKg-u",
+      img: "/podcast-6.jpg",
+    },
+    {
+      id: "07",
+      titleKey: "episode7",
+      link: "https://youtu.be/4Cnef1wqVGs?si=3gQ2sMKatUcGMu8g",
+      img: "/podcast-7.jpg",
+    },
+    {
+      id: "08",
+      titleKey: "episode8",
+      link: "https://youtu.be/EC4Ny9lLs-M?si=PPxrrZDom1XuFThK",
+      img: "/podcast-8.jpg",
+    },
+  ];
 
   return (
     <section

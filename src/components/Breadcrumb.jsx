@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { ChevronLeft, Home2 } from "tabler-icons-react";
+import { useTranslations } from "next-intl";
 
 export default function Breadcrumb({ title, pageName }) {
+  const t = useTranslations("Breadcrumb");
   return (
     <section
       className="h-[30vh] md:h-[60vh] bg-cover bg-center relative flex items-center justify-center overflow-hidden"
@@ -28,7 +30,7 @@ export default function Breadcrumb({ title, pageName }) {
             className="text-slate-500 hover:text-main transition-all duration-300 flex items-center gap-1"
           >
             <Home2 />
-            الرئيسية
+            {t("home")}
           </Link>
 
           <span className="text-slate-300">

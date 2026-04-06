@@ -102,14 +102,14 @@ export default function ConsultingForm({ mode = "consulting" }) {
             </div>
 
             <div className="md:col-span-2 mt-4">
-              <button className="cursor-pointer w-full bg-(--main-color) text-white py-5 rounded-2xl font-black text-lg shadow-xl shadow-(--main-color)/20 hover:bg-slate-800 transition-all flex items-center justify-center gap-3 group">
+              <button className="cursor-pointer w-full bg-(--main-color) text-white py-2 md:py-5 rounded-2xl font-black md:text-lg shadow-xl shadow-(--main-color)/20 hover:bg-slate-800 transition-all flex items-center justify-center gap-3 group">
                 <span>
                   {isConsulting
                     ? t("form.confirmBooking")
                     : t("form.sendMessage")}
                 </span>
                 <Send
-                  size={22}
+                  size={20}
                   className="group-hover:-translate-x-1 group-hover:-translate-y-1 transition-transform"
                 />
               </button>

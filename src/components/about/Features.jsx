@@ -1,36 +1,31 @@
 import { Book2, Rocket, School, Spiral } from "tabler-icons-react";
 import MainTitle from "../MainTitle";
+import { useTranslations } from "next-intl";
 
 const featureData = [
   {
-    title: "الخبرة المباشرة والشخصية",
-    description:
-      "مؤسسو المنصة عاشوا تجربة الانتقال من التعليم الجامعي إلى الحياة المهنية، مما يمنحهم فهمًا عميقًا للتحديات.",
+    title: "feature1.title",
+    description: "feature1.description",
     icon: <School size={40} strokeWidth={1.5} />,
   },
   {
-    title: "البرامج الشاملة والفعّالة",
-    description:
-      "نقدم برامج تدريبية متكاملة صُممت خصيصًا لسد الفجوة بين التعليم والعمل، بالاعتماد على أفضل الممارسات.",
+    title: "feature2.title",
+    description: "feature2.description",
     icon: <Book2 size={40} strokeWidth={1.5} />,
   },
   {
-    title: "التركيز على التمكين العملي",
-    description:
-      "نزوّد الشباب بالمعرفة والمهارات اللازمة للنجاح المهني عبر التدريب العملي والمحتوى الرقمي التفاعلي.",
+    title: "feature3.title",
+    description: "feature3.description",
     icon: <Rocket size={40} strokeWidth={1.5} />,
   },
 ];
 
 export default function Features() {
+  const t = useTranslations("Features");
   return (
     <section className="py-20 bg-white" id="features">
       <div className="container mx-auto px-5">
-        <MainTitle
-          title="لماذا ابدأ بسؤال؟"
-          subtitle="نثق بأن كل سؤال هو بداية رحلة نحو المعرفة."
-          center={true}
-        />
+        <MainTitle title={t("title")} subtitle={t("subtitle")} center={true} />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-20">
           {featureData.map((item, index) => (
@@ -48,11 +43,11 @@ export default function Features() {
 
               {/* المحتوى النصي */}
               <h3 className="font-extrabold text-2xl mb-4 text-slate-800 transition-colors duration-500 group-hover:text-white leading-tight">
-                {item.title}
+                {t(item.title)}
               </h3>
 
               <p className="text-slate-600 leading-relaxed text-sm md:text-base transition-colors duration-500 group-hover:text-rose-50">
-                {item.description}
+                {t(item.description)}
               </p>
 
               {/* عنصر ديكوري صغير يظهر في الزاوية */}

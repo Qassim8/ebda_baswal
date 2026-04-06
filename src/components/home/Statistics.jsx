@@ -95,16 +95,15 @@ export default function Statistics({ home }) {
       ref={sectionRef}
     >
       {/* لمسة خلفية لتكرار الاستايل الجمالي */}
-      <div className="absolute top-0 left-1/4 w-64 h-64 bg-(--main-color)/80 rounded-full blur-3xl -z-10"></div>
 
       <div className="container mx-auto px-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
         {stats.map((stat) => (
           <div
             key={stat.id}
-            className="group text-center flex flex-col items-center gap-2 p-10 bg-(--main-color) rounded-[2.5rem] relative shadow-2xl shadow-(--main-color)/10 transition-transform duration-500 hover:-translate-y-2"
+            className="group text-center flex flex-col items-center gap-2 p-10 bg-(--main-color) rounded-2xl relative shadow-xl shadow-(--main-color)/10 transition-transform duration-500 hover:-translate-y-2"
           >
             {/* الأيقونة بتصميمك مع لمسة احترافية */}
-            <div className="w-16 h-16 flex justify-center items-center rounded-2xl absolute -top-8 bg-slate-800 border-[6px] border-white text-white shadow-lg transition-transform duration-500 group-hover:rotate-12">
+            <div className="w-16 h-16 flex justify-center items-center rounded-2xl absolute -top-8 bg-slate-800 border-[6px] border-(--second-color) text-white transition-transform duration-500 group-hover:rotate-12">
               {stat.icon}
             </div>
 

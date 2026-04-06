@@ -3,15 +3,59 @@
 :root {
   --main-color: #a6225b;
   --alt-color: #f9d6b4;
-  --second-color: #f9d6b424;
+  --second-color: #fdfaf6;
 }
 html {
   scroll-behavior: smooth;
 }
-@theme inline {
+html[data-locale="en"] {
+  --font-sans: var(--font-exo2);
+}
+html[data-locale="ar"] {
   --font-sans: var(--font-almarai);
 }
 body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   overflow-x: hidden; /* Prevent horizontal scroll */
+}
+@theme {
+  /* تعريف الـ Keyframes لتغيير اللون */
+  @keyframes color-fade {
+    0%,
+    100% {
+      color: rgba(255, 255, 255); /* لون أبيض باهت (Off) */
+    }
+    50% {
+      color: #fbbf24; /* لون أصفر مشرق (amber-400) */
+    }
+  }
+
+  /* ربط الـ Keyframes باسم أنيميشن لاستخدامه كـ Class */
+  --animate-color-fade: color-fade 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes glow-pulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  /* ربط الـ Keyframes باسم أنيميشن لاستخدامه كـ Class */
+  --animate-glow-pulse: glow-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes fade-grayscale {
+    0%,
+    100% {
+      filter: grayscale(2);
+    }
+    50% {
+      filter: grayscale(0);
+    }
+  }
+
+  /* ربط الـ Keyframes باسم أنيميشن لاستخدامه كـ Class */
+  --animate-fade-grayscale: fade-grayscale 5s ease-in-out infinite;
 }

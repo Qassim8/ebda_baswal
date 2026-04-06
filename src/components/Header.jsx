@@ -61,14 +61,14 @@ export default function Navbar() {
 
   return (
     <header className="bg-(--alt-color) sticky top-0 shadow-md z-50 font-sans">
-      <nav className="container mx-auto px-5 flex justify-between items-center h-20 md:h-24">
+      <nav className="container mx-auto px-5 flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="w-20 md:w-28 outline-none">
+        <Link href="/" className="w-20 outline-none">
           <Image
             src="/logo.png"
             alt="Logo"
-            width={120}
-            height={70}
+            width={80}
+            height={50}
             priority
             className="h-auto w-auto"
           />
@@ -78,7 +78,7 @@ export default function Navbar() {
         <div className="flex items-center">
           <ul
             ref={menuRef}
-            className={`transition-all duration-500 flex flex-col md:flex-row items-center gap-2 absolute md:relative top-full md:top-0 left-0 bg-amber-50 md:bg-transparent w-full h-[calc(100vh-80px)] md:h-auto ${isOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 md:opacity-100 -translate-y-4 md:translate-y-0 pointer-events-none md:pointer-events-auto"}`}
+            className={`transition-all duration-500 flex flex-col md:flex-row items-center absolute md:relative top-full md:top-0 left-0 bg-amber-50 md:bg-transparent w-full h-[calc(100vh-80px)] md:h-auto ${isOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 md:opacity-100 -translate-y-4 md:translate-y-0 pointer-events-none md:pointer-events-auto"}`}
           >
             {navLinks.map((link) => {
               const isActive = isNavActive(link.href);
@@ -87,7 +87,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`block py-6 md:py-2 px-4 font-bold md:rounded-lg transition-all ${isActive ? "bg-(--main-color) text-white" : "text-slate-700 hover:text-(--main-color)"}`}
+                    className={`block py-5 px-8 font-bold transition-all ${isActive ? "bg-(--main-color) text-white" : "text-slate-700 hover:text-(--main-color)"}`}
                   >
                     {link.name}
                   </Link>
@@ -141,9 +141,9 @@ export default function Navbar() {
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`flex justify-center items-center w-10 h-10 rounded-xl md:hidden transition-all ${isOpen ? "bg-(--main-color) text-white rotate-90" : "bg-white text-(--main-color) shadow-sm"}`}
+            className={`flex justify-center items-center w-8 h-8 rounded-lg md:hidden transition-all ${isOpen ? "bg-(--main-color) text-white rotate-90" : "bg-white text-(--main-color) shadow-sm"}`}
           >
-            {isOpen ? <X size={24} /> : <Menu2 size={24} />}
+            {isOpen ? <X size={20} /> : <Menu2 size={20} />}
           </button>
         </div>
       </nav>

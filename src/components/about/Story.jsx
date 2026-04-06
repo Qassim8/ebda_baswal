@@ -1,36 +1,34 @@
 import { Award, Bulb, Users } from "tabler-icons-react";
 import MainTitle from "../MainTitle";
+import { useTranslations } from "next-intl";
 
 const storySteps = [
   {
-    year: "البداية",
-    title: "فكرة صغيرة، حلم كبير",
-    desc: "بدأ كل شيء بفكرة بسيطة ولدت من رحم التحديات التي يواجهها الخريجون الجدد. كانت البداية مجرد محاولات فردية للإرشاد المهني عبر منصات التواصل.",
+    year: "step1.year",
+    title: "step1.title",
+    desc: "step1.description",
     icon: <Bulb />,
   },
   {
-    year: "التأسيس",
-    title: "فريق عمل مؤمن بالرسالة",
-    desc: "اجتمع فريق صغير لكنه ملتزم، يجمعهم هدف واحد وهو سد الفجوة بين التعليم والعمل. في هذه المرحلة بدأت ملامح 'أحاديث رزان' تتشكل ككيان منظم.",
+    year: "step2.year",
+    title: "step2.title",
+    desc: "step2.description",
     icon: <Users />,
   },
   {
-    year: "الآن",
-    title: "مبادرة متكاملة وتأثير ملموس",
-    desc: "اليوم، تحولت الفكرة إلى مبادرة وطنية مكتملة، تضم برامج تدريبية، بودكاست ملهم، واستشارات فنية متخصصة تخدم آلاف الشباب.",
+    year: "step3.year",
+    title: "step3.title",
+    desc: "step3.description",
     icon: <Award />,
   },
 ];
 
 export default function Story() {
+  const t = useTranslations("Story");
   return (
     <section className="py-20 relative overflow-hidden" id="story">
       <div className="container mx-auto px-5">
-        <MainTitle
-          title="رحلتنا"
-          subtitle="كيف تحول الحلم إلى واقع يلمس حياة الآلاف"
-          center={true}
-        />
+        <MainTitle title={t("title")} subtitle={t("subtitle")} center={true} />
 
         <div className="relative mt-16">
           {/* الخط المركزي (Vertical Line) */}
@@ -55,13 +53,13 @@ export default function Story() {
                 {/* محتوى الكارد */}
                 <div className="w-full md:w-5/12 bg-white p-8 rounded-2xl shadow-sm border border-rose-50 hover:shadow-xl transition-all duration-300 group">
                   <span className="text-(--main-color) font-black text-xs bg-rose-50 px-3 py-1 rounded-full mb-3 inline-block uppercase tracking-widest">
-                    {step.year}
+                    {t(step.year)}
                   </span>
                   <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-(--main-color) transition-colors">
-                    {step.title}
+                    {t(step.title)}
                   </h3>
                   <p className="text-slate-600 leading-relaxed text-sm md:text-base">
-                    {step.desc}
+                    {t(step.desc)}
                   </p>
                 </div>
               </div>

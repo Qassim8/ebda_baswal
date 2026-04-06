@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useState } from "react";
 import {
   IconBrandFacebook,
   IconBrandLinkedin,
@@ -26,11 +27,18 @@ const socialPlatforms = [
     name: "Spotify",
     icon: <IconBrandSpotify size={32} />,
     color: "hover:text-[#1DB954]",
-  }, // لو حبيت تضيفه مستقبلاً
+  },
 ];
 
 export default function PodcastPlatforms() {
-  // بنكرر المصفوفة عشان الحركة تكون مستمرة بدون فراغات
+  const [dir, setDir] = useState("ltr");
+
+  // التحقق من اتجاه الصفحة عند التحميل
+  useEffect(() => {
+    const currentDir = document.documentElement.dir || "ltr";
+    setDir(currentDir);
+  }, []);
+
   const doublePlatforms = [
     ...socialPlatforms,
     ...socialPlatforms,
@@ -40,7 +48,6 @@ export default function PodcastPlatforms() {
 
   return (
     <section className="py-12 bg-white border-y border-rose-50 overflow-hidden relative">
-      {/* تأثير الـ Fade على الجوانب عشان الحركة تختفي وتظهر بسلاسة */}
       <div className="absolute inset-y-0 left-0 w-32 bg-linear-to-r from-white to-transparent z-10"></div>
       <div className="absolute inset-y-0 right-0 w-32 bg-linear-to-l from-white to-transparent z-10"></div>
 
@@ -62,14 +69,14 @@ export default function PodcastPlatforms() {
         </div>
       </div>
 
-      {/* إضافة الـ Animation في Tailwind config أو كـ Style tag */}
       <style jsx>{`
         @keyframes marquee {
           0% {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(50%);
+            /* إذا كان الاتجاه RTL (عربي) يمشي يمين (50%)، وإذا LTR (إنجليزي) يمشي شمال (-50%) */
+            transform: translateX(${dir === "rtl" ? "50%" : "-50%"});
           }
         }
         .animate-marquee {
@@ -77,7 +84,6 @@ export default function PodcastPlatforms() {
           display: flex;
           width: max-content;
         }
-        /* توقف الحركة عند الوقوف بالماوس لسهولة الضغط */
         .group:hover .animate-marquee {
           animation-play-state: paused;
         }

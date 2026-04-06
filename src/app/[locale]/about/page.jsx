@@ -5,12 +5,13 @@ import Story from "@/components/about/Story";
 import Breadcrumb from "@/components/Breadcrumb";
 import Goals from "@/components/home/Goals";
 import Testimonials from "@/components/home/Testimonials";
-import React from "react";
+import { useTranslations } from "next-intl";
 
 export default function AboutUs() {
+  const t = useTranslations("About");
   return (
     <>
-      <Breadcrumb title="من نحن" pageName="من نحن" />
+      <Breadcrumb title={t("badge")} pageName={t("badge")} />
       <Founder />
       <Story />
       <About about={true} />
