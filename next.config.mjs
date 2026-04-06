@@ -4,7 +4,17 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // أي إعدادات تانية عندك حطها هنا (مثل الصور)
+  async redirects() {
+    return [
+      {
+        // إذا دخل المستخدم على الرابط الرئيسي /
+        source: "/",
+        // حوله تلقائياً إلى النسخة العربية /ar
+        destination: "/ar",
+        permanent: true,
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {

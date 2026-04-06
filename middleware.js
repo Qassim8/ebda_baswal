@@ -1,15 +1,13 @@
-// src/middleware.ts
 import createMiddleware from "next-intl/middleware";
-import { routingConfig } from "./src/i18n/config";
 
 export default createMiddleware({
-  // تأكد من تمرير القيم مباشرة هنا
-  locales: routingConfig.locales,
-  defaultLocale: routingConfig.defaultLocale,
-  localePrefix: "always", // جرب إضافة هذا الخيار لضمان التوجيه الصحيح
+  // اكتب القيم هنا مباشرة بدون استيراد من ملفات أخرى لضمان الاستقرار
+  locales: ["ar", "en"],
+  defaultLocale: "ar",
+  localePrefix: "always",
 });
 
 export const config = {
-  // هذا الـ Matcher مهم جداً لاستبعاد ملفات النظام
+  // هذا الـ Matcher هو "صمام الأمان" لعدم انهيار السيرفر
   matcher: ["/((?!api|_next|.*\\..*).*)"],
 };
