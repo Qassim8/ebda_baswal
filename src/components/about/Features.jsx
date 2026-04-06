@@ -1,6 +1,8 @@
+"use client";
 import { Book2, Rocket, School, Spiral } from "tabler-icons-react";
 import MainTitle from "../MainTitle";
 import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 
 const featureData = [
   {
@@ -22,6 +24,13 @@ const featureData = [
 
 export default function Features() {
   const t = useTranslations("Features");
+  const [dir, setDir] = useState("ltr");
+
+  useEffect(() => {
+    const currentDir = document.documentElement.dir || "ltr";
+    setDir(currentDir);
+  }, []);
+
   return (
     <section className="py-20 bg-white" id="features">
       <div className="container mx-auto px-5">

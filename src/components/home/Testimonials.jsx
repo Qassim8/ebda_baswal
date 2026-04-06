@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
@@ -8,13 +8,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import MainTitle from "../MainTitle";
-import {
-  ArrowLeft,
-  ArrowRight,
-  ChevronLeft,
-  ChevronRight,
-  Quote,
-} from "tabler-icons-react";
+import { ArrowLeft, ArrowRight, Quote } from "tabler-icons-react";
 import { useTranslations } from "next-intl";
 
 const testimonialData = [
@@ -60,6 +54,12 @@ export default function Testimonials() {
   // نستخدم State بدلاً من Refs لتجنب خطأ الـ Render
   const [prevEl, setPrevEl] = useState(null);
   const [nextEl, setNextEl] = useState(null);
+  const [dir, setDir] = useState("ltr");
+
+  useEffect(() => {
+    const currentDir = document.documentElement.dir || "ltr";
+    setDir(currentDir);
+  }, []);
 
   return (
     <section
@@ -76,13 +76,21 @@ export default function Testimonials() {
               ref={(node) => setPrevEl(node)}
               className="cursor-pointer pointer-events-auto w-10 h-10 flex items-center justify-center rounded-full bg-(--main-color) border border-rose-100 text-main shadow-md hover:bg-main hover:text-white transition-all -ml-5"
             >
-              <ArrowRight className="text-white" />
+              {dir === "rtl" ? (
+                <ArrowRight className="text-white" />
+              ) : (
+                <ArrowLeft className="text-white" />
+              )}
             </button>
             <button
               ref={(node) => setNextEl(node)}
               className="cursor-pointer pointer-events-auto w-10 h-10 flex items-center justify-center rounded-full bg-(--main-color) border border-rose-100 text-main shadow-md hover:bg-main hover:text-white transition-all -mr-5"
             >
-              <ArrowLeft className="text-white" />
+              {dir === "rtl" ? (
+                <ArrowLeft className="text-white" />
+              ) : (
+                <ArrowRight className="text-white" />
+              )}
             </button>
           </div>
 
@@ -112,7 +120,7 @@ export default function Testimonials() {
           >
             {testimonialData.map((item) => (
               <SwiperSlide key={item.id}>
-                <div className="bg-rose-50/40 p-8 min-h-72 rounded-2xl border border-(--main-color)/20 flex flex-col h-full hover:shadow-md transition-all border-b-4 hover:border-b-main">
+                <div className="bg-rose-50/40 p-8 h-92! rounded-2xl border border-(--main-color)/20 flex flex-col hover:shadow-md transition-all border-b-4 hover:border-b-main">
                   <div className="text-3xl text-(--main-color)/30 mb-4">
                     <Quote />
                   </div>

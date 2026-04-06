@@ -18,7 +18,7 @@ const testimonialsData = [
   { id: 4, gender: "male", key: "testimonial4" },
 ];
 
-export default function Testimonials() {
+export default function Testimonials({ dir }) {
   const t = useTranslations("Rating");
   const [prevEl, setPrevEl] = useState(null);
   const [nextEl, setNextEl] = useState(null);
@@ -47,13 +47,21 @@ export default function Testimonials() {
               ref={(node) => setPrevEl(node)}
               className="cursor-pointer pointer-events-auto w-12 h-12 flex items-center justify-center rounded-2xl bg-white/80 backdrop-blur-sm border border-rose-100 text-(--main-color) shadow-lg hover:bg-(--main-color) hover:text-white transition-all -ml-6 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 -translate-x-4"
             >
-              <ArrowRight size={22} />
+              {dir === "rtl" ? (
+                <ArrowRight size={20} />
+              ) : (
+                <ArrowLeft size={20} />
+              )}
             </button>
             <button
               ref={(node) => setNextEl(node)}
               className="cursor-pointer pointer-events-auto w-12 h-12 flex items-center justify-center rounded-2xl bg-white/80 backdrop-blur-sm border border-rose-100 text-(--main-color) shadow-lg hover:bg-(--main-color) hover:text-white transition-all -mr-6 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 translate-x-4"
             >
-              <ArrowLeft size={22} />
+              {dir === "rtl" ? (
+                <ArrowLeft size={20} />
+              ) : (
+                <ArrowRight size={20} />
+              )}
             </button>
           </div>
 

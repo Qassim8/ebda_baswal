@@ -23,17 +23,90 @@ const almarai = Almarai({
   display: "swap",
 });
 
-export const metadata = {
-  title: "Start with a Question - Empower Your Career Journey",
-  description:
-    "A platform dedicated to simplifying knowledge and empowering youth through mentorship, practical guidance, and career development.",
-  keywords: [
-    "career development",
-    "mentorship",
-    "youth empowerment",
-    "learning platform",
-  ],
-};
+// Generate metadata function for locale-specific SEO
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+
+  const seoData = {
+    en: {
+      title: "Start with a Question - Empower Your Career Journey",
+      description:
+        "A platform dedicated to simplifying knowledge and empowering youth through mentorship, practical guidance, and career development.",
+      keywords: [
+        "career development",
+        "mentorship",
+        "youth empowerment",
+        "learning platform",
+        "professional growth",
+        "career coaching",
+      ],
+      siteUrl: "https://yoursite.com",
+      ogTitle: "Start with a Question - Empower Your Career Journey",
+      ogDescription:
+        "A platform dedicated to simplifying knowledge and empowering youth through mentorship, practical guidance, and career development.",
+      ogImage: "https://yoursite.com/og-image.png",
+      twitterHandle: "@yourhandle",
+    },
+    ar: {
+      title: "ابدأ بسؤال - اختبر كفاءاتك المهنية",
+      description:
+        "منصة تهدف إلى تبسيط المعرفة، وتحفيز التفكير، وتمكين الشباب من خلال مشاركة المحتوى والإرشاد العملي لبناء مسارات مهنية ناجحة.",
+      keywords: [
+        "تطوير مهني",
+        "الارشاد",
+        "تمكين الشباب",
+        "منصة تعليم",
+        "النمو الوظيفي",
+        "استشارات مهنية",
+      ],
+      siteUrl: "https://yoursite.com",
+      ogTitle: "ابدأ بسؤال - اختبر كفاءاتك المهنية",
+      ogDescription:
+        "منصة تهدف إلى تبسيط المعرفة، وتحفيز التفكير، وتمكين الشباب من خلال مشاركة المحتوى والإرشاد العملي لبناء مسارات مهنية ناجحة.",
+      ogImage: "https://yoursite.com/og-image-ar.png",
+      twitterHandle: "@yourhandle",
+    },
+  };
+
+  const currentSeo = seoData[locale] || seoData.en;
+
+  return {
+    title: currentSeo.title,
+    description: currentSeo.description,
+    keywords: currentSeo.keywords,
+    robots: "index, follow",
+    viewport: "width=device-width, initial-scale=1.0",
+    language: locale,
+    charset: "utf-8",
+    openGraph: {
+      type: "website",
+      locale: locale === "ar" ? "ar_SA" : "en_US",
+      url: currentSeo.siteUrl,
+      title: currentSeo.ogTitle,
+      description: currentSeo.ogDescription,
+      image: {
+        url: currentSeo.ogImage,
+        width: 1200,
+        height: 630,
+        alt: currentSeo.ogTitle,
+      },
+      siteName: "Start with a Question",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: currentSeo.ogTitle,
+      description: currentSeo.ogDescription,
+      image: currentSeo.ogImage,
+      creator: currentSeo.twitterHandle,
+    },
+    alternateLanguages: [
+      { hrefLang: "en", href: `${currentSeo.siteUrl}/en` },
+      { hrefLang: "ar", href: `${currentSeo.siteUrl}/ar` },
+      { hrefLang: "x-default", href: currentSeo.siteUrl },
+    ],
+    canonical: `${currentSeo.siteUrl}/${locale}`,
+  };
+}
 
 // Generate static routes for all supported locales
 export function generateStaticParams() {

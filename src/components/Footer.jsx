@@ -11,10 +11,17 @@ import {
   BrandFacebook,
   Heart,
 } from "tabler-icons-react";
+import { useEffect, useState } from "react";
 
 export default function Footer() {
   const t = useTranslations("Footer");
   const locale = useLocale();
+  const [dir, setDir] = useState("ltr");
+
+  useEffect(() => {
+    const currentDir = document.documentElement.dir || "ltr";
+    setDir(currentDir);
+  }, []);
 
   const quickLinks = [
     { name: t("home"), href: `/` },
@@ -62,7 +69,9 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-black text-lg mb-8 relative inline-block">
               {t("quickLinks")}
-              <span className="absolute -bottom-2 right-0 w-10 h-1.5 bg-(--main-color) rounded-full"></span>
+              <span
+                className={`absolute -bottom-2 ${dir === "ltr" ? "left-0" : "right-0"} w-10 h-1.5 bg-(--main-color) rounded-full`}
+              ></span>
             </h3>
             <ul className="space-y-4">
               {quickLinks.map((link) => (
@@ -83,7 +92,9 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-black text-lg mb-8 relative inline-block">
               {t("services")}
-              <span className="absolute -bottom-2 right-0 w-10 h-1.5 bg-(--main-color) rounded-full"></span>
+              <span
+                className={`absolute -bottom-2 ${dir === "ltr" ? "left-0" : "right-0"} w-10 h-1.5 bg-(--main-color) rounded-full`}
+              ></span>
             </h3>
             <ul className="space-y-4">
               {[t("session"), t("podcast"), t("volunteer"), t("courses")].map(
@@ -106,7 +117,9 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-black text-lg mb-8 relative inline-block">
               {t("contact")}
-              <span className="absolute -bottom-2 right-0 w-10 h-1.5 bg-(--main-color) rounded-full"></span>
+              <span
+                className={`absolute -bottom-2 ${dir === "ltr" ? "left-0" : "right-0"} w-10 h-1.5 bg-(--main-color) rounded-full`}
+              ></span>
             </h3>
             <ul className="space-y-5">
               {[

@@ -1,15 +1,11 @@
-import Breadcrumb from "@/components/Breadcrumb";
-import ConsultingForm from "@/components/consulting/Form";
-import ConsultingPlans from "@/components/consulting/Plans";
-import Testimonials from "@/components/consulting/Rating";
+import { generatePageMetadata } from "@/lib/seo";
+import ConsultingClient from "./consulting-client";
+
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  return generatePageMetadata("consulting", locale);
+}
 
 export default function Consulting() {
-  return (
-    <>
-      <Breadcrumb title="الاستشارة" pageName="الاستشارة" />
-      <Testimonials />
-      <ConsultingPlans />
-      <ConsultingForm />
-    </>
-  );
+  return <ConsultingClient />;
 }

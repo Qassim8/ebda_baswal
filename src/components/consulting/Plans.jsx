@@ -56,13 +56,13 @@ export default function ConsultingPlans() {
               </div>
 
               <h3
-                className={`text-2xl font-black mb-2 ${plan.featured ? "text-white" : "text-slate-800"}`}
+                className={`text-sm md:text-md font-black mb-2 ${plan.featured ? "text-white" : "text-slate-800"}`}
               >
                 {t(`${plan.key}.title`)}
               </h3>
 
               <div className="flex items-baseline gap-2 mb-6">
-                <span className="text-3xl font-black">
+                <span className="md:text-2xl font-black">
                   {t(`${plan.key}.price`)}
                 </span>
                 <span

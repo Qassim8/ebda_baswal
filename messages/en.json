@@ -13,7 +13,7 @@
     "badge": "Ebda Baswal Initiative",
     "mainTitle": "Ebda Baswal",
     "subtitle": "and get knowledge",
-    "description": "Questions are the first step towards real understanding and learning. At the \"Start with a Question\" platform, we believe that every great idea begins with a simple question. Join us and be part of a community that shares questions and grows through answers.",
+    "description": "Questions are the first step towards real understanding and learning. At the \"Ebda Baswal\" platform, we believe that every great idea begins with a simple question. Join us and be part of a community that shares questions and grows through answers.",
     "contactButton": "Contact Us",
     "servicesButton": "Our Services"
   },
@@ -43,7 +43,7 @@
   },
   "Goals": {
     "title": "Our Vision",
-    "subtitle": "We believe that every person has inner curiosity that drives them to understand the world around them, and that every question is a first step towards progress.",
+    "subtitle": "Our first goal is to empower youth to build successful and impactful career paths in their communities",
     "mission": "Mission",
     "missionText": "Empowering students, graduates, and researchers to access reliable and clear answers to all questions in their academic and professional lives through simplified, comprehensive, and accessible content.",
     "vision": "Vision",
@@ -86,14 +86,15 @@
   "About": {
     "badge": "About Us",
     "title": "Who Are We?",
-    "description": "We are your first answer and we strive to be the first platform that students and graduates turn to",
-    "mainDescription": "Start with a Question is a youth training and development platform aimed at raising awareness and developing skills in the youth community with special focus on university students and recent graduates. The platform works to bridge the gap between university education and professional life.",
-    "additionalDescription": "The platform offers practical programs, training workshops, and guided mentoring sessions that help youth acquire the required experience, build clear career paths that enable them to compete effectively, and make a positive impact in their communities. The platform also seeks to create an integrated learning community that brings together students, graduates, and experts from various fields to exchange knowledge, share experience, and provide practical support in the journey of personal and professional development. In addition, \"Start with a Question\" works to provide volunteer opportunities, organize events and activities aimed at empowering youth to expand their networks, promote the spirit of initiative, and develop their ability to innovate and create.",
-    "subtitle": "Bridge the gap between education and career"
+    "description": "Your first destination for career guidance and skill development.",
+    "mainDescription": "Ebda Baswal (Start with a Question) is a youth-led platform dedicated to bridging the gap between university education and the professional world. We empower students and recent graduates with the essential skills needed to excel in today's job market.",
+    "additionalDescription": "Through practical workshops, expert mentorship, and volunteer opportunities, we provide a collaborative learning environment. We help youth build clear career paths, expand their professional networks, and turn their creative ideas into impactful realities.",
+    "subtitle": "Bridging the gap between education and your future career."
   },
   "Services": {
+    "pageName": "Services",
     "title": "Our Best Services",
-    "subtitle": "We are committed to providing in-depth analysis and strategic advice to help you prepare for your career future",
+    "subtitle": "Strategic consulting and in-depth analysis to successfully build your professional future",
     "service1": {
       "title": "Educational Content",
       "description": "Continuous sharing of written and visual content through our social media platforms to simplify knowledge for beneficiaries."
@@ -127,7 +128,7 @@
   },
   "Podcast": {
     "title": "Razan's Talk",
-    "subtitle": "A podcast aimed at empowering youth, students, and recent graduates in their professional journey through exploring inspiring topics and providing practical methods for qualification.",
+    "subtitle": "Empowering youth with practical skills and inspiring stories for a successful career.",
     "listenNow": "Listen Now",
     "viewAll": "View All Episodes",
     "episodeLabel": "Episode",
@@ -141,7 +142,16 @@
     "episode7": "Branding Journey in the New World",
     "episode8": "Investment Opportunities After War"
   },
+  "FeaturedEpisode": {
+    "badge": "Latest Episode",
+    "title": "Reconstruction: How Do We Seize Investment Opportunities to Build Sudan's Future?",
+    "duration": "36 min",
+    "date": "September 07, 2025",
+    "tag": "#Investment_Opportunities_After_War",
+    "button": "Listen Now"
+  },
   "Consulting": {
+    "pageName": "Consulting",
     "title": "Book Your Session Now",
     "subtitle": "Send your consultation details and our team will contact you to confirm the appointment.",
     "form": {
@@ -165,6 +175,7 @@
     }
   },
   "Contact": {
+    "pageName": "Contact",
     "title": "Get in Touch",
     "description": "We'd love to hear from you",
     "phone": "Phone",
@@ -176,7 +187,7 @@
   },
   "Founder": {
     "subtitle": "Founder's Message",
-    "quot": "This journey started with one question: How can we make the path easier for those who come after us?",
+    "quote": "This journey started with one question: How can we make the path easier for those who come after us?",
     "description": "Here you can write a short story about how the initiative started, and what personal motivation drove Dr. Razan to start the podcast and help youth. Personal stories create an emotional connection between the website and visitors.",
     "name": "Dr. Razan Al-Harith"
   },
@@ -312,7 +323,7 @@
       "value": "+249 000 000 000"
     },
     "email": {
-      "title": "Email",
+      "title": "Contact via Email",
       "value": "info@razantalks.com"
     },
     "hours": {

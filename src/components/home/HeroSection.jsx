@@ -45,7 +45,7 @@ export default function HeroSection() {
               </h1>
 
               {/* خط منحني ناعم في الأسفل - اختياري */}
-              <div className="absolute -bottom-2 left-1/4 w-1/2 h-1 bg-(--main-color)/10 rounded-full blur-[2px]"></div>
+              {/* <div className="absolute -bottom-2 left-1/4 w-3/4 h-1 bg-(--main-color)/10 rounded-full blur-[2px]"></div> */}
             </div>
 
             {/* Description */}
@@ -57,7 +57,7 @@ export default function HeroSection() {
             <div className="flex items-center gap-5 my-5">
               <Link
                 href={`/${locale}/contact`}
-                className="text-sm md:text-[16px] inline-flex items-center justify-center w-27 md:w-45 py-2 md:py-3 border border-slate-800 duration-300 rounded-sm hover:bg-slate-800 hover:text-[#F9D6B4]"
+                className="text-sm md:text-[16px] inline-flex items-center justify-center w-27 md:w-45 py-2 md:py-3 border border-slate-800 duration-300 rounded-lg hover:bg-slate-800 hover:text-[#F9D6B4]"
               >
                 <Phone className="text-sm md:text-lg me-2" />
                 {t("contactButton")}
@@ -65,7 +65,7 @@ export default function HeroSection() {
 
               <Link
                 href={`/${locale}/services`}
-                className="text-sm md:text-[16px] inline-flex items-center justify-center w-27 md:w-45 py-2 md:py-3 bg-(--main-color) text-white duration-300 border border-transparent rounded-sm hover:bg-transparent hover:text-slate-800 hover:border-slate-800"
+                className="text-sm md:text-[16px] inline-flex items-center justify-center w-27 md:w-45 py-2 md:py-3 bg-(--main-color) text-white duration-300 border border-transparent rounded-lg hover:bg-transparent hover:text-slate-800 hover:border-slate-800"
               >
                 <Tools className="text-sm md:text-lg me-2" />
                 {t("servicesButton")}

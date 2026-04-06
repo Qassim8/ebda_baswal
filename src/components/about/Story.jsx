@@ -1,6 +1,8 @@
+"use client";
 import { Award, Bulb, Users } from "tabler-icons-react";
 import MainTitle from "../MainTitle";
 import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 
 const storySteps = [
   {
@@ -25,6 +27,12 @@ const storySteps = [
 
 export default function Story() {
   const t = useTranslations("Story");
+  const [dir, setDir] = useState("ltr");
+
+  useEffect(() => {
+    const currentDir = document.documentElement.dir || "ltr";
+    setDir(currentDir);
+  }, []);
   return (
     <section className="py-20 relative overflow-hidden" id="story">
       <div className="container mx-auto px-5">
@@ -32,7 +40,7 @@ export default function Story() {
 
         <div className="relative mt-16">
           {/* الخط المركزي (Vertical Line) */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-(--main-color)/20 hidden md:block"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-(--main-color)/40 hidden md:block"></div>
 
           <div className="space-y-12">
             {storySteps.map((step, index) => (
@@ -47,7 +55,7 @@ export default function Story() {
 
                 {/* الدائرة المركزية (التي تقع على الخط) */}
                 <div className="z-20 flex items-center justify-center w-12 h-12 bg-white border-4 border-(--main-color) rounded-full shadow-lg mb-4 md:mb-0">
-                  <div className="text-(--main-color) text-xl">{step.icon}</div>
+                  <div className="text-yellow-600 text-xl">{step.icon}</div>
                 </div>
 
                 {/* محتوى الكارد */}
@@ -67,14 +75,6 @@ export default function Story() {
           </div>
         </div>
       </div>
-
-      <div className="absolute top-20 right-10 w-72 h-72 bg-(--main-color)/50 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2"></div>
-
-      <div className="absolute top-1/2 left-0 w-72 h-72 bg-(--alt-color)/50 rounded-full blur-2xl -z-10 -translate-x-1/2"></div>
-
-      <div className="absolute bottom-0 right-10 w-48 h-48 bg-(--main-color)/50 rounded-full blur-2xl -z-10 translate-y-1/3"></div>
-
-      <div className="absolute inset-0 opacity-5 -z-10 bg-[radial-gradient(#a6225d_1px,transparent_1px)] bg-size-[20px_20px]"></div>
     </section>
   );
 }

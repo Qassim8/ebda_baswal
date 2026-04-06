@@ -8,6 +8,13 @@ import Statistics from "@/components/home/Statistics";
 import Testimonials from "@/components/home/Testimonials";
 import ServicesSection from "@/components/services/ServicesSection";
 import ConsultingForm from "@/components/consulting/Form";
+import { generatePageMetadata } from "@/lib/seo";
+
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  return generatePageMetadata("home", locale);
+}
+
 export default function Home() {
   return (
     <>

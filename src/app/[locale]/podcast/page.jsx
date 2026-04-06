@@ -1,15 +1,11 @@
-import Breadcrumb from "@/components/Breadcrumb";
-import FeaturedEpisode from "@/components/podcast/Epsoide";
-import PodcastPlatforms from "@/components/podcast/Platforms";
-import PodcastSection from "@/components/podcast/Podcast";
+import { generatePageMetadata } from "@/lib/seo";
+import PodcastClient from "./podcast-client";
 
-export default function Podcast({ home = false }) {
-  return (
-    <>
-      <Breadcrumb title="كلام رزان" pageName="كلام رزان" />
-      <FeaturedEpisode />
-      <PodcastSection />
-      <PodcastPlatforms />
-    </>
-  );
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  return generatePageMetadata("podcast", locale);
+}
+
+export default function Podcast() {
+  return <PodcastClient />;
 }

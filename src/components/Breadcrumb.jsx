@@ -1,9 +1,18 @@
+"use client";
 import Link from "next/link";
 import { ChevronLeft, Home2 } from "tabler-icons-react";
 import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 
 export default function Breadcrumb({ title, pageName }) {
   const t = useTranslations("Breadcrumb");
+  const [dir, setDir] = useState("ltr");
+
+  useEffect(() => {
+    const currentDir = document.documentElement.dir || "ltr";
+    setDir(currentDir);
+  }, []);
+
   return (
     <section
       className="h-[30vh] md:h-[60vh] bg-cover bg-center relative flex items-center justify-center overflow-hidden"
@@ -34,7 +43,11 @@ export default function Breadcrumb({ title, pageName }) {
           </Link>
 
           <span className="text-slate-300">
-            <ChevronLeft />
+            {dir === "rtl" ? (
+              <ChevronLeft />
+            ) : (
+              <ChevronLeft className="rotate-180" />
+            )}
           </span>
 
           <span className="text-(--main-color) bg-rose-50 px-3 py-1 rounded-md">

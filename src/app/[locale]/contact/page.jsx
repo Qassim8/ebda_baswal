@@ -1,13 +1,11 @@
-import Breadcrumb from "@/components/Breadcrumb";
-import ConsultingForm from "@/components/consulting/Form";
-import { ContactCards } from "@/components/contact/ContactInfo";
+import { generatePageMetadata } from "@/lib/seo";
+import ContactClient from "./contact-client";
+
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  return generatePageMetadata("contact", locale);
+}
 
 export default function Contact() {
-  return (
-    <>
-      <Breadcrumb title="تواصل معنا" pageName="تواصل معنا" />
-      <ContactCards />
-      <ConsultingForm mode="." />
-    </>
-  );
+  return <ContactClient />;
 }

@@ -1,3 +1,4 @@
+"use client";
 import {
   Briefcase,
   ChartBar,
@@ -7,40 +8,47 @@ import {
 } from "tabler-icons-react";
 import MainTitle from "../MainTitle";
 import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 
 export default function Fields() {
   const t = useTranslations("Fields");
+  const [dir, setDir] = useState("ltr");
+
+  useEffect(() => {
+    const currentDir = document.documentElement.dir || "ltr";
+    setDir(currentDir);
+  }, []);
 
   const fieldsData = [
     {
       title: "softSkills.title",
       desc: "softSkills.description",
       icon: <MoodSmileBeam />,
-      align: "right",
+      align: `${dir === "rtl" ? "left" : "right"}`,
     },
     {
       title: "management.title",
       desc: "management.description",
       icon: <Briefcase />,
-      align: "left",
+      align: `${dir === "rtl" ? "right" : "left"}`,
     },
     {
       title: "dataAnalysis.title",
       desc: "dataAnalysis.description",
       icon: <ChartBar />,
-      align: "right",
+      align: `${dir === "rtl" ? "left" : "right"}`,
     },
     {
       title: "technicalFields.title",
       desc: "technicalFields.description",
       icon: <Code />,
-      align: "left",
+      align: `${dir === "rtl" ? "right" : "left"}`,
     },
     {
       title: "entrepreneurship.title",
       desc: "entrepreneurship.description",
       icon: <Rocket />,
-      align: "right",
+      align: `${dir === "rtl" ? "left" : "right"}`,
     },
   ];
 
