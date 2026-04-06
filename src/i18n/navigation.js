@@ -1,6 +1,6 @@
 // src/i18n/navigation.ts
 import { createNavigation } from "next-intl/navigation";
-import { routingConfig } from "./routingConfig"; // استيراد الإعدادات من الملف الجديد
+import { routingConfig } from "./config";
 
 export const routing = routingConfig;
 
