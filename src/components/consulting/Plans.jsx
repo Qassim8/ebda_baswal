@@ -22,24 +22,37 @@ const plansData = [
 
 export default function ConsultingPlans() {
   const t = useTranslations("Plans");
+
   return (
-    <section className="py-24 bg-[#fdfafb] relative overflow-hidden" id="plans">
+    <section
+      className="py-20 bg-(--second-color) relative overflow-hidden"
+      id="plans"
+    >
       {/* خلفية جمالية */}
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-(--main-color)/50 rounded-full blur-3xl -z-10"></div>
 
       <div className="container mx-auto px-5">
-        {/* استخدام الـ MainTitle الجاهز بتاعك */}
-        <MainTitle title={t("title")} subtitle={t("subtitle")} center={true} />
+        {/* أنميشن للعنوان الرئيسي */}
+        <div data-aos="fade-down">
+          <MainTitle
+            title={t("title")}
+            subtitle={t("subtitle")}
+            center={true}
+          />
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 items-stretch">
           {plansData.map((plan, index) => (
             <div
               key={index}
-              className={`relative flex flex-col p-10 rounded-[3rem] transition-all duration-500 hover:-translate-y-3 min-h-[550px] shadow-xl shadow-rose-100/20 ${
+              className={`relative flex flex-col p-10 rounded-[3rem] transition-transform duration-300 hover:-translate-y-3 min-h-137.5 shadow-xl shadow-rose-100/20 ${
                 plan.featured
                   ? "bg-(--main-color) text-white scale-105 z-10 border-none shadow-(--main-color)/20"
                   : "bg-white text-slate-800 border border-rose-50"
               }`}
+              // أنميشن فيد أب مع تأخير زمني متسلسل لكل بوكس
+              data-aos="zoom-in"
+              data-aos-delay={index * 400}
             >
               {/* شارة "الأكثر طلباً" */}
               {plan.featured && (
