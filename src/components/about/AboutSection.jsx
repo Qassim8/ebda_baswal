@@ -14,7 +14,7 @@ export default function About({ about }) {
     >
       <div className="container mx-auto px-3 md:px-0">
         {/* First Section: Images + Text */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-10 md:gap-5">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-5">
           {/* Images - تحريك الصور من جهة اليمين أو اليسار حسب الـ Layout */}
           <div
             className="relative flex-1 order-last md:order-first w-full min-h-100"
@@ -22,8 +22,8 @@ export default function About({ about }) {
             data-aos-duration="1200"
           >
             <div
-              className="absolute top-25 md:right-37.5 z-10 
-                       rounded-md w-full md:w-[70%]"
+              className="absolute top-32 md:top-25 right-0 md:right-37.5 z-10 
+                       rounded-md w-[70%]"
             >
               <Image
                 src="/Consulting-1024x644.jpg"
@@ -49,7 +49,7 @@ export default function About({ about }) {
                 width={400}
                 height={300}
                 loading="lazy"
-                className="rounded-md object-cover border-8 border-white"
+                className="rounded-lg object-cover  border-white"
               />
             </div>
           </div>
@@ -61,7 +61,7 @@ export default function About({ about }) {
               subtitle={t("description")}
               fullwidth={1}
             />
-            <p className="text-slate-600 text-lg md:text-xl leading-relaxed">
+            <p className="text-slate-600 md:text-xl leading-relaxed">
               <span className="text-(--main-color) font-bold">
                 {t("title")}
               </span>{" "}
@@ -73,13 +73,13 @@ export default function About({ about }) {
         {about && (
           <>
             {/* Second Section: Additional Text + Image */}
-            <div className="py-16 flex flex-col md:flex-row justify-between items-center gap-10">
+            <div className="py-16 flex flex-col md:flex-row justify-between items-center gap-5">
               <div
                 className="flex-1"
                 data-aos="fade-up"
                 data-aos-duration="1000"
               >
-                <p className="text-slate-600 text-lg md:text-xl leading-relaxed">
+                <p className="text-slate-600 md:text-xl leading-relaxed">
                   {t("additionalDescription")}
                 </p>
               </div>

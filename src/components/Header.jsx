@@ -67,7 +67,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
           ? "bg-(--alt-color)/80 backdrop-blur-md shadow-lg py-1"
-          : "bg-(--alt-color) py-3"
+          : "bg-(--alt-color)"
       }`}
     >
       <nav className="container mx-auto px-5 flex justify-between items-center">
@@ -90,7 +90,7 @@ export default function Navbar() {
         <div className="flex items-center">
           <ul
             ref={menuRef}
-            className={`transition-all duration-500 flex flex-col md:flex-row items-center absolute md:relative top-full md:top-0 left-0 bg-white md:bg-transparent w-full h-[calc(100vh-80px)] md:h-auto ${
+            className={`transition-all duration-500 flex flex-col md:flex-row items-center absolute md:relative top-full md:top-0 left-0 bg-amber-50 md:bg-transparent w-full h-[calc(100vh-80px)] md:h-auto ${
               isOpen
                 ? "opacity-100 translate-y-0 pointer-events-auto"
                 : "opacity-0 md:opacity-100 -translate-y-4 md:translate-y-0 pointer-events-none md:pointer-events-auto"
@@ -112,7 +112,7 @@ export default function Navbar() {
                     {link.name}
                     {/* خط تحت الرابط يظهر عند الهوفر أو النشاط */}
                     <span
-                      className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-1 bg-(--main-color) transition-all duration-300 rounded-full ${isActive ? "w-8" : "w-0 group-hover:w-6"}`}
+                      className={`absolute bottom-0 left-10 md:left-1/2 -translate-x-1/2 h-1 bg-(--main-color) transition-all duration-300 rounded-full ${isActive ? "w-8" : "w-0 group-hover:w-6"}`}
                     ></span>
                   </Link>
                 </li>
@@ -122,7 +122,7 @@ export default function Navbar() {
         </div>
 
         {/* Language & Mobile Toggle */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1 md:gap-3">
           <div className="relative" ref={langRef}>
             <button
               disabled={isPending}
@@ -182,10 +182,8 @@ export default function Navbar() {
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`flex justify-center items-center w-10 h-10 rounded-xl md:hidden transition-all ${
-              isOpen
-                ? "bg-slate-100 text-slate-800 rotate-90 shadow-inner"
-                : "text-(--main-color) bg-white shadow-sm"
+            className={`flex justify-center items-center rounded-xl md:hidden transition-all ${
+              isOpen ? " text-slate-800 rotate-90 " : "text-(--main-color) "
             }`}
           >
             {isOpen ? <X size={20} /> : <Menu2 size={20} />}
