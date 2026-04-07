@@ -1,7 +1,7 @@
 // components/home/ServiceCard.jsx
 export default function ServiceCard({ title, icon, desc, id }) {
   return (
-    <div className="relative p-7 bg-(--second-color) rounded-md duration-500 border border-slate-100 group hover:bg-(--main-color)">
+    <div className="relative md:h-75 p-7 bg-(--second-color) rounded-md duration-500 border border-slate-100 group hover:bg-(--main-color)">
       <div
         className="text-xl p-3 bg-(--main-color) text-white rounded-full
        duration-500 group-hover:text-(--main-color) group-hover:bg-white! w-fit"

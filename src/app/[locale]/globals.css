@@ -59,3 +59,12 @@ body {
   /* ربط الـ Keyframes باسم أنيميشن لاستخدامه كـ Class */
   --animate-fade-grayscale: fade-grayscale 5s ease-in-out infinite;
 }
+[data-aos="grow-line"] {
+  width: 0 !important;
+  transition-property: width;
+}
+
+/* الحالة أول ما السكرول يوصل (الظهور) */
+[data-aos="grow-line"].aos-animate {
+  width: 100% !important;
+}
