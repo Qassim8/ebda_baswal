@@ -3,9 +3,16 @@
 import Image from "next/image";
 import MainTitle from "../MainTitle";
 import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 
 export default function About({ about }) {
   const t = useTranslations("About");
+  const [dir, setDir] = useState("ltr");
+
+  useEffect(() => {
+    const currentDir = document.documentElement.dir || "ltr";
+    setDir(currentDir);
+  }, []);
 
   return (
     <section
@@ -22,34 +29,34 @@ export default function About({ about }) {
             data-aos-duration="1200"
           >
             <div
-              className="absolute top-32 md:top-25 right-0 md:right-37.5 z-10 
-                       rounded-md w-[70%]"
+              className={`absolute md:top-25 ${dir === "ltr" ? "left-0" : "right-0 md:right-37.5"} z-10 
+                        w-[80%] md:w-1/2`}
             >
               <Image
-                src="/Consulting-1024x644.jpg"
+                src="/about02.jpg"
                 alt="Professional Consultation"
                 width={600}
                 height={400}
                 loading="lazy"
-                className="rounded-md object-cover shadow-lg"
+                className=" object-cover shadow-lg"
               />
             </div>
 
             {/* الصورة الصغيرة بتتحرك بتأخير بسيط عشان تدي عمق */}
             <div
-              className="h-full mt-60 md:me-50
-                        rounded-md z-10 relative w-[70%] md:w-1/2"
+              className={`h-full mt-50 md:mt-75 ${dir === "rtl" ? "md:me-50" : "md:ms-50"}
+                         z-10 relative w-[80%] md:w-1/2 border-15 border-white`}
               data-aos="fade-up"
               data-aos-delay="300"
               data-aos-duration="1000"
             >
               <Image
-                src="/Planning-for-New-Financial-Year.png"
+                src="/about03.jpg"
                 alt="Career Planning"
                 width={400}
                 height={300}
                 loading="lazy"
-                className="rounded-lg object-cover  border-white"
+                className=" object-cover"
               />
             </div>
           </div>
@@ -91,12 +98,12 @@ export default function About({ about }) {
                 data-aos-delay="200"
               >
                 <Image
-                  src="/about-2.jpg"
+                  src="/about04.jpg"
                   alt="Workshop"
                   width={500}
                   height={400}
                   loading="lazy"
-                  className="rounded-md object-cover shadow-lg"
+                  className="object-cover shadow-lg"
                 />
               </div>
             </div>

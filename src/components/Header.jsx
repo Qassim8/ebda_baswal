@@ -20,6 +20,13 @@ export default function Navbar() {
   const menuRef = useRef(null);
   const langRef = useRef(null);
 
+  const [dir, setDir] = useState("ltr");
+
+  useEffect(() => {
+    const currentDir = document.documentElement.dir || "ltr";
+    setDir(currentDir);
+  }, []);
+
   // مراقبة السكرول لتغيير شكل الهيدر
   useEffect(() => {
     const handleScroll = () => {
@@ -112,7 +119,7 @@ export default function Navbar() {
                     {link.name}
                     {/* خط تحت الرابط يظهر عند الهوفر أو النشاط */}
                     <span
-                      className={`absolute bottom-0 left-10 md:left-1/2 -translate-x-1/2 h-1 bg-(--main-color) transition-all duration-300 rounded-full ${isActive ? "w-8" : "w-0 group-hover:w-6"}`}
+                      className={`absolute bottom-0 ${dir === "rtl" ? "right-5 md:right-1/2" : "left-10 md:left-1/2"} -translate-x-1/2 h-1 bg-(--main-color) transition-all duration-300 rounded-full ${isActive ? "w-10" : "w-0 group-hover:w-6"}`}
                     ></span>
                   </Link>
                 </li>

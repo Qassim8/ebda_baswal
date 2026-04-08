@@ -15,64 +15,42 @@ import { useTranslations } from "next-intl";
 const testimonialData = [
   {
     id: 1,
-
     nameKey: "testimonial1.name",
-
     roleKey: "testimonial1.role",
-
     commentKey: "testimonial1.comment",
-
-    image: "/images/user-1.jpg",
+    image: "/testi-01.png",
   },
-
   {
     id: 2,
-
     nameKey: "testimonial2.name",
-
     roleKey: "testimonial2.role",
-
     commentKey: "testimonial2.comment",
-
-    image: "/images/user-2.jpg",
+    image: "/testi-02.png",
   },
-
   {
     id: 3,
-
     nameKey: "testimonial3.name",
-
     roleKey: "testimonial3.role",
-
     commentKey: "testimonial3.comment",
-
-    image: "/images/user-3.jpg",
+    image: "/testi-03.png",
   },
-
   {
     id: 4,
-
     nameKey: "testimonial4.name",
-
     roleKey: "testimonial4.role",
-
     commentKey: "testimonial4.comment",
-
-    image: "/images/user-2.jpg",
+    image: "/testi-04.png",
   },
-
   {
     id: 5,
-
     nameKey: "testimonial5.name",
-
     roleKey: "testimonial5.role",
-
     commentKey: "testimonial5.comment",
-
-    image: "/images/user-3.jpg",
+    image: "/testi-05.png",
   },
 ];
+
+// ... (نفس الـ Imports والـ Data)
 
 export default function Testimonials() {
   const t = useTranslations("Testimonials");
@@ -91,7 +69,6 @@ export default function Testimonials() {
       id="testimonials"
     >
       <div className="container mx-auto px-5">
-        {/* 1. العنوان: يظهر من الأعلى */}
         <div data-aos="fade-down" data-aos-duration="1000">
           <MainTitle
             title={t("title")}
@@ -100,40 +77,38 @@ export default function Testimonials() {
           />
         </div>
 
-        {/* 2. السلايدر: يظهر بتكبير ناعم للداخل */}
         <div
-          className="mt-12 relative"
+          className="mt-20 relative"
           data-aos="zoom-in"
           data-aos-duration="1200"
-          data-aos-delay="200"
         >
-          {/* أزرار التنقل المخصصة */}
-          <div className="hidden md:flex justify-between absolute top-1/2 -translate-y-1/2 w-full z-30 pointer-events-none">
+          {/* أزرار التنقل */}
+          <div className="hidden md:flex justify-between absolute top-1/2 -translate-y-1/2 w-full z-30 pointer-events-none px-2">
             <button
               ref={(node) => setPrevEl(node)}
-              className="cursor-pointer pointer-events-auto w-10 h-10 flex items-center justify-center rounded-full bg-(--main-color) border border-rose-100 text-main shadow-md hover:bg-main hover:text-white transition-all -ml-5"
+              className="cursor-pointer pointer-events-auto w-12 h-12 flex items-center justify-center rounded-full bg-white border-2 border-(--main-color) text-(--main-color) shadow-xl hover:bg-(--main-color) hover:text-white transition-all -ml-6"
             >
               {dir === "rtl" ? (
-                <ArrowRight className="text-white" />
+                <ArrowRight size={24} />
               ) : (
-                <ArrowLeft className="text-white" />
+                <ArrowLeft size={24} />
               )}
             </button>
             <button
               ref={(node) => setNextEl(node)}
-              className="cursor-pointer pointer-events-auto w-10 h-10 flex items-center justify-center rounded-full bg-(--main-color) border border-rose-100 text-main shadow-md hover:bg-main hover:text-white transition-all -mr-5"
+              className="cursor-pointer pointer-events-auto w-12 h-12 flex items-center justify-center rounded-full bg-white border-2 border-(--main-color) text-(--main-color) shadow-xl hover:bg-(--main-color) hover:text-white transition-all -mr-6"
             >
               {dir === "rtl" ? (
-                <ArrowLeft className="text-white" />
+                <ArrowLeft size={24} />
               ) : (
-                <ArrowRight className="text-white" />
+                <ArrowRight size={24} />
               )}
             </button>
           </div>
 
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={30}
+            spaceBetween={40}
             slidesPerView={1}
             loop={true}
             autoplay={{ delay: 5000 }}
@@ -149,65 +124,64 @@ export default function Testimonials() {
               768: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
             }}
-            className="pb-16"
+            className="pb-20 !overflow-visible" // جعل الفائض مرئي لجمال التصميم
           >
             {testimonialData.map((item) => (
               <SwiperSlide key={item.id}>
-                <div className="bg-rose-50/40 p-8 h-92! rounded-2xl border border-(--main-color)/20 flex flex-col hover:shadow-md transition-all border-b-4 hover:border-b-main">
-                  <div className="text-3xl text-(--main-color)/30 mb-4">
-                    <Quote />
+                <div className="relative bg-white pt-16 pb-10 px-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 group flex flex-col items-center text-center">
+                  {/* الصورة: كبيرة وبارزة للأعلى */}
+                  <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 md:w-28 md:h-28 rounded-3xl overflow-hidden border-4 border-white shadow-2xl group-hover:scale-110 transition-transform duration-500 rotate-3 group-hover:rotate-0">
+                    <Image
+                      src={item.image}
+                      alt={t(item.nameKey)}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
-                  <p className="text-slate-600 leading-relaxed italic mb-8 grow text-sm md:text-base">
+
+                  {/* علامة الاقتباس الخلفية */}
+                  <div className="absolute top-6 right-8 opacity-5 text-slate-900 group-hover:opacity-10 transition-opacity">
+                    <Quote size={60} fill="currentColor" />
+                  </div>
+
+                  {/* الاسم والدور */}
+                  <div className="mb-6">
+                    <h4 className="font-black text-slate-800 text-xl md:text-2xl mb-1">
+                      {t(item.nameKey)}
+                    </h4>
+                    <span className="text-(--main-color) text-sm font-bold tracking-wider uppercase">
+                      {t(item.roleKey)}
+                    </span>
+                  </div>
+
+                  {/* التعليق */}
+                  <p className="text-slate-500 leading-relaxed italic text-sm md:text-base">
                     "{t(item.commentKey)}"
                   </p>
-                  <div className="flex items-center gap-4 pt-6">
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-sm">
-                      <Image
-                        src={item.image}
-                        alt={t(item.nameKey)}
-                        fill
-                        loading="lazy"
-                        className="object-cover"
-                      />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-slate-800 text-md">
-                        {t(item.nameKey)}
-                      </h4>
-                      <p className="text-main text-xs font-medium">
-                        {t(item.roleKey)}
-                      </p>
-                    </div>
-                  </div>
+
+                  {/* خط ديكوري سفلي */}
+                  <div className="mt-8 w-12 h-1 bg-(--main-color)/20 rounded-full group-hover:w-24 transition-all duration-500"></div>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
 
-          <div className="custom-pagination flex justify-center gap-2 mt-5"></div>
+          <div className="custom-pagination flex justify-center gap-2 mt-8"></div>
         </div>
       </div>
 
-      {/* ... (styles stay the same) */}
       <style jsx global>{`
         .custom-pagination .swiper-pagination-bullet {
-          background: #d1d5db;
-
+          background: #e2e8f0;
           opacity: 1;
-
-          width: 8px;
-
-          height: 8px;
-
+          width: 10px;
+          height: 10px;
           transition: all 0.3s;
         }
-
         .custom-pagination .swiper-pagination-bullet-active {
           background: #a6225d !important;
-
-          width: 24px;
-
-          border-radius: 4px;
+          width: 30px;
+          border-radius: 5px;
         }
       `}</style>
     </section>
