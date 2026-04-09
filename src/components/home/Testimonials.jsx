@@ -158,7 +158,7 @@ export default function Testimonials() {
               <SwiperSlide key={item.id}>
                 <div className="relative h-96 bg-white pt-16 pb-10 px-8 rounded-4xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 group flex flex-col items-center text-center">
                   {/* الصورة: كبيرة وبارزة للأعلى */}
-                  <div className="absolute -top-12 left-1/2 md:-translate-x-1/2 w-24 h-24 md:w-30 md:h-30 rounded-3xl overflow-hidden border-4 border-white shadow-2xl group-hover:scale-110 transition-transform duration-500 rotate-3 group-hover:rotate-0">
+                  <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 md:w-30 md:h-30 rounded-3xl overflow-hidden border-4 border-white shadow-2xl group-hover:scale-110 transition-transform duration-500 md:rotate-3 group-hover:rotate-0">
                     <Image
                       src={item.image}
                       alt={t(item.nameKey)}
@@ -168,7 +168,7 @@ export default function Testimonials() {
                   </div>
 
                   {/* علامة الاقتباس الخلفية */}
-                  <div className="absolute top-6 right-8 opacity-5 text-slate-900 group-hover:opacity-50 group-hover:text-(--main-color) transition-opacity">
+                  <div className="absolute top-6 right-8 opacity-40 md:opacity-5 text-(--main-color) md:text-slate-900 group-hover:opacity-50 group-hover:text-(--main-color) transition-opacity">
                     <Quote size={60} fill="currentColor" />
                   </div>
 
