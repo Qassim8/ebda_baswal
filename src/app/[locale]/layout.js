@@ -6,6 +6,9 @@ import { NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/navigation";
 import { notFound } from "next/navigation";
 import AOSInit from "@/components/AOS";
+import ScrollToTop from "@/components/ScrollToTop";
+import { Suspense } from "react";
+import PageLoader from "@/components/PageLoader";
 
 const exo2 = Comfortaa({
   variable: "--font-exo2",
@@ -129,6 +132,7 @@ export default async function RootLayout({ children, params }) {
       className={`${fontVariables} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <PageLoader />
         <AOSInit />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />

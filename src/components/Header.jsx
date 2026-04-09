@@ -110,6 +110,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
+                    scroll={true}
                     className={`relative block py-3 px-5 font-bold transition-all group ${
                       isActive
                         ? "text-(--main-color)"
