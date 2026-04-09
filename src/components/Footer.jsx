@@ -10,6 +10,8 @@ import {
   BrandInstagram,
   BrandFacebook,
   Heart,
+  BrandYoutube,
+  BrandTelegram,
 } from "tabler-icons-react";
 import { useEffect, useState } from "react";
 
@@ -22,6 +24,25 @@ export default function Footer() {
     const currentDir = document.documentElement.dir || "ltr";
     setDir(currentDir);
   }, []);
+
+  const socialMediaLinks = [
+    {
+      icon: <BrandYoutube size={20} />,
+      href: "https://www.youtube.com/@RazanTalks/videos",
+    },
+    {
+      icon: <BrandFacebook size={20} />,
+      href: "https://www.facebook.com/share/1GVbKSdsSN/?mibextid=wwXIfr",
+    },
+    {
+      icon: <BrandLinkedin size={20} />,
+      href: "https://www.linkedin.com/company/swqedu/",
+    },
+    {
+      icon: <BrandTelegram size={20} />,
+      href: "https://t.me/letsstartwithaquestion",
+    },
+  ];
 
   const quickLinks = [
     { name: t("home"), href: `/` },
@@ -55,13 +76,14 @@ export default function Footer() {
             </p>
             {/* أيقونات السوشيال ميديا */}
             <div className="flex gap-4">
-              {[BrandLinkedin, BrandInstagram, BrandFacebook].map((Icon, i) => (
+              {socialMediaLinks.map((link, i) => (
                 <Link
                   key={i}
-                  href="#"
+                  href={link.href}
+                  target="_blank"
                   className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-(--main-color) hover:border-(--main-color) hover:-translate-y-2 transition-all duration-300"
                 >
-                  <Icon size={20} />
+                  {link.icon}
                 </Link>
               ))}
             </div>
@@ -171,11 +193,7 @@ export default function Footer() {
         </div>
 
         {/* الحقوق واللمسة النهائية */}
-        <div
-          className="border-t border-white/5 py-10 flex flex-col md:flex-row justify-between items-center gap-6"
-          data-aos="fade-in"
-          data-aos-duration="1500"
-        >
+        <div className="border-t border-white/5 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-gray-500 text-xs font-bold tracking-wide">
             {t("copyright", { year: new Date().getFullYear() })}
           </p>
@@ -187,9 +205,6 @@ export default function Footer() {
               className="text-red-500 fill-red-500 group-hover:scale-125 transition-transform duration-300 animate-pulse"
             />
             <span>{t("by")}</span>
-            <span className="text-gray-400 hover:text-(--main-color) cursor-pointer transition-colors">
-              Ebda Baswal Team
-            </span>
           </div>
         </div>
       </div>

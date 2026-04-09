@@ -53,7 +53,7 @@ export default function Story() {
 
         <div className="relative mt-20">
           {/* الخط المركزي - متدرج وانسيابي */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-(--main-color) via-rose-200 to-transparent hidden md:block"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-linear-to-b from-(--main-color) via-rose-400 to-transparent hidden md:block"></div>
 
           <div className="space-y-20">
             {storySteps.map((step, index) => {
@@ -79,7 +79,7 @@ export default function Story() {
                     }
                     data-aos-duration="1000"
                   >
-                    <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 relative transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-rose-100/50 group-hover:-translate-y-2">
+                    <div className="bg-white p-8 rounded-4xl shadow-sm border border-slate-100 relative transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-rose-100/50 group-hover:-translate-y-2">
                       {/* السنة كـ Badge طائر */}
                       <div
                         className={`absolute -top-4 ${isEven && dir === "ltr" ? "left-8" : "right-8"} bg-white shadow-md border border-rose-50 px-4 py-1 rounded-full`}
@@ -102,7 +102,7 @@ export default function Story() {
 
                       {/* سهم صغير يشير للخط المركزي في الميديم سكرين */}
                       <div
-                        className={`hidden md:block absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-(--main-color) border-t border-l border-slate-100 transform rotate-45 ${isEven ? "-left-2" : "-right-2"}`}
+                        className={`hidden md:block absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-(--main-color) border-t border-l border-slate-100 transform rotate-45 -right-2`}
                       ></div>
                     </div>
                   </div>

@@ -30,7 +30,7 @@ export default function Founder() {
           ></div>
 
           {/* الصورة الأساسية */}
-          <div className="relative z-10 overflow-hidden rounded-[2rem] shadow-2xl">
+          <div className="relative z-10 overflow-hidden rounded-4xl shadow-2xl">
             <Image
               src="/founder.jpg"
               alt="Founder"
@@ -43,10 +43,10 @@ export default function Founder() {
 
           {/* لمسة إضافية: اقتباس صغير عائم */}
           <div
-            className={`flex justify-center items-center absolute -top-4 ${dir === "ltr" ? "-right-4" : "-left-4"} z-20 bg-(--main-color) text-white px-6 py-3 rounded-full shadow-xl hidden lg:block animate-bounce`}
+            className={`md:flex justify-center items-center absolute -top-4 ${dir === "ltr" ? "-right-4" : "-left-4"} z-20 bg-(--main-color) text-white h-15 w-15 rounded-full shadow-xl hidden animate-bounce`}
             style={{ animationDuration: "3s" }}
           >
-            <span className="text-3xl font-serif">&ldquo;</span>
+            <span className="text-6xl font-serif">&ldquo;</span>
           </div>
         </div>
 
@@ -63,8 +63,10 @@ export default function Founder() {
           </div>
 
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800 leading-snug italic relative">
-            <span className="text-(--main-color) opacity-20 text-6xl absolute -top-10 -left-4 font-serif">
-              “
+            <span
+              className={`text-(--main-color) opacity-20 text-6xl absolute -top-10 ${dir === "rtl" ? "-left-4" : "-right-4"} font-serif`}
+            >
+              &ldquo;
             </span>
             {t("quote")}
           </h2>

@@ -126,7 +126,7 @@ export default function ConsultingForm({ mode = "consulting" }) {
               data-aos="zoom-in"
               data-aos-delay="700"
             >
-              <button className="cursor-pointer w-full bg-(--main-color) text-white py-2 md:py-5 rounded-2xl font-black md:text-lg shadow-xl shadow-(--main-color)/20 hover:bg-slate-800 transition-all flex items-center justify-center gap-3 group">
+              <button className="cursor-pointer w-full bg-(--main-color) text-white py-4 md:py-5 rounded-2xl font-black md:text-lg shadow-xl shadow-(--main-color)/20 hover:bg-slate-800 transition-all flex items-center justify-center gap-3 group">
                 <span>
                   {isConsulting
                     ? t("form.confirmBooking")

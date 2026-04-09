@@ -48,6 +48,34 @@ const testimonialData = [
     commentKey: "testimonial5.comment",
     image: "/testi-05.png",
   },
+  {
+    id: 6,
+    nameKey: "testimonial6.name",
+    roleKey: "testimonial6.role",
+    commentKey: "testimonial6.comment",
+    image: "/testi-06.png",
+  },
+  {
+    id: 7,
+    nameKey: "testimonial7.name",
+    roleKey: "testimonial7.role",
+    commentKey: "testimonial7.comment",
+    image: "/testi-07.png",
+  },
+  {
+    id: 8,
+    nameKey: "testimonial8.name",
+    roleKey: "testimonial8.role",
+    commentKey: "testimonial8.comment",
+    image: "/testi-08.png",
+  },
+  {
+    id: 9,
+    nameKey: "testimonial9.name",
+    roleKey: "testimonial9.role",
+    commentKey: "testimonial9.comment",
+    image: "/testi-09.png",
+  },
 ];
 
 // ... (نفس الـ Imports والـ Data)
@@ -107,6 +135,7 @@ export default function Testimonials() {
           </div>
 
           <Swiper
+            dir={dir === "ltr" ? "rtl" : "ltr"}
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={40}
             slidesPerView={1}
@@ -124,13 +153,13 @@ export default function Testimonials() {
               768: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
             }}
-            className="pb-20 !overflow-visible" // جعل الفائض مرئي لجمال التصميم
+            className="pb-20 overflow-visible!"
           >
             {testimonialData.map((item) => (
               <SwiperSlide key={item.id}>
-                <div className="relative bg-white pt-16 pb-10 px-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 group flex flex-col items-center text-center">
+                <div className="relative h-96 bg-white pt-16 pb-10 px-8 rounded-4xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 group flex flex-col items-center text-center">
                   {/* الصورة: كبيرة وبارزة للأعلى */}
-                  <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 md:w-28 md:h-28 rounded-3xl overflow-hidden border-4 border-white shadow-2xl group-hover:scale-110 transition-transform duration-500 rotate-3 group-hover:rotate-0">
+                  <div className="absolute -top-12 left-1/2 md:-translate-x-1/2 w-24 h-24 md:w-30 md:h-30 rounded-3xl overflow-hidden border-4 border-white shadow-2xl group-hover:scale-110 transition-transform duration-500 rotate-3 group-hover:rotate-0">
                     <Image
                       src={item.image}
                       alt={t(item.nameKey)}
@@ -140,12 +169,12 @@ export default function Testimonials() {
                   </div>
 
                   {/* علامة الاقتباس الخلفية */}
-                  <div className="absolute top-6 right-8 opacity-5 text-slate-900 group-hover:opacity-10 transition-opacity">
+                  <div className="absolute top-6 right-8 opacity-5 text-slate-900 group-hover:opacity-50 group-hover:text-(--main-color) transition-opacity">
                     <Quote size={60} fill="currentColor" />
                   </div>
 
                   {/* الاسم والدور */}
-                  <div className="mb-6">
+                  <div className="my-6">
                     <h4 className="font-black text-slate-800 text-xl md:text-2xl mb-1">
                       {t(item.nameKey)}
                     </h4>
@@ -160,7 +189,7 @@ export default function Testimonials() {
                   </p>
 
                   {/* خط ديكوري سفلي */}
-                  <div className="mt-8 w-12 h-1 bg-(--main-color)/20 rounded-full group-hover:w-24 transition-all duration-500"></div>
+                  <div className="absolute bottom-8 w-12 h-1 bg-(--main-color)/20 rounded-full group-hover:w-24 transition-all duration-500"></div>
                 </div>
               </SwiperSlide>
             ))}

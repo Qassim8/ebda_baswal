@@ -37,7 +37,7 @@ export default function HeroSection() {
                   <IconBulbFilled className="h-5 w-5 md:w-10 md:h-10 text-white drop-shadow-sm animate-color-fade" />
                 </span>
 
-                <div className="flex gap-x-1 md:gap-x-3 text-[17px] md:text-5xl">
+                <div className="flex items-center gap-x-1 md:gap-x-3 text-[17px] md:text-5xl">
                   <span className="font-extrabold text-(--main-color) tracking-tighter whitespace-nowrap">
                     {t("mainTitle")}
                   </span>

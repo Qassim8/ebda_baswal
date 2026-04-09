@@ -40,10 +40,10 @@ export default function ServicesCTA() {
               className={`lg:w-2/3 text-center ${dir === "rtl" ? "lg:text-right" : "lg:text-left"}`}
             >
               <div data-aos="fade-up" data-aos-delay="200">
-                <h2 className="text-3xl md:text-6xl font-black text-white mb-8 leading-tight">
+                <h2 className="text-xl md:text-5xl font-black text-white mb-8 leading-tight">
                   {t("title")}
                 </h2>
-                <p className="text-rose-100 text-lg md:text-2xl mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium opacity-90">
+                <p className="text-rose-100 text-[17px] md:text-xl mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium opacity-90">
                   {t("subtitle")}
                 </p>
               </div>
@@ -53,7 +53,7 @@ export default function ServicesCTA() {
                 <div data-aos="fade-up" data-aos-delay="400">
                   <Link
                     href="/consulting"
-                    className="bg-white text-(--main-color) px-10 py-5 rounded-2xl font-black text-lg shadow-2xl hover:bg-slate-900 hover:text-white hover:-translate-y-2 transition-all duration-500 flex items-center justify-center gap-3 group/btn"
+                    className="bg-white text-(--main-color) text-sm md:text-[16px] p-3 md:p-5 rounded-2xl font-black hover:bg-slate-900 hover:text-white hover:-translate-y-2 transition-all duration-500 flex items-center justify-center gap-3 group/btn"
                   >
                     <IconCalendarCheck
                       size={26}
@@ -67,7 +67,7 @@ export default function ServicesCTA() {
                 <div data-aos="fade-up" data-aos-delay="600">
                   <Link
                     href="/podcast"
-                    className="bg-transparent border-2 border-white/40 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-white hover:text-(--main-color) hover:-translate-y-2 transition-all duration-500 flex items-center justify-center gap-3"
+                    className="bg-transparent border-2 border-white/40 text-white text-sm md:text-[16px] p-3 md:p-5 rounded-2xl font-black hover:bg-white hover:text-(--main-color) hover:-translate-y-2 transition-all duration-500 flex items-center justify-center gap-3"
                   >
                     <Microphone2 size={26} />
                     {t("podcastButton")}
@@ -78,7 +78,7 @@ export default function ServicesCTA() {
 
             {/* الأيقونة الضخمة - الصاروخ */}
             <div
-              className="lg:w-1/3 hidden lg:flex justify-center"
+              className="lg:w-1/3 lg:flex justify-center order-first md:order-last"
               data-aos="fade-right"
               data-aos-delay="800"
             >

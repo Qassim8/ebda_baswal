@@ -55,32 +55,52 @@
     "author": "Dr. Razan Al-Harith"
   },
   "Testimonials": {
-    "title": "What They Say About Us",
-    "subtitle": "We are proud to be part of the success journey of many creative young people.",
+    "title": "What Experts Say",
+    "subtitle": "Proud to be part of the success journey of many creative youth.",
     "testimonial1": {
-      "name": "Sarah Ahmed",
-      "role": "Computer Engineering Graduate",
-      "comment": "The initiative was a turning point in my career path. The soft skills I learned helped me a lot in my first interview and thanks to God I was able to get accepted for the job."
+      "name": "Dalia Youssef",
+      "role": "Engineer & Influencer",
+      "comment": "I was delighted to participate in a professional platform that combines youth passion with precise delivery; the 'Start with a Question' initiative is a true role model."
     },
     "testimonial2": {
-      "name": "Muhammad Khaled",
-      "role": "Young Entrepreneur",
-      "comment": "The podcast and consultations that Dr. Razan provides always contain the essence of experience. Really inspiring content that puts you on the right practical path."
+      "name": "Hussam Al-Nasri",
+      "role": "Entrepreneurship Expert",
+      "comment": "What sets this podcast apart is the search for 'the essence' and presenting it to youth in a way that makes entrepreneurship a reachable reality."
     },
     "testimonial3": {
-      "name": "Layla Hassan",
-      "role": "University Student",
-      "comment": "What distinguishes them the most is honesty and realism in presenting solutions. Not just theoretical talk, but practical steps you can apply from the next day."
+      "name": "Montaser Dahab",
+      "role": "Digital Marketing & Business Dev Expert",
+      "comment": "The depth of questioning and the focus on bridging the professional gap are what make 'Start with a Question' an exceptional platform."
     },
     "testimonial4": {
-      "name": "Fatima Ibrahim",
-      "role": "Project Manager",
-      "comment": "The support I received changed the way I looked at my personal and professional life. I felt my true value."
+      "name": "Heba Gaafar",
+      "role": "Institutional Development Consultant",
+      "comment": "I was impressed by the organizers' awareness of the importance of true empowerment, and their focus on content quality over mere reach."
     },
     "testimonial5": {
-      "name": "Yusuf Muhammad",
-      "role": "Entrepreneur",
-      "comment": "The entrepreneurship training gave me the tools and knowledge I needed to turn my idea into reality."
+      "name": "Barakat Badawi",
+      "role": "Investment Consultant",
+      "comment": "We need platforms like this that build knowledge bridges between generations and prepare youth for market challenges with a sharp vision."
+    },
+    "testimonial6": {
+      "name": "Ali Mahjoub",
+      "role": "Certified International Trainer",
+      "comment": "An inspiring platform that steps outside traditional training frameworks to create a genuine dialogue that touches the aspirations of the next generation."
+    },
+    "testimonial7": {
+      "name": "Ibrahim Al-Haj",
+      "role": "IT Expert",
+      "comment": "The conversations at 'Start with a Question' are characterized by technical intelligence and realism, providing a high-quality addition to specialized Arabic content."
+    },
+    "testimonial8": {
+      "name": "Hassan Khalid",
+      "role": "Nursing Specialist",
+      "comment": "A pioneering initiative in shedding light on available opportunities and guiding youth towards investing their energy in the most optimal way."
+    },
+    "testimonial9": {
+      "name": "Rania Abdullah",
+      "role": "Human Development Expert",
+      "comment": "Proud of a Sudanese platform that cares about the fine details of building a professional personality and opens doors to hope and innovation."
     }
   },
   "About": {
@@ -121,7 +141,7 @@
     }
   },
   "Statistics": {
-    "followers": "Followers",
+    "followers": "Views",
     "consultations": "Consultations",
     "broadcasts": "Live Broadcasts",
     "posts": "Posts"
@@ -168,7 +188,7 @@
       "roadmapSession": "Roadmap (90 minutes)",
       "challengesDescription": "Brief about your challenges",
       "subject": "Message Subject",
-      "subjectPlaceholder": "General inquiry, collaboration, etc...",
+      "subjectPlaceholder": "General inquiry, volunteer opportunity, etc...",
       "messageDetails": "Message Details",
       "confirmBooking": "Confirm Booking",
       "sendMessage": "Send Message"
@@ -186,9 +206,9 @@
     "home": "Home"
   },
   "Founder": {
-    "subtitle": "Founder's Message",
-    "quote": "This journey started with one question: How can we make the path easier for those who come after us?",
-    "description": "lorem lorem ipsom",
+    "subtitle": "A Word from the Founder",
+    "quote": "This journey began with one question: How can we make the path easier for those who follow?",
+    "description": "A specialist in youth empowerment and career development. Dr. Razan founded 'Start with a Question' to bridge the gap for students and graduates, providing practical solutions and expert insights for today's job market.",
     "name": "Dr. Razan Al-Harith"
   },
   "Story": {
@@ -349,6 +369,6 @@
     "followUs": "Follow Us",
     "copyright": "© {year} Start with a Question. All rights reserved.",
     "madeWith": "Made with",
-    "by": "by the Team"
+    "by": "for you"
   }
 }
