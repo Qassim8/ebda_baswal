@@ -8,10 +8,5 @@ export async function generateMetadata({ params }) {
 }
 
 export default function Consulting() {
-  return (
-    <>
-      <FAQSchema />
-      <ConsultingClient />
-    </>
-  );
+  return <ConsultingClient />;
 }
