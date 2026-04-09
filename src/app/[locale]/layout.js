@@ -97,6 +97,11 @@ export async function generateMetadata({ params }) {
         ar: "/ar",
       },
     },
+    icons: {
+      icon: "./icon.png", // هيدور عليه في مجلد public
+      shortcut: "./icon.png",
+      apple: "./icon.png", // مهم للأيفون لما يضيفوا الموقع للشاشة الرئيسية
+    },
   };
 }
 
