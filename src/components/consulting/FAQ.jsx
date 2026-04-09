@@ -38,7 +38,7 @@ export default function FAQ({ contact }) {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className={`w-full flex justify-between items-center p-6 text-start outline-none ${openIndex === index ? "bg-(--alt-color) rounded-t-2xl" : "rounded-2xl"} transition-colors duration-300`}
+                className={`w-full flex justify-between items-center p-6 text-start cursor-pointer outline-none ${openIndex === index ? "bg-(--alt-color) rounded-t-2xl" : "rounded-2xl"} transition-colors duration-300`}
               >
                 <span
                   className={`text-lg font-bold transition-colors duration-300 ${

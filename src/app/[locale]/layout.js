@@ -129,7 +129,9 @@ export default async function RootLayout({ children, params }) {
       className={`${fontVariables} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <PageLoader />
+        <Suspense fallback={null}>
+          <PageLoader />
+        </Suspense>
         <AOSInit />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
