@@ -41,7 +41,7 @@ export default function FAQ({ contact }) {
                 className={`w-full flex justify-between items-center p-6 text-start cursor-pointer outline-none ${openIndex === index ? "bg-(--alt-color) rounded-t-2xl" : "rounded-2xl"} transition-colors duration-300`}
               >
                 <span
-                  className={`text-lg font-bold transition-colors duration-300 ${
+                  className={`text-sm md:text-lg font-bold transition-colors duration-300 ${
                     openIndex === index
                       ? "text-(--main-color)"
                       : "text-slate-800"
@@ -74,7 +74,7 @@ export default function FAQ({ contact }) {
                 }`}
               >
                 <div className="p-6 pt-5">
-                  <p className="text-slate-600 leading-relaxed text-base">
+                  <p className="text-slate-600 leading-relaxed text-[12px] md:text-base">
                     {t(`questions.${index}.a`)}
                   </p>
                 </div>

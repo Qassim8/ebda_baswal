@@ -24,7 +24,7 @@ export default function About({ about }) {
         <div className="flex flex-col lg:flex-row justify-between items-center gap-16">
           {/* حاوية الصور الأولى - ستايل احترافي متداخل */}
           <div
-            className="flex-1 relative w-full h-[350px] md:h-[450px] order-last lg:order-first"
+            className="flex-1 relative w-full h-87.5 md:h-112.5 order-last lg:order-first"
             data-aos={dir === "rtl" ? "fade-left" : "fade-right"}
             data-aos-duration="1200"
           >
@@ -68,8 +68,8 @@ export default function About({ about }) {
               subtitle={t("description")}
               fullwidth={1}
             />
-            <p className="text-slate-600 text-lg md:text-xl leading-relaxed mt-6">
-              <span className="text-(--main-color) font-extrabold text-2xl block mb-2">
+            <p className="text-slate-600 text-sm md:text-xl leading-relaxed mt-6">
+              <span className="text-(--main-color) font-extrabold text-lg md:text-2xl block mb-2">
                 {t("title")}
               </span>
               {t("mainDescription")}
@@ -89,7 +89,7 @@ export default function About({ about }) {
               <div
                 className={`w-20 h-1 bg-(--main-color) mb-8 rounded-full ${dir === "rtl" ? "mr-0" : "ml-0"}`}
               ></div>
-              <p className="text-slate-700 text-lg md:text-xl leading-relaxed text-justify italic font-medium">
+              <p className="text-slate-700 text-sm md:text-xl leading-relaxed text-justify italic font-medium">
                 {t("additionalDescription")}
               </p>
             </div>
