@@ -135,7 +135,6 @@ export default function Testimonials() {
           </div>
 
           <Swiper
-            dir={dir === "ltr" ? "rtl" : "ltr"}
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={40}
             slidesPerView={1}

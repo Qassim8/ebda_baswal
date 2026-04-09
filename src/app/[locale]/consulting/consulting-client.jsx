@@ -1,5 +1,6 @@
 "use client";
 import Breadcrumb from "@/components/Breadcrumb";
+import FAQ from "@/components/consulting/FAQ";
 import ConsultingForm from "@/components/consulting/Form";
 import ConsultingPlans from "@/components/consulting/Plans";
 import Testimonials from "@/components/consulting/Rating";
@@ -15,6 +16,7 @@ const ConsultingClient = () => {
       <Breadcrumb title={t("pageName")} pageName={t("pageName")} />
       <Testimonials />
       <ConsultingPlans />
+      <FAQ />
       <ConsultingForm />
     </main>
   );

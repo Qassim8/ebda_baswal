@@ -39,42 +39,39 @@ export async function generateMetadata({ params }) {
 
   const seoData = {
     en: {
-      title: "Start with a Question - Empower Your Career Journey",
+      title: "Start with a Question | Bridging the Gap to Your Dream Career",
       description:
-        "A platform dedicated to simplifying knowledge and empowering youth through mentorship, practical guidance, and career development.",
+        "The leading platform for Sudanese youth to transition from education to the professional world. Expert insights on career planning, soft skills, and navigating the job market.",
       keywords: [
-        "career development",
-        "mentorship",
-        "youth empowerment",
-        "learning platform",
-        "professional growth",
-        "career coaching",
+        "Sudanese youth career",
+        "career guidance Sudan",
+        "Start with a question initiative",
+        "job market readiness",
+        "professional mentorship",
+        "career podcast Sudan",
       ],
-      siteUrl: "https://yoursite.com",
-      ogTitle: "Start with a Question - Empower Your Career Journey",
+      siteUrl: "https://startwithaquestion.com", // غير الرابط لرابطك الحقيقي
+      ogTitle:
+        "Don't Just Look for a Job, Build a Career | Start with a Question",
       ogDescription:
-        "A platform dedicated to simplifying knowledge and empowering youth through mentorship, practical guidance, and career development.",
-      ogImage: "https://yoursite.com/og-image.png",
-      twitterHandle: "@yourhandle",
+        "Join thousands of graduates discovering their path. Expert-led guidance to help you master the skills companies actually want.",
     },
     ar: {
-      title: "ابدأ بسؤال - اختبر كفاءاتك المهنية",
+      title: "ابدأ بسؤال | دليلك العملي من التخرج إلى أول وظيفة",
       description:
-        "منصة تهدف إلى تبسيط المعرفة، وتحفيز التفكير، وتمكين الشباب من خلال مشاركة المحتوى والإرشاد العملي لبناء مسارات مهنية ناجحة.",
+        "المنصة الأولى لتمكين الشباب السوداني مهنياً. نقدم لك استشارات واقعية، مهارات ناعمة، وخارطة طريق لاجتياز المقابلات الوظيفية وبناء مسار مهني ناجح.",
       keywords: [
-        "تطوير مهني",
-        "الارشاد",
-        "تمكين الشباب",
-        "منصة تعليم",
-        "النمو الوظيفي",
-        "استشارات مهنية",
+        "مبادرة ابدأ بسؤال",
+        "تمكين الشباب السوداني",
+        "التطوير المهني للخريجين",
+        "كيفية اجتياز المقابلة الشخصية",
+        "بناء السيرة الذاتية",
+        "رزان الحارث",
       ],
-      siteUrl: "https://yoursite.com",
-      ogTitle: "ابدأ بسؤال - اختبر كفاءاتك المهنية",
+      siteUrl: "https://startwithaquestion.com",
+      ogTitle: "ابدأ بسؤال | لا تبحث عن وظيفة فحسب، ابنِ مسارك المهني بذكاء",
       ogDescription:
-        "منصة تهدف إلى تبسيط المعرفة، وتحفيز التفكير، وتمكين الشباب من خلال مشاركة المحتوى والإرشاد العملي لبناء مسارات مهنية ناجحة.",
-      ogImage: "https://yoursite.com/og-image-ar.png",
-      twitterHandle: "@yourhandle",
+        "انضم لآلاف الخريجين في رحلة الوعي المهني. تعلم ما لا تعلمه لك الجامعة عن سوق العمل والنجاح الوظيفي.",
     },
   };
 

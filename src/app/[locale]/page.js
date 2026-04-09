@@ -9,6 +9,7 @@ import Testimonials from "@/components/home/Testimonials";
 import ServicesSection from "@/components/services/ServicesSection";
 import ConsultingForm from "@/components/consulting/Form";
 import { generatePageMetadata } from "@/lib/seo";
+import FAQ from "@/components/consulting/FAQ";
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }) {
 
 export default function Home() {
   return (
-    <>
+    <main>
       <HeroSection />
       <About />
       <Statistics home={1} />
@@ -27,7 +28,8 @@ export default function Home() {
       <Goals />
       <Podcast home={true} />
       <Testimonials />
+      <FAQ />
       <ConsultingForm />
-    </>
+    </main>
   );
 }

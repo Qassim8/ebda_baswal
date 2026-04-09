@@ -11,6 +11,8 @@ export default function AOSInit() {
       once: true, // الأنميشن يشتغل مرة واحدة بس وأنت نازل (عشان ما يشتتش المستخدم)
       easing: "ease-out-quad", // حركة ناعمة في النهاية
       delay: 100, // تأخير بسيط عالمي
+      once: true, // مهم جداً: الأنميشن يحصل مرة واحدة فقط
+      disableMutationObserver: false,
     });
   }, []);
 

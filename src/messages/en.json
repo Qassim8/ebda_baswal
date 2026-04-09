@@ -140,6 +140,36 @@
       "description": "We are here to help you increase your chances of being accepted for scholarships by improving essays and CVs."
     }
   },
+  "FAQ": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about the 'Start with a Question' initiative",
+    "questions": [
+      {
+        "q": "What is 'Start with a Question' and who is it for?",
+        "a": "It is a professional initiative dedicated to bridging the gap between academic education and the job market. We target fresh graduates and young professionals, helping them plan their careers and build the skills actually demanded by employers."
+      },
+      {
+        "q": "How can I benefit from the podcast, and is it free?",
+        "a": "Yes, all podcast episodes are 100% free and available on our website and all major streaming platforms. Our goal is to share guest experiences and success stories as an accessible source of inspiration for everyone."
+      },
+      {
+        "q": "Are the consultation sessions held online or in person?",
+        "a": "Currently, all sessions are conducted online via virtual meeting platforms. This allows you to connect with our experts from anywhere in the world with maximum schedule flexibility."
+      },
+      {
+        "q": "How can I join the initiative as a volunteer or partner?",
+        "a": "We always welcome ambitious minds! You can reach out to us through the 'Contact Us' page by sending your profile or partnership proposal, and our team will review it and get back to you."
+      },
+      {
+        "q": "What differentiates 'Start with a Question' from traditional soft skills training?",
+        "a": "We don't offer generic self-help; we provide 'Realistic Career Awareness.' We focus on the actual needs of the Sudanese and regional job markets, moving beyond theory to share real experiences from experts who have walked the same path."
+      },
+      {
+        "q": "Does the initiative provide accredited certificates after workshops or sessions?",
+        "a": "Our primary goal is 'Empowerment through Skill' rather than just issuing certificates. However, for specific specialized workshops, we do provide certificates of completion to verify your attendance and the skills you've acquired."
+      }
+    ]
+  },
   "Statistics": {
     "followers": "Views",
     "consultations": "Consultations",

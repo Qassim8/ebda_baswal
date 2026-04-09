@@ -1,5 +1,6 @@
 import { generatePageMetadata } from "@/lib/seo";
 import ConsultingClient from "./consulting-client";
+import FAQSchema from "@/components/FAQSchema";
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -7,5 +8,10 @@ export async function generateMetadata({ params }) {
 }
 
 export default function Consulting() {
-  return <ConsultingClient />;
+  return (
+    <>
+      <FAQSchema />
+      <ConsultingClient />
+    </>
+  );
 }
