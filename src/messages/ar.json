@@ -221,7 +221,9 @@
       "subjectPlaceholder": "استفسار عام، تطوع، إلخ...",
       "messageDetails": "تفاصيل رسالتك",
       "confirmBooking": "تأكيد الحجز",
-      "sendMessage": "إرسال الرسالة"
+      "sendMessage": "إرسال الرسالة",
+      "loading": "جاري الإرسال...",
+      "success": "تم الإرسال بنجاح!"
     }
   },
   "Contact": {
@@ -374,7 +376,7 @@
     },
     "email": {
       "title": "تواصل عبر البريد الإلكتروني",
-      "value": "info@razantalks.com"
+      "value": "swqedu@gmail.com"
     },
     "hours": {
       "title": "ساعات العمل",

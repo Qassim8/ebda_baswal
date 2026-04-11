@@ -221,7 +221,9 @@
       "subjectPlaceholder": "General inquiry, volunteer opportunity, etc...",
       "messageDetails": "Message Details",
       "confirmBooking": "Confirm Booking",
-      "sendMessage": "Send Message"
+      "sendMessage": "Send Message",
+      "loading": "Sending...",
+      "success": "Message sent successfully!"
     }
   },
   "Contact": {
@@ -374,7 +376,7 @@
     },
     "email": {
       "title": "Contact via Email",
-      "value": "info@razantalks.com"
+      "value": "swqedu@gmail.com"
     },
     "hours": {
       "title": "Working Hours",

@@ -11,7 +11,7 @@ const contactMethodsData = [
   {
     icon: <Mail size={32} />,
     key: "email",
-    link: "mailto:info@razantalks.com",
+    link: "mailto:swqedu@gmail.com",
     color:
       "bg-rose-50 text-(--main-color) border-rose-100 hover:border-rose-400",
   },
